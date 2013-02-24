@@ -76,7 +76,7 @@
 				}							​
 			</style>
     		<script>
-				<!-- Dunction loading tabs-->
+				<!-- Function loading tabs-->
 				$(function() {
 					$( "#tabs" ).tabs({				
 						beforeLoad: function( event, ui ) {					
