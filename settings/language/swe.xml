@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language>
+		<main>
+		<savebutton>Spara</savebutton>		
+		</main>
+		<settings>
+			<main>
+				<name>Sidans namn:</name>
+				<ip>Adress till switchkingserver:</ip>
+				<port>Port:</port>
+				<user>Användarnamn:</user>
+				<pass>Lösenord:</pass>
+				<autoup>Autoupdatering:</autoup>
+				<tabtime>Tid mellan autoupdatering: (anges i sec)</tabtime>
+				<hidetab>Gömma tabmenyn vid start?</hidetab>
+				<saved>Inställningar sparade!</saved>
+				<savebutton>Spara!</savebutton>
+				<hidetabbutton>Visa knappen för visa/gömma tabmenyn:</hidetabbutton>
+				<langfile>Språk:</langfile>
+			</main>
+			<devices>
+			<newdevimport>Det finns nya Enheter att importera! Vill du importera dem nu?</newdevimport>
+				<mvdevice>Flyttbara enheter:</mvdevice>
+				<name>Enhet:</name>
+				<id>Id för enheten:</id>
+				<x>Position x-axel:</x>
+				<y>Position y-axel:</y>
+				<onscenariodriven>Picture OnScenarioDriven:</onscenariodriven>
+				<offscenariodriven>Picture OffScenarioDriven:</offscenariodriven>
+				<onscheduledriven>Picture OnScheduleDriven:</onscheduledriven>
+				<offscheduledriven>Picture OffScheduleDriven:</offscheduledriven>
+				<onsemiauto>Picture OnSemiAuto:</onsemiauto>
+				<offsemiauto>Picture OffSemiAuto:</offsemiauto>
+				<onscheduleandruledriven>Picture OnScheduleAndRuleDriven:</onscheduleandruledriven>
+				<offscheduleandruledriven>Picture OffScheduleAndRuleDriven:</offscheduleandruledriven>
+				<en>Aktiverad:</en>
+				<tab>Flik som Enheten ska synas på:</tab>
+				<shname>Visa enhetens namn:</shname>
+				<picsizewidth>Bildernas storlek bredd:</picsizewidth>
+				<picsizeheight>Bildernas storlek höjd:</picsizeheight>
+			</devices>
+			<datasources>
+				<mvds>Flyttbara datakällor:</mvds>
+				<name>Datakälla:</name>
+				<id>Id för datakälla:</id>
+				<text>Text efter värde: (°C)</text>
+				<en>Aktiverad:</en>
+				<tab>Flik som datakällan ska synas på:</tab>
+				<shname>Visa datakällans namn:</shname>
+			</datasources>
+			<systemmodes>
+				<mvsm>Flyttbara systemlägen:</mvsm>
+				<name>Systemläge:</name>
+				<id>Id för systemläget:</id>
+				<x>Position x-axel:</x>
+				<y>Position y-axel:</y>
+				<picon>Bild för "ON" läge:</picon>
+				<picoff>Bild för "OFF" läge:</picoff>
+				<en>Aktiverad:</en>
+				<tab>Flik som Systemläget ska synas på:</tab>
+			</systemmodes>
+			<scenarios>
+				<enabled>Aktivera scenario:</enabled>
+				<movesc>Flyttbar:</movesc>
+				<posx>Position x-axel:</posx>
+				<posy>Position y-axel:</posy>
+				<backcolor>Bakgrundsfärg:</backcolor>
+				<fontsize>Textstorlek:</fontsize>
+				<hideable>Visa knapp för att gömma scenario (Beta):</hideable>
+			</scenarios>
+			<devicegroups>
+			<enabled>Aktivera Enhetsgrupper</enabled>
+				<movedg>Flyttbar:</movedg>
+				<posx>Position x-axel:</posx>
+				<posy>Position y-axel:</posy>
+			</devicegroups>
+			<tabs>
+				<tab>Filk:</tab>
+				<id>ID:</id>
+				<name>Flikens namn:</name>
+				<fileb>Filen som ska laddas:</fileb>
+				<pic>Bakgrundsbild:</pic>
+				<height>Höjdstorlek på fliken:</height>
+				<width>Längdstorlek på fliken:</width>
+				<en>Aktiverad:</en>
+			</tabs>
+			<tabssettings>
+			<menutab1>Main settings</menutab1>
+			<menutab2>Enheter</menutab2>
+			<menutab3>Flikar</menutab3>
+			<menutab4>Systemlägen</menutab4>
+			<menutab5>Datakällor</menutab5>
+			<menutab6>Scenarier</menutab6>
+			<menutab7>Enhetsgrupper</menutab7>
+			</tabssettings>
+		</settings>
+</language>

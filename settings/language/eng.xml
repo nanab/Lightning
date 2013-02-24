@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language>
+		<firsttime>
+			<first>This is the first time you are using this plugin. Please fill in connection info to switchking server!</first>
+		</firsttime>
+		<globallang>
+			<minutes>min</minutes>
+			<hours>h</hours>
+			<day>day</day>
+			<days>days</days>
+			<week>week</week>
+			<weeks>weeks</weeks>
+			<month>month</month>
+			<months>months</months>
+			<year>year</year>
+			<years>years</years>
+		</globallang>
+		<import>
+			<devicestitle>There are new devices to import!</devicestitle>
+			<devicestext>Do you want to do it now?</devicestext>
+			<devicesbackground>Please disable the devices that you don´t want to use in the switchking interface.</devicesbackground>
+			<systemmodestitle>There are new systemmodes to import!</systemmodestitle>
+			<systemmodestext>Do you want to do it now?</systemmodestext>
+			<systemmodesbackground>Please disable the systemmodes that you don´t want to use in the switchking interface.</systemmodesbackground>
+			<datasourcestitle>There are new datasources to import!</datasourcestitle>
+			<datasourcestext>Do you want to do it now?</datasourcestext>
+			<datasourcesbackground>Please disable the datasources that you don´t want to use in the switchking interface.</datasourcesbackground>
+		</import>
+		<main>
+			<dircheck>Directory /settings/tempfiles is not writeable! Please fix it and reload page.</dircheck>
+			<writefilecheck>File /settings/settings.xml is not writeable! Please fix it and reload page.</writefilecheck>
+			<savebutton>Save!</savebutton>
+			<refreshbutton>Refresh</refreshbutton>
+			<settingsbutton>Settings</settingsbutton>		
+		</main>
+		<moveable>
+			<maintext>!!Moveable mode active!!</maintext>
+			<devicessaved1>Device</devicessaved1>
+			<devicessaved2>:s position saved!</devicessaved2>
+			<systemmodessaved1>Systemmode</systemmodessaved1>
+			<systemmodessaved2>:s position saved!</systemmodessaved2>
+			<datasourcessaved1>Datasource</datasourcessaved1>
+			<datasourcessaved2>:s position saved!</datasourcessaved2>
+			<devicegroupssaved1>Devicegroup</devicegroupssaved1>
+			<devicegroupssaved2>:s position saved!</devicegroupssaved2>
+			<scenariossaved1>Scenario</scenariossaved1>
+			<scenariossaved2>:s position saved!</scenariossaved2>
+		</moveable>
+		<settings>
+			<main>
+				<name>Page title:</name>
+				<ip>IP to SwitchKing:</ip>
+				<port>Port:</port>
+				<user>Username:</user>
+				<pass>Password:</pass>
+				<autoup>Autouppdate page:</autoup>
+				<tabtime>Time between updates: (specified in sec)</tabtime>
+				<hidetab>Hide tabmenu at start?</hidetab>
+				<saved>Settings saved</saved>
+				<savebutton>Save!</savebutton>
+				<hidetabbutton>Show button for Show/Hide tabmenu:</hidetabbutton>
+				<langfile>Language:</langfile>
+				<theme>Theme:</theme>
+				<allmove>All objekts moveable:</allmove>
+				<backbutton>Back</backbutton>
+			</main>
+			<weather>
+				<enabled>Enabled</enabled>
+				<disabled>Disabled</disabled>
+				<url>Url to get weather from yr.no:</url>
+				<posx>Position x-axis:</posx>
+				<posy>Position y-axis:</posy>
+				<numberof>Number of rows to display:</numberof>
+				<transparent>Grade of Transparent on background:</transparent>
+				<iconsize>Size of icons:</iconsize>
+				<fontsize>Fontsize of text:</fontsize>
+			</weather>
+			<devices>
+			<newdevimport>There is new devices! Do you want to import them now?</newdevimport>
+				<name>Device:</name>
+				<id>Id for device:</id>
+				<x>Position x-axis:</x>
+				<y>Position y-axis:</y>
+				<onscenariodriven>Picture OnScenarioDriven:</onscenariodriven>
+				<offscenariodriven>Picture OffScenarioDriven:</offscenariodriven>
+				<onscheduledriven>Picture OnScheduleDriven:</onscheduledriven>
+				<offscheduledriven>Picture OffScheduleDriven:</offscheduledriven>
+				<onsemiauto>Picture OnSemiAuto:</onsemiauto>
+				<offsemiauto>Picture OffSemiAuto:</offsemiauto>
+				<onscheduleandruledriven>Picture OnScheduleAndRuleDriven:</onscheduleandruledriven>
+				<offscheduleandruledriven>Picture OffScheduleAndRuleDriven:</offscheduleandruledriven>
+				<en>Active:</en>
+				<tab>Tab where device should be displayed:</tab>
+				<shname>Show name of device:</shname>
+				<picsizewidth>Picture size width:</picsizewidth>
+				<picsizeheight>Picture size height:</picsizeheight>
+			</devices>
+			<datasources>
+				<name>Datasource:</name>
+				<id>Id for datasource:</id>
+				<text>Sentens after value (°C):</text>
+				<en>Active:</en>
+				<tab>Tab where datasource should be displayed:</tab>
+				<shname>Show name of datasource:</shname>
+				<graph>Graph</graph>
+				<sizeheightgraph>Heightsize of graph:</sizeheightgraph>
+				<sizewidthgraph>Widthsize of graph:</sizewidthgraph>
+				<minutegraph>Minutes to display on own:</minutegraph>
+			</datasources>
+			<systemmodes>
+				<name>Systemmode:</name>
+				<id>Id for systemmode:</id>
+				<x>Position x-axis:</x>
+				<y>Position y-axis:</y>
+				<picon>Picture for "ON" mode:</picon>
+				<picoff>Picture for "OFF" mode::</picoff>
+				<en>Active:</en>
+				<tab>Tab where systemmode should be displayed:</tab>
+			</systemmodes>
+			<scenarios>
+				<enabled>Enabled</enabled>
+				<disabled>Disabled</disabled>
+				<posx>Position x-axis:</posx>
+				<posy>Position y-axis:</posy>
+				<backcolor>Background Color:</backcolor>
+				<fontsize>Font size:</fontsize>
+				<hideable>Show button for Hide/Show scenario (Beta):</hideable>
+			</scenarios>
+			<devicegroups>
+			<enabled>Enabled</enabled>
+			<disabled>Disabled</disabled>
+				<posx>Position x-axis:</posx>
+				<posy>Position y-axis:</posy>
+			</devicegroups>
+			<tabs>
+				<tab>Tab:</tab>
+				<id>ID:</id>
+				<name>Name on tab:</name>
+				<fileb>File that should be loaded (/tab1.php):</fileb>
+				<pic>Mainpicture:</pic>
+				<height>Height Size of tab:</height>
+				<width>Width Size of tab:</width>
+				<en>Active:</en>
+			</tabs>
+			<tabssettings>
+			<menutab1>Main settings</menutab1>
+			<menutab2>Devices</menutab2>
+			<menutab3>Tabs</menutab3>
+			<menutab4>Systemmode</menutab4>
+			<menutab5>Datasources</menutab5>
+			<menutab6>Scenarios</menutab6>
+			<menutab7>Devicegroups</menutab7>
+			<menutab8>Weather bar</menutab8>
+			</tabssettings>
+		</settings>
+</language>
