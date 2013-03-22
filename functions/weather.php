@@ -5,6 +5,15 @@ $Night = "Night";
 $Morning = "Morning";
 $Day = "Day";
 $Evening = "Evening";
+//Load text from language file
+$sunday = $XmlLang->weather->sunday;
+$monday = $XmlLang->weather->monday;
+$tuesday = $XmlLang->weather->tuesday;
+$wednesday = $XmlLang->weather->wednesday;
+$thursday = $XmlLang->weather->thursday;
+$friday = $XmlLang->weather->friday;
+$saturday = $XmlLang->weather->saturday;
+
 ?>
 <style>
 	.mainweather{
@@ -105,7 +114,31 @@ foreach ($forecast->forecast->tabular as $tabular) {
 					$Number = "Number".$idwe;
 					$Code = "Code".$idwe;
 					$Mps = "Mps".$idwe;
-					$TempValue = "TempValue".$idwe;
+					$TempValue = "TempValue".$idwe;	
+					//Start Converting date to weekdays				
+					$From = date('l', strtotime($$From));
+					if ($From == "Sunday"){ //Get the right weekday spelling from language file
+						$From = $sunday;
+					}
+					if ($From == "Monday"){
+						$From = $monday;
+					}
+					if ($From == "Tuesday"){
+						$From = $tuesday;
+					}
+					if ($From == "Wednesday"){
+						$From = $wednesday;
+					}
+					if ($From == "Thursday"){
+						$From = $thursday;
+					}
+					if ($From == "Friday"){ 
+						$From = $friday;
+					}
+					if ($From == "Saturday"){
+						$From = $saturday;
+					}
+					//Done converting date to weekdays
 					?>
 					<div id="ikon" style="display:inline-block;">
 						<?php
@@ -118,7 +151,7 @@ foreach ($forecast->forecast->tabular as $tabular) {
 					</div>
 					<div id="dayweather" class="dayweather" style="display:inline-block; border:3 black;">                                                      
 						<?php								
-						echo $$From;
+						echo $From;
 						echo "&nbsp;";
 						echo $$PeriodName;
 						echo "&nbsp;&nbsp;&nbsp;";

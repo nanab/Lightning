@@ -46,6 +46,15 @@
 			<scenariossaved1>Scenario</scenariossaved1>
 			<scenariossaved2>:s position saved!</scenariossaved2>
 		</moveable>
+		<weather>
+			<sunday>Sunday</sunday>
+			<monday>Monday</monday>
+			<tuesday>Tuesday</tuesday>
+			<wednesday>Wednesday</wednesday>
+			<thursday>Thursday</thursday>
+			<friday>Friday</friday>
+			<saturday>Saturday</saturday>			
+		</weather>
 		<settings>
 			<main>
 				<name>Page title:</name>
