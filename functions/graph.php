@@ -1,4 +1,4 @@
-<!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
+<!-- V2.0 Copyright Nanab nanab666@gmail.com.  -->
 <?php
 //Load graph image
 include(dirname(__FILE__)."/../settings/load_settings.php");
