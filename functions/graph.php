@@ -1,15 +1,19 @@
-<!-- V2.0 Copyright Nanab nanab666@gmail.com.  -->
+<!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
 <?php
 //Load graph image
 include(dirname(__FILE__)."/../settings/load_settings.php");
-//DSId
+//Get id off device
 @$DSId = $_GET["DSId"];
-//DSSizeX
+//Get width size of image to display
 @$DSSizeX = $_GET["DSSizeX"];
-//DSSizeY
+//Get Height size of imgage to display
 @$DSSizeY = $_GET["DSSizeY"];
-//DSMinute
+//Get minutes to diplay on graph
 @$DSMinute = $_GET["DSMinute"];
-$test = "http://$User:$Pass@$Ip:$Port/$FuncDS/$DSId/graph.png?width=$DSSizeX&height=$DSSizeY&minutesofhistory=$DSMinute";
+//Path where to save image you get from switchking temporarly
+$img = dirname(__FILE__)."/../settings/tempfiles/tempgraph.png";
+//String to get image from switchking
+$url = "http://$User:$Pass@$Ip:$Port/$FuncDS/$DSId/graph.png?width=$DSSizeX&height=$DSSizeY&minutesofhistory=$DSMinute";
+file_put_contents($img, file_get_contents($url)); //Save image from switch king to the temporarly location
 ?>
-<img src="<?php echo $test; ?>" />
+<img src="../settings/tempfiles/tempgraph.png" /> <!-- Display image. -->
