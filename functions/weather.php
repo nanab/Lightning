@@ -1,11 +1,11 @@
 <!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
 <?php
 include(dirname(__FILE__)."/../settings/load_settings.php");
-$Night = "Night";
-$Morning = "Morning";
-$Day = "Day";
-$Evening = "Evening";
 //Load text from language file
+$Night = $XmlLang->weather->night;
+$Morning = $XmlLang->weather->morning;
+$Day = $XmlLang->weather->day;
+$Evening = $XmlLang->weather->evening;
 $sunday = $XmlLang->weather->sunday;
 $monday = $XmlLang->weather->monday;
 $tuesday = $XmlLang->weather->tuesday;
@@ -83,9 +83,9 @@ foreach ($forecast->forecast->tabular as $tabular) {
 		//Winddirection
 		${'Code'.$itime} = $data->windDirection['code'];
 		//Windspeed
-		${'Mps'.$itime} = $data->windSpeed['mps'] . '&nbsp;M/s';
+		${'Mps'.$itime} = $data->windSpeed['mps'] . 'M/s';
 		//temperature
-		${'TempValue'.$itime} = $data->temperature['value'] . '&nbsp;°C';
+		${'TempValue'.$itime} = $data->temperature['value'] . '°C';
 		//convert period numbers to time on day in text
 		if (${'Period'.$itime} == "0") {
 			${'PeriodName'.$itime} = $Night;
@@ -101,7 +101,6 @@ foreach ($forecast->forecast->tabular as $tabular) {
     } 
 }
 ?>
-<body bgcolor="black">
 	<div class="notclickdiv">
 		<div id="mainweather" class="mainweather" style="display:inline-block;">
 			<div class="clickweather">
@@ -177,4 +176,3 @@ foreach ($forecast->forecast->tabular as $tabular) {
 		<div id="test">
 		</div>
 	</div>
-</body>

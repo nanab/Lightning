@@ -53,7 +53,11 @@
 			<wednesday>Wednesday</wednesday>
 			<thursday>Thursday</thursday>
 			<friday>Friday</friday>
-			<saturday>Saturday</saturday>			
+			<saturday>Saturday</saturday>
+			<night>Night</night>
+			<morning>Morning</morning>
+			<day>Day</day>
+			<evening>Evening</evening>			
 		</weather>
 		<settings>
 			<main>
