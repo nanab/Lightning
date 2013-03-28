@@ -279,6 +279,9 @@ if ($First == "true"){
 		${'Tab'.$ITabLoad.'BakPicHeight'} = $xml->tabs->$Tabtemp->bakpicheight;
 		${'Tab'.$ITabLoad.'BakPicWidth'} = $xml->tabs->$Tabtemp->bakpicwidth;	
 		$ITabLoad++;
-	};			
+	};
+	
+	//Razzberry support (Alpha)
+	$RazberryActive = "true";			
 };
 ?>

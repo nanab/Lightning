@@ -1,26 +1,35 @@
 <!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
-<html style="border:none;">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<?php
 		$TabBakPic = 'Tab'.$tabpage.'BakPic';
 		?>
 		<script src="<?php echo $Jquery; ?>"></script>
-		<script src="<?php echo $JqueryCustom; ?>"></script> 
+		<script src="<?php echo $JqueryCustom; ?>"></script>  
+        <?php if ($RazberryActive == "true") { ?>      <!-- If razzbery is aktivated start loading files. -->
+        <script src="razberry/razberry_load.js"></script> 
+        <script src="razberry/jquery.triggerpath.js"></script> 
+        <script src="razberry/jquery.dateformat.js"></script> 
+        <?php } ?> <!-- Done loading razberry files -->		       
 		<link rel="stylesheet" href="<?php echo $JqueryCustomCss; ?>" />
         <link rel="stylesheet" href="<?php echo $JqueryCustomCss2; ?>" />
-        <?php
-        include_once(dirname(__FILE__)."/functions/import_from_switchking.php");
-		importtoxml(dirname(__FILE__)."/settings/tempfiles/devices.xml", "http://$User:$Pass@$Ip:$Port/$funcdev", "Devices");
-		importtoxml(dirname(__FILE__)."/settings/tempfiles/systemmodes.xml", "http://$User:$Pass@$Ip:$Port/$FuncSysm", "Systemmodes");
+        <?php if ($AllMove == "true"){ 
+			//If move is active load functions ?>  	
+			<script src="/functions/moveabledivs.js"></script>            
+		<?php };
+		//Start importing from switchking to xml files
+        include_once(dirname(__FILE__)."/functions/import_from_switchking.php"); //Call the file where the importtoxml function is. 
+		importtoxml(dirname(__FILE__)."/settings/tempfiles/devices.xml", "http://$User:$Pass@$Ip:$Port/$funcdev", "Devices"); //Import devices
+		importtoxml(dirname(__FILE__)."/settings/tempfiles/systemmodes.xml", "http://$User:$Pass@$Ip:$Port/$FuncSysm", "Systemmodes"); // Import systemmodes
 		if ($SCEn == "true"){
-		importtoxml(dirname(__FILE__)."/settings/tempfiles/scenarios.xml", "http://$User:$Pass@$Ip:$Port/$FuncSC", "Scenarios");
+		importtoxml(dirname(__FILE__)."/settings/tempfiles/scenarios.xml", "http://$User:$Pass@$Ip:$Port/$FuncSC", "Scenarios"); //Import Scenarios but only if enable
 		};
 		if ($DGEn == "true"){
-		importtoxml(dirname(__FILE__)."/settings/tempfiles/devicegroups.xml", "http://$User:$Pass@$Ip:$Port/$FuncDG", "Devicegroups");
+		importtoxml(dirname(__FILE__)."/settings/tempfiles/devicegroups.xml", "http://$User:$Pass@$Ip:$Port/$FuncDG", "Devicegroups"); //Import Devicegroups but only if enable
 		};
-		importtoxml(dirname(__FILE__)."/settings/tempfiles/datasources.xml", "http://$User:$Pass@$Ip:$Port/$FuncDS", "Datasources");
-		sortxml(dirname(__FILE__)."/settings/tempfiles/devices.xml", 'ID', 'number', 'ascending', 'RESTDevice' );		
+		importtoxml(dirname(__FILE__)."/settings/tempfiles/datasources.xml", "http://$User:$Pass@$Ip:$Port/$FuncDS", "Datasources"); //Import Datasources
+		sortxml(dirname(__FILE__)."/settings/tempfiles/devices.xml", 'ID', 'number', 'ascending', 'RESTDevice' ); //Sort devices after id instead of names.
+				
 		//Get XML file from yr.no. Check file for timestamp and only update if more than 20min old. (yr.no rules)
 		if ($WeatherEnabled == "true") {
 			$FileWeather = $WeatherUrl . $WeatherXmlFile;
@@ -112,6 +121,7 @@
 			}
 			<?php if ($WeatherEnabled == "true") { ?>
 			.weather{
+				
 				position: absolute;
 				z-index: 30;
 				left: <?php echo $WeatherPositionX; ?>px;
@@ -122,9 +132,17 @@
 				pointer-events: none;
 			}
 			<?php }; ?>
+			#device2 { 
+				position: absolute;
+				cursor:pointer;						
+				z-index: 25;
+				left: 10px;
+				top: 10px;
+				font-size: 12px; 	
+			}
 		</style>
 		<script>
-			//Function for hide scenarios
+			//Function for hide scenarios BETA!
     		$(function() {
         		// run the currently selected effect
 		 		function runEffect(page) {
@@ -147,198 +165,7 @@
             		return false;
         		});		
     		});
-			//If move is active load functions
-			<?php if ($AllMove == "true"){ ?>  	
-			//Function for moveable divs.
-			function MoveableDivs<?php echo $tabpage ?>(Move1, Move2, Move3) {   
-				var $MoveId = Move1
-				$('#ap' + Move3 + 'DivDev'+ $MoveId).draggable({ 
-					containment: '#main' + Move3, 
-					scroll: false
-				}).mousemove(function(){
-					var coord = $(this).position();
-					$("p:last").text( "left: " + coord.left + ", top: " + coord.top );								
-				}).mouseup(function(){ 
-					var coord = $(this).position();	
-					var $left = coord.left;
-					var $top = coord.top;
-					$.ajax({	
-						type: "POST",
-						url: "/settings/save_movable_divs.php",
-						data: {"left": $left, "top": $top, "id": $MoveId},
-						success: function(response){
-							$("#respond").html('<div class="success"><center><?php echo $MoveDevices1Lang; ?> ' + Move2 + '<?php echo $MoveDevices2Lang; ?></center></div>').hide().fadeIn(1000);
-							setTimeout(function(){ $('#respond').fadeOut(1000); }, 2000);
-						}					
-					});
-				});			
-			}
-			//Funktion för moveable datasources
-			function MoveableDS<?php echo $tabpage ?>(MoveDS1, MoveDS2, MoveDS3) {   
-				var $MoveDSId = MoveDS1		
-				$('#ap' + MoveDS3 + 'DivDS'+ $MoveDSId).draggable({ 
-					containment: '#main' + MoveDS3, 
-					scroll: false
-				}).mousemove(function(){
-					var coord = $(this).position();
-					$("p:last").text( "left: " + coord.left + ", top: " + coord.top );								
-				}).mouseup(function(){ 
-					var coord = $(this).position();	
-					var $left = coord.left;
-					var $top = coord.top;
-					$.ajax({	
-						type: "POST",
-						url: "/settings/save_movable_ds.php",
-						data: {"left": $left, "top": $top, "id": $MoveDSId},
-						success: function(response){
-							$("#respond").html('<div class="success"><center><?php echo $MoveDS1Lang; ?> ' + MoveDS2 + '<?php echo $MoveDS2Lang; ?></center></div>').hide().fadeIn(1000);
-							setTimeout(function(){ $('#respond').fadeOut(1000); }, 2000);
-						}	
-					});
-				});				 	
-			}	
-			//Funktion för moveable systemlägen
-			function MoveableSM<?php echo $tabpage ?>(MoveSM1, MoveSM2, MoveSM3) {   
-				var $MoveSMId = MoveSM1		
-				$('#ap' + MoveSM3 + 'DivSM'+ $MoveSMId).draggable({ 
-					containment: '#main' + MoveSM3, 
-					scroll: false
-				}).mousemove(function(){
-					var coord = $(this).position();
-					$("p:last").text( "left: " + coord.left + ", top: " + coord.top );								
-				}).mouseup(function(){ 
-					var coord = $(this).position();	
-					var $left = coord.left;
-					var $top = coord.top;
-					$.ajax({	
-						type: "POST",
-						url: "/settings/save_movable_sm.php",
-						data: {"left": $left, "top": $top, "id": $MoveSMId},
-						success: function(response){
-							$("#respond").html('<div class="success"><center><?php echo $MoveSM1Lang; ?> ' + MoveSM2 + '<?php echo $MoveSM2Lang; ?></center></div>').hide().fadeIn(1000);
-							setTimeout(function(){ $('#respond').fadeOut(1000); }, 2000);
-						}					
-					});
-				});				 
-			}
-			//Funktion för moveable scenario
-			function MoveableSC(MoveSC1) {   	
-				$('#scenariosmain').draggable({ 
-					containment: '#main' + MoveSC1, 
-					scroll: false
-				}).mousemove(function(){
-					var coord = $(this).position();
-					$("p:last").text( "left: " + coord.left + ", top: " + coord.top );								
-				}).mouseup(function(){ 
-					var coord = $(this).position();	
-					var $left = coord.left;
-					var $top = coord.top;
-					$.ajax({	
-						type: "POST",
-						url: "/settings/save_movable_sc.php",
-						data: {"left": $left, "top": $top},
-						success: function(response){
-							$("#respond").html('<div class="success"><center><?php echo $MoveSC1Lang; ?><?php echo $MoveSC2Lang; ?></center></div>').hide().fadeIn(1000);
-							setTimeout(function(){ $('#respond').fadeOut(1000); }, 2000);
-						}					
-					});
-				});				 
-			}			
-			//Funktion för moveable devicegroups
-			function MoveableDG(MoveDG1) {   	
-				$('#devicegroupsmain').draggable({ 
-					containment: '#main' + MoveDG1, 
-					scroll: false
-				}).mousemove(function(){
-					var coord = $(this).position();
-					$("p:last").text( "left: " + coord.left + ", top: " + coord.top );								
-				}).mouseup(function(){ 
-					var coord = $(this).position();	
-					var $left = coord.left;
-					var $top = coord.top;
-					$.ajax({	
-						type: "POST",
-						url: "/settings/save_movable_dg.php",
-						data: {"left": $left, "top": $top},
-						success: function(response){
-							$("#respond").html('<div class="success"><center><?php echo $MoveDG1Lang; ?><?php echo $MoveDG2Lang; ?></center></div>').hide().fadeIn(1000);
-							setTimeout(function(){ $('#respond').fadeOut(1000); }, 2000);
-						}					
-					});
-				});				 
-			}
-			//Funktion för moveable weather
-			<?php if ($WeatherEnabled == "true") { ?>
-			function MoveableWeather(MoveWeather1) {   	
-				$('#weather').draggable({ 
-					containment: '#main' + MoveWeather1, 
-					scroll: false
-				}).mousemove(function(){
-					var coord = $(this).position();
-					$("p:last").text( "left: " + coord.left + ", top: " + coord.top );								
-				}).mouseup(function(){ 
-					var coord = $(this).position();	
-					var $left = coord.left;
-					var $top = coord.top;
-					$.ajax({	
-						type: "POST",
-						url: "/settings/save_movable_weather.php",
-						data: {"left": $left, "top": $top},
-						success: function(response){
-							$("#respond").html('<div class="success"><center><?php echo $MoveWeather1Lang; ?><?php echo $MoveWeather2Lang; ?></center></div>').hide().fadeIn(1000);
-							setTimeout(function(){ $('#respond').fadeOut(1000); }, 2000);
-						}					
-					});
-				});				 
-			}
-			<?php }; ?>
-			//Funktion för moveable Settingsbutton
-			function MoveableSettingsButton(MoveSettingsButton1) {   	
-				$('#buttonsettings').draggable({ 
-					containment: '#main' + MoveSettingsButton1, 
-					scroll: false
-				}).mousemove(function(){
-					var coord = $(this).position();
-					$("p:last").text( "left: " + coord.left + ", top: " + coord.top );								
-				}).mouseup(function(){ 
-					var coord = $(this).position();	
-					var $left = coord.left;
-					var $top = coord.top;
-					$.ajax({	
-						type: "POST",
-						url: "/settings/save_movable_settings_button.php",
-						data: {"left": $left, "top": $top},
-						success: function(response){
-							$("#respond").html('<div class="success"><center><?php echo $MoveSettingsButton1Lang; ?><?php echo $MoveSettingsButton2Lang; ?></center></div>').hide().fadeIn(1000);
-							setTimeout(function(){ $('#respond').fadeOut(1000); }, 2000);
-						}					
-					});
-				});				 
-			}
-			//Funktion för moveable Refresh button
-			function MoveableRefreshButton(MoveRefreshButton1) {   	
-				$('#refresh').draggable({ 
-					containment: '#main' + MoveRefreshButton1, 
-					scroll: false
-				}).mousemove(function(){
-					var coord = $(this).position();
-					$("p:last").text( "left: " + coord.left + ", top: " + coord.top );								
-				}).mouseup(function(){ 
-					var coord = $(this).position();	
-					var $left = coord.left;
-					var $top = coord.top;
-					$.ajax({	
-						type: "POST",
-						url: "/settings/save_movable_refresh_button.php",
-						data: {"left": $left, "top": $top},
-						success: function(response){
-							$("#respond").html('<div class="success"><center><?php echo $MoveRefreshButton1Lang; ?><?php echo $MoveRefreshButton2Lang; ?></center></div>').hide().fadeIn(1000);
-							setTimeout(function(){ $('#respond').fadeOut(1000); }, 2000);
-						}					
-					});
-				});				 
-			}
-			<?php }; ?>
+			
 			//Function update (On/Off) Devices
 			var DELAY = 250, clicks = 0, timer = null;	
 			$(document).ready(function(){
@@ -427,9 +254,8 @@
     			.on("dblclick", function(e){
         				e.preventDefault();  //cancel system double-click event
     			return false; });
-    		});								
+    										
 			//Function Dim device
-			$(document).ready(function(){
 				$('.DevDim').on('change',function() {
 					var element = $(this);
 					var Id = element.attr("id");
@@ -473,9 +299,8 @@
 						}
 					});
 				return false; 	});						
-			});
+			
 			//Function update systemmodes
-			$(document).ready(function(){
 				$('body').on('click', '.SystemmodesOn_Off', function(e){					
 					e.preventDefault();
 					var element = $(this);
@@ -494,8 +319,6 @@
 						}
 					});
 				return false; 	});						
-			});
-			$(document).ready(function(){
 				<?php																									
 				//Load devicegroups
 				if ($DGEn == "true"){ ?>
@@ -599,25 +422,11 @@
 					function() {
 						if (SettingsDivVissible == 'true') {
 							//No update									
-						}else{
-							<?php
-							include_once(dirname(__FILE__)."/functions/import_from_switchking.php");
-							importtoxml(dirname(__FILE__)."/settings/tempfiles/devices.xml", "http://$User:$Pass@$Ip:$Port/$funcdev", "Devices");
-							importtoxml(dirname(__FILE__)."/settings/tempfiles/systemmodes.xml", "http://$User:$Pass@$Ip:$Port/$FuncSysm", "Systemmodes");
-							if ($SCEn == "true"){
-								importtoxml(dirname(__FILE__)."/settings/tempfiles/scenarios.xml", "http://$User:$Pass@$Ip:$Port/$FuncSC", "Scenarios");
-							};
-							if ($DGEn == "true"){
-								importtoxml(dirname(__FILE__)."/settings/tempfiles/devicegroups.xml", "http://$User:$Pass@$Ip:$Port/$FuncDG", "Devicegroups");
-							};
-							importtoxml(dirname(__FILE__)."/settings/tempfiles/datasources.xml", "http://$User:$Pass@$Ip:$Port/$FuncDS", "Datasources");
-							sortxml(dirname(__FILE__)."/settings/tempfiles/devices.xml", 'ID', 'number', 'ascending', 'RESTDevice' );
-							?>
-							location.reload();
+						}else{							
+							location.reload(); //Reload page
 						}								
 					}, <?php echo $TabTime; ?>, true);												
-				<?php }; ?>
-			
+				<?php }; ?>			
 		</script>
 	</head>
 	<body>
@@ -686,7 +495,7 @@
                                             <input type="hidden" id="DevCurrentState<?php echo $idev; ?>" value="<?php echo $$DevCurrentState; ?>" />
 											<input type="hidden" id="SupportsAbsoluteDimLvl<?php echo $idev; ?>" value="<?php echo $$SupportsAbsoluteDimLvl; ?>" />
 											<input type="hidden" id="CurrentDimLevel<?php echo $idev; ?>" value="<?php echo $$CurrentDimLevel; ?>" />
-                                            <input type="hidden" id="DevModeType<?php echo $idev; ?>" value="<?php echo $$DevModeType; ?>" />                                            
+                                            <input type="hidden" id="DevModeType<?php echo $idev; ?>" value="<?php echo $$DevModeType; ?>                                           
                                             <?php
 												if ($$DevModeType == "ScenarioDriven"){ ?>
 												<input type="image"  src='<?php echo $ImagePath.$$DevOnScenarioDriven; ?>'  width="<?php echo $$DevPicSizeWidth ?>" height="<?php echo $$DevPicSizeHeight ?>" id="<?php echo $$Devap ?>" style="display:block;" class="ReturnON_OFF" id="<?php echo $$Devap; ?>"/>
@@ -901,10 +710,10 @@
             <div id="devicegroupsmain"></div>   
    			<div id="settings" style="display: none" class="settings"></div>
             <div id="datasourcegraf" style="display: none" class="datasourcegraf"></div>
-            <div id="refresh" class="refresh">
-			</div>
-   			<div id="buttonsettings" class="buttonsettings">
-   			</div>
+            <div id="refresh" class="refresh"></div>
+   			<div id="buttonsettings" class="buttonsettings"></div>
+            <?php if ($RazberryActive == "true") { ?> <!-- If razberry is activated start add support for Razberry zwave device --> 
+           	<div class="razberry"></div> 
+            <?php } ?> <!-- Done adding support for razberry -->
  		</div>
 	</body>
-</html>
