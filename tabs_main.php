@@ -495,7 +495,7 @@
                                             <input type="hidden" id="DevCurrentState<?php echo $idev; ?>" value="<?php echo $$DevCurrentState; ?>" />
 											<input type="hidden" id="SupportsAbsoluteDimLvl<?php echo $idev; ?>" value="<?php echo $$SupportsAbsoluteDimLvl; ?>" />
 											<input type="hidden" id="CurrentDimLevel<?php echo $idev; ?>" value="<?php echo $$CurrentDimLevel; ?>" />
-                                            <input type="hidden" id="DevModeType<?php echo $idev; ?>" value="<?php echo $$DevModeType; ?>                                           
+                                            <input type="hidden" id="DevModeType<?php echo $idev; ?>" value="<?php echo $$DevModeType; ?>" />                                       
                                             <?php
 												if ($$DevModeType == "ScenarioDriven"){ ?>
 												<input type="image"  src='<?php echo $ImagePath.$$DevOnScenarioDriven; ?>'  width="<?php echo $$DevPicSizeWidth ?>" height="<?php echo $$DevPicSizeHeight ?>" id="<?php echo $$Devap ?>" style="display:block;" class="ReturnON_OFF" id="<?php echo $$Devap; ?>"/>
