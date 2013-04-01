@@ -1,4 +1,0 @@
-2013-02-10 12:10:59 Could not open weather url check that you have internet connection and url line is rigth!
-2013-02-10 12:11:00 Could not open weather url check that you have internet connection and url line is rigth!
-2013-02-10 12:11:00 Could not read weather.xml file check that you have internet connection and url line is rigth!
-2013-02-10 12:11:01 Could not read weather.xml file check that you have internet connection and url line is rigth!
