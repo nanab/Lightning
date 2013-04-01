@@ -1,7 +1,9 @@
 <!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<?php $TabBakPic = 'Tab'.$tabpage.'BakPic'; ?> <!-- Set bakground picture for specifik tab. -->
+		<?php $TabBakPic = 'Tab'.$tabpage.'BakPic'; 
+		
+		 ?> <!-- Set bakground picture for specifik tab. -->
 		<script src="<?php echo $Jquery; ?>"></script> <!-- Inlude jquery files. -->
 		<script src="<?php echo $JqueryCustom; ?>"></script> <!-- Inlude jquery files. --> 
         <?php if ($RazberryActive == "true") { ?>      <!-- If razzbery is aktivated start loading files. -->
@@ -14,18 +16,6 @@
         <?php if ($AllMove == "true") { ?>   <!-- If move is active load move functions -->	
 			<script src="/functions/moveabledivs.js"></script>            
 		<?php }; // Done loading move function
-		//Start importing from switchking to xml files
-        include_once(dirname(__FILE__)."/functions/import_from_switchking.php"); //Call the file where the importtoxml function is. 
-		importtoxml(dirname(__FILE__)."/settings/tempfiles/devices.xml", "http://$User:$Pass@$Ip:$Port/$funcdev", "Devices"); //Import devices
-		importtoxml(dirname(__FILE__)."/settings/tempfiles/systemmodes.xml", "http://$User:$Pass@$Ip:$Port/$FuncSysm", "Systemmodes"); // Import systemmodes
-		if ($SCEn == "true"){
-		importtoxml(dirname(__FILE__)."/settings/tempfiles/scenarios.xml", "http://$User:$Pass@$Ip:$Port/$FuncSC", "Scenarios"); //Import Scenarios but only if enable
-		};
-		if ($DGEn == "true"){
-		importtoxml(dirname(__FILE__)."/settings/tempfiles/devicegroups.xml", "http://$User:$Pass@$Ip:$Port/$FuncDG", "Devicegroups"); //Import Devicegroups but only if enable
-		};
-		importtoxml(dirname(__FILE__)."/settings/tempfiles/datasources.xml", "http://$User:$Pass@$Ip:$Port/$FuncDS", "Datasources"); //Import Datasources
-		sortxml(dirname(__FILE__)."/settings/tempfiles/devices.xml", 'ID', 'number', 'ascending', 'RESTDevice' ); //Sort devices after id instead of names.
 				
 		//Get XML file from yr.no. Check file for timestamp and only update if more than 20min old. (yr.no rules)
 		if ($WeatherEnabled == "true") { //Check if weather tab is activated in settings
@@ -207,14 +197,14 @@
             			timer = setTimeout(function() {	
 							$.ajax({
 								type: "POST",
-								url: "/functions/devices.php",
+								url: "<?php echo $Catalog; ?>/functions/devices.php",
 								data: {'DevOnId': DevOnId, 'DevOnDiv': DevOnDiv, 'DevUpdate': DevUpdate, 'DevDimLevel': DevDimLevel, 'DevUpdateDim': DevUpdateDim},
 								success: function(html){
 									e.preventDefault();
 									setTimeout(function(){
 										if(html = 'success') {
 											$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).fadeOut('fast').delay(1000);																						
-											$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).load('/functions/devices_load.php?Devap='+ Devap +'&DevOnId='+ DevOnId + '&DevOnScenarioDriven='+ DevOnScenarioDriven +'&DevOffScenarioDriven='+ DevOffScenarioDriven +'&Deven='+ Deven +'&DevNameOn='+ DevNameOn +'&Devtab='+ Devtab +'&DevName='+ DevName +'&DevOnScheduleDriven='+ DevOnScheduleDriven +'&DevOffScheduleDriven='+ DevOffScheduleDriven +'&DevOnSemiAuto='+ DevOnSemiAuto +'&DevOffSemiAuto='+ DevOffSemiAuto +'&DevOnScheduleAndRuleDriven='+ DevOnScheduleAndRuleDriven +'&DevOffScheduleAndRuleDriven='+ DevOffScheduleAndRuleDriven +'&DevPicSizeWidth='+ DevPicSizeWidth +'&DevPicSizeHeight='+ DevPicSizeHeight + '&DevCurrentState='+ DevCurrentState + '&SupportsAbsoluteDimLvl='+ SupportsAbsoluteDimLvl + '&CurrentDimLevel='+ CurrentDimLevel + '&DevModeType='+ DevModeType + '&TabPage='+ TabPage + '&func=device_load').fadeIn('slow');																																											
+											$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).load('<?php echo $Catalog; ?>/functions/devices_load.php?Devap='+ Devap +'&DevOnId='+ DevOnId + '&DevOnScenarioDriven='+ DevOnScenarioDriven +'&DevOffScenarioDriven='+ DevOffScenarioDriven +'&Deven='+ Deven +'&DevNameOn='+ DevNameOn +'&Devtab='+ Devtab +'&DevName='+ DevName +'&DevOnScheduleDriven='+ DevOnScheduleDriven +'&DevOffScheduleDriven='+ DevOffScheduleDriven +'&DevOnSemiAuto='+ DevOnSemiAuto +'&DevOffSemiAuto='+ DevOffSemiAuto +'&DevOnScheduleAndRuleDriven='+ DevOnScheduleAndRuleDriven +'&DevOffScheduleAndRuleDriven='+ DevOffScheduleAndRuleDriven +'&DevPicSizeWidth='+ DevPicSizeWidth +'&DevPicSizeHeight='+ DevPicSizeHeight + '&DevCurrentState='+ DevCurrentState + '&SupportsAbsoluteDimLvl='+ SupportsAbsoluteDimLvl + '&CurrentDimLevel='+ CurrentDimLevel + '&DevModeType='+ DevModeType + '&TabPage='+ TabPage + '&func=device_load').fadeIn('slow');																																											
 										}
 									}, 1000);
 								}
@@ -234,13 +224,13 @@
 						}
 						$.ajax({
 							type: "POST",
-							url: "/functions/devices.php",
+							url: "<?php echo $Catalog; ?>/functions/devices.php",
 							data: {'DevOnId': DevOnId, 'DevOnDiv': DevOnDiv, 'DevUpdate': DevUpdate, 'DevDimLevel': DevDimLevel, 'DevUpdateDim': DevUpdateDim},
 							success: function(html){
 								e.preventDefault();
 								if(html = 'success') {
 									$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).fadeOut('fast').delay(1000);											
-									$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).load('/functions/devices_load.php?Devap='+ Devap +'&DevOnId='+ DevOnId + '&DevOnScenarioDriven='+ DevOnScenarioDriven +'&DevOffScenarioDriven='+ DevOffScenarioDriven +'&Deven='+ Deven +'&DevNameOn='+ DevNameOn +'&Devtab='+ Devtab +'&DevName='+ DevName +'&DevOnScheduleDriven='+ DevOnScheduleDriven +'&DevOffScheduleDriven='+ DevOffScheduleDriven +'&DevOnSemiAuto='+ DevOnSemiAuto +'&DevOffSemiAuto='+ DevOffSemiAuto +'&DevOnScheduleAndRuleDriven='+ DevOnScheduleAndRuleDriven +'&DevOffScheduleAndRuleDriven='+ DevOffScheduleAndRuleDriven +'&DevPicSizeWidth='+ DevPicSizeWidth +'&DevPicSizeHeight='+ DevPicSizeHeight + '&DevCurrentState='+ DevCurrentState + '&SupportsAbsoluteDimLvl='+ SupportsAbsoluteDimLvl + '&CurrentDimLevel='+ CurrentDimLevel + '&DevModeType='+ DevModeType + '&TabPage='+ TabPage + '&func=device_load');																																
+									$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).load('<?php echo $Catalog; ?>/functions/devices_load.php?Devap='+ Devap +'&DevOnId='+ DevOnId + '&DevOnScenarioDriven='+ DevOnScenarioDriven +'&DevOffScenarioDriven='+ DevOffScenarioDriven +'&Deven='+ Deven +'&DevNameOn='+ DevNameOn +'&Devtab='+ Devtab +'&DevName='+ DevName +'&DevOnScheduleDriven='+ DevOnScheduleDriven +'&DevOffScheduleDriven='+ DevOffScheduleDriven +'&DevOnSemiAuto='+ DevOnSemiAuto +'&DevOffSemiAuto='+ DevOffSemiAuto +'&DevOnScheduleAndRuleDriven='+ DevOnScheduleAndRuleDriven +'&DevOffScheduleAndRuleDriven='+ DevOffScheduleAndRuleDriven +'&DevPicSizeWidth='+ DevPicSizeWidth +'&DevPicSizeHeight='+ DevPicSizeHeight + '&DevCurrentState='+ DevCurrentState + '&SupportsAbsoluteDimLvl='+ SupportsAbsoluteDimLvl + '&CurrentDimLevel='+ CurrentDimLevel + '&DevModeType='+ DevModeType + '&TabPage='+ TabPage + '&func=device_load');																																
 									$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).fadeIn('slow');	
 								}
 							}
@@ -285,12 +275,12 @@
 					}
 					$.ajax({
 						type: "POST",
-						url: "/functions/devices.php",
+						url: "<?php echo $Catalog; ?>/functions/devices.php",
 						data: {'DevOnId': DevOnId, 'DevOnDiv': DevOnDiv, 'DevUpdate': DevUpdate, 'DevDimLevel': DevDimLevel, 'DevUpdate': DevUpdate},
 						success: function(html){
 							if(html = 'success') {
 								$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).fadeOut('fast');											
-								$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).delay(1000).load('/functions/devices_load.php?Devap='+ Devap +'&DevOnId='+ DevOnId + '&DevOnScenarioDriven='+ DevOnScenarioDriven +'&DevOffScenarioDriven='+ DevOffScenarioDriven +'&Deven='+ Deven +'&DevNameOn='+ DevNameOn +'&Devtab='+ Devtab +'&DevName='+ DevName +'&DevOnScheduleDriven='+ DevOnScheduleDriven +'&DevOffScheduleDriven='+ DevOffScheduleDriven +'&DevOnSemiAuto='+ DevOnSemiAuto +'&DevOffSemiAuto='+ DevOffSemiAuto +'&DevOnScheduleAndRuleDriven='+ DevOnScheduleAndRuleDriven +'&DevOffScheduleAndRuleDriven='+ DevOffScheduleAndRuleDriven +'&DevPicSizeWidth='+ DevPicSizeWidth +'&DevPicSizeHeight='+ DevPicSizeHeight + '&DevCurrentState='+ DevCurrentState + '&SupportsAbsoluteDimLvl='+ SupportsAbsoluteDimLvl + '&CurrentDimLevel='+ CurrentDimLevel + '&DevModeType='+ DevModeType + '&TabPage='+ TabPage + '&func=device_load');																																
+								$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).delay(1000).load('<?php echo $Catalog; ?>/functions/devices_load.php?Devap='+ Devap +'&DevOnId='+ DevOnId + '&DevOnScenarioDriven='+ DevOnScenarioDriven +'&DevOffScenarioDriven='+ DevOffScenarioDriven +'&Deven='+ Deven +'&DevNameOn='+ DevNameOn +'&Devtab='+ Devtab +'&DevName='+ DevName +'&DevOnScheduleDriven='+ DevOnScheduleDriven +'&DevOffScheduleDriven='+ DevOffScheduleDriven +'&DevOnSemiAuto='+ DevOnSemiAuto +'&DevOffSemiAuto='+ DevOffSemiAuto +'&DevOnScheduleAndRuleDriven='+ DevOnScheduleAndRuleDriven +'&DevOffScheduleAndRuleDriven='+ DevOffScheduleAndRuleDriven +'&DevPicSizeWidth='+ DevPicSizeWidth +'&DevPicSizeHeight='+ DevPicSizeHeight + '&DevCurrentState='+ DevCurrentState + '&SupportsAbsoluteDimLvl='+ SupportsAbsoluteDimLvl + '&CurrentDimLevel='+ CurrentDimLevel + '&DevModeType='+ DevModeType + '&TabPage='+ TabPage + '&func=device_load');																																
 								$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).fadeIn('slow');	
 							}
 						}
@@ -307,7 +297,7 @@
 										
 					$.ajax({
 						type: "POST",
-						url: "/functions/systemmodes.php",
+						url: "<?php echo $Catalog; ?>/functions/systemmodes.php",
 						data: {'SMId': Id, 'SystemmodesUpdate': SystemmodesUpdate},
 						success: function(html){
 							if(html = 'success') {
@@ -319,7 +309,7 @@
 				<?php																									
 				//Load devicegroups
 				if ($DGEn == "true"){ ?>
-					$('#devicegroupsmain').load('/functions/devicegroups.php');
+					$('#devicegroupsmain').load('<?php echo $Catalog; ?>/functions/devicegroups.php');
 					//Moveable devicegroup
 					<?php if ($AllMove == "true"){ ?>
 						MoveableDG('<?php echo $tabpage ?>');
@@ -327,16 +317,16 @@
 				<?php }; 													
 				//Load Scenarios
 				if ($SCEn == "true"){ ?>					
-					$('#scenarios').load('/functions/scenarios.php');
+					$('#scenarios').load('<?php echo $Catalog; ?>/functions/scenarios.php');
 					//Moveable Scenarios
 					<?php if ($AllMove == "true"){ ?>			
 						MoveableSC('<?php echo $tabpage ?>');
 					<?php }; ?>						
-				<?php }; ?>
+				<?php };
 				//Load Settingsbutton
-				<?php if ($SettingsButtonActive == "true"){ ?>
+				if ($SettingsButtonActive == "true"){ ?>
 					$( ".buttonsettings" ).button({ label: "<?php echo $SettingsButtonLang; ?>"}).click(function() {
-						$('#settings').load('/settings/settings_tabs.php').show();
+						$('#settings').load('<?php echo $Catalog; ?>/settings/settings_tabs.php').show();
 						SettingsDivVissible = 'true';
 						return false;
 					});
@@ -358,7 +348,7 @@
 				};
 				//Load weather widget
 				if ($WeatherEnabled == "true") { ?>			
-					$('#weather').load('/functions/weather.php');
+					$('#weather').load('<?php echo $Catalog; ?>/functions/weather.php');
 					//Moveable Weather
 					<?php if ($AllMove == "true"){ ?>			
 						MoveableWeather('<?php echo $tabpage ?>');
@@ -406,10 +396,10 @@
 						};
 						//Bring upp the dialog whit dropdown list in title
 						dialog.dialog({title: DSName + ' <select id="dropDown"><option value="' + DSMinute + '">own</option><option value="720">12' + hours + '</option><option value="1440">24' + hours + '</option><option value="2160">36' + hours + '</option><option value="2880">48' + hours + '</option><option value="4320">3' + days + '</option><option value="5760">4' + days + '</option><option value="7200">5' + days + '</option><option value="8640">6' + days + '</option><option value="10080">1' + week + '</option><option value="20160">2' + weeks + '</option><option value="30240">3' + weeks + '</option></select>', draggable: false});
-						dialog.dialog({ position: 'top' }).load('/functions/graph.php?DSMinute='+ DSMinute + '&DSSizeX='+ DSSizeX + '&DSSizeY='+ DSSizeY + '&DSId='+ DSId + '&func=graph');
+						dialog.dialog({ position: 'top' }).load('<?php echo $Catalog; ?>/functions/graph.php?DSMinute='+ DSMinute + '&DSSizeX='+ DSSizeX + '&DSSizeY='+ DSSizeY + '&DSId='+ DSId + '&func=graph');
 						$('#dropDown').on('change',function() {
 							var NewTime = $("#dropDown").val();
-							dialog.dialog({ position: 'top' }).load('/functions/graph.php?DSMinute='+ NewTime + '&DSSizeX='+ DSSizeX + '&DSSizeY='+ DSSizeY + '&DSId='+ DSId + '&func=graph');
+							dialog.dialog({ position: 'top' }).load('<?php echo $Catalog; ?>/functions/graph.php?DSMinute='+ NewTime + '&DSSizeX='+ DSSizeX + '&DSSizeY='+ DSSizeY + '&DSId='+ DSId + '&func=graph');
 						});
 					});					
                 });								
