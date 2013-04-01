@@ -1,22 +1,19 @@
 <!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<?php
-		$TabBakPic = 'Tab'.$tabpage.'BakPic';
-		?>
-		<script src="<?php echo $Jquery; ?>"></script>
-		<script src="<?php echo $JqueryCustom; ?>"></script>  
+		<?php $TabBakPic = 'Tab'.$tabpage.'BakPic'; ?> <!-- Set bakground picture for specifik tab. -->
+		<script src="<?php echo $Jquery; ?>"></script> <!-- Inlude jquery files. -->
+		<script src="<?php echo $JqueryCustom; ?>"></script> <!-- Inlude jquery files. --> 
         <?php if ($RazberryActive == "true") { ?>      <!-- If razzbery is aktivated start loading files. -->
-        <script src="razberry/razberry_load.js"></script> 
-        <script src="razberry/jquery.triggerpath.js"></script> 
-        <script src="razberry/jquery.dateformat.js"></script> 
+			<script src="razberry/razberry_load.js"></script> 
+            <script src="razberry/jquery.triggerpath.js"></script> 
+            <script src="razberry/jquery.dateformat.js"></script> 
         <?php } ?> <!-- Done loading razberry files -->		       
 		<link rel="stylesheet" href="<?php echo $JqueryCustomCss; ?>" />
         <link rel="stylesheet" href="<?php echo $JqueryCustomCss2; ?>" />
-        <?php if ($AllMove == "true"){ 
-			//If move is active load functions ?>  	
+        <?php if ($AllMove == "true") { ?>   <!-- If move is active load move functions -->	
 			<script src="/functions/moveabledivs.js"></script>            
-		<?php };
+		<?php }; // Done loading move function
 		//Start importing from switchking to xml files
         include_once(dirname(__FILE__)."/functions/import_from_switchking.php"); //Call the file where the importtoxml function is. 
 		importtoxml(dirname(__FILE__)."/settings/tempfiles/devices.xml", "http://$User:$Pass@$Ip:$Port/$funcdev", "Devices"); //Import devices
@@ -31,7 +28,7 @@
 		sortxml(dirname(__FILE__)."/settings/tempfiles/devices.xml", 'ID', 'number', 'ascending', 'RESTDevice' ); //Sort devices after id instead of names.
 				
 		//Get XML file from yr.no. Check file for timestamp and only update if more than 20min old. (yr.no rules)
-		if ($WeatherEnabled == "true") {
+		if ($WeatherEnabled == "true") { //Check if weather tab is activated in settings
 			$FileWeather = $WeatherUrl . $WeatherXmlFile;
 			if (file_exists($WeatherTempFile) && (filemtime($WeatherTempFile) > (time() - 60 * 20 ))) {
 				// Cache file is less than twenty minutes old. 
