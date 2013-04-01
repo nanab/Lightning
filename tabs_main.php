@@ -1,44 +1,20 @@
 <!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<?php $TabBakPic = 'Tab'.$tabpage.'BakPic'; 
-		
-		 ?> <!-- Set bakground picture for specifik tab. -->
+		<?php $TabBakPic = 'Tab'.$tabpage.'BakPic'; ?> <!-- Set bakground picture for specifik tab. -->
 		<script src="<?php echo $Jquery; ?>"></script> <!-- Inlude jquery files. -->
-		<script src="<?php echo $JqueryCustom; ?>"></script> <!-- Inlude jquery files. --> 
+		<script src="<?php echo $JqueryCustom; ?>"></script> <!-- Inlude jquery files. -->        
+		<link rel="stylesheet" href="<?php echo $JqueryCustomCss; ?>" />
+        <link rel="stylesheet" href="<?php echo $JqueryCustomCss2; ?>" />
         <?php if ($RazberryActive == "true") { ?>      <!-- If razzbery is aktivated start loading files. -->
 			<script src="razberry/razberry_load.js"></script> 
             <script src="razberry/jquery.triggerpath.js"></script> 
             <script src="razberry/jquery.dateformat.js"></script> 
-        <?php } ?> <!-- Done loading razberry files -->		       
-		<link rel="stylesheet" href="<?php echo $JqueryCustomCss; ?>" />
-        <link rel="stylesheet" href="<?php echo $JqueryCustomCss2; ?>" />
+        <?php } ?> <!-- Done loading razberry files -->		
         <?php if ($AllMove == "true") { ?>   <!-- If move is active load move functions -->	
 			<script src="/functions/moveabledivs.js"></script>            
 		<?php }; // Done loading move function
-				
-		//Get XML file from yr.no. Check file for timestamp and only update if more than 20min old. (yr.no rules)
-		if ($WeatherEnabled == "true") { //Check if weather tab is activated in settings
-			$FileWeather = $WeatherUrl . $WeatherXmlFile;
-			if (file_exists($WeatherTempFile) && (filemtime($WeatherTempFile) > (time() - 60 * 20 ))) {
-				// Cache file is less than twenty minutes old. 
-				// Don't bother refreshing, just use the file as-is.
-			} else {
-				// Our cache is out-of-date, so load the data from our remote server,
-				// and also save it over our cache for next time.   
-				$dom = new DOMDocument();
-				//check if url is alright and try to load xml file from yr.no
-				if (@$dom->load($FileWeather) == false){
-					//If not loading write to logfile
-					$FileLog = fopen(dirname(__FILE__)."/settings/tempfiles/log.txt", 'a+') or die("can't open file");
-					fwrite($FileLog, date("Y-m-d H:i:s"). " Could not open weather url check that you have internet connection and url line is rigth!".  PHP_EOL);
-					fclose($FileLog);			
-				}else{
-					$dom->load($FileWeather);
-					$dom->save($WeatherTempFile);					
-				}			
-			}
-		};
+						
 		//Language
 		$RefreshButtonLang = $XmlLang->main->refreshbutton;
 		$SettingsButtonLang = $XmlLang->main->settingsbutton;
