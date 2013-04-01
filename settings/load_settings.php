@@ -1,16 +1,16 @@
 <!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
 <?php
 $Version = "2.0";
+$Catalog = "";
 $xml = simplexml_load_file(dirname(__FILE__)."/settings.xml");
-//include dirname(__FILE__).'../inc/include.php';
 //Load language inte array
 
 //Jquery files
 $Theme = $xml->main->theme;
-$Jquery = "../ui/jquery-1.9.0.js";
-$JqueryCustom = "../ui/jquery-ui-1.10.0.custom.js";
-$JqueryCustomCss = "../themes/themes/$Theme/jquery.ui.theme.css";
-$JqueryCustomCss2 = "../themes/themes/$Theme/jquery-ui.css";
+$Jquery = $Catalog . '&#92ui&#92jquery-1.9.0.js';
+$JqueryCustom = $Catalog . '&#92ui&#92jquery-ui-1.10.0.custom.js';
+$JqueryCustomCss = $Catalog . '&#92;themes&#92;themes&#92;' . $Theme . '&#92;jquery.ui.theme.css';
+$JqueryCustomCss2 = $Catalog . '&#92;themes&#92;themes&#92;' . $Theme . '&#92;jquery-ui.css';
 //$JqueryCustom2 = "../themes/vader/jquery-ui-1.9.2.custom.css";
 //$JqueryCustom2Css = "../themes/vader/jquery-ui-1.9.2.custom.css";
 
@@ -73,7 +73,7 @@ if ($First == "true"){
 	$RefreshButtonPositionY = $xml->main->refreshbuttonpositiony;
 	$XmlLang = simplexml_load_file(dirname(__FILE__)."/language/$LangFile");
  	//Advanced
-	$ImagePath = $xml->advanced->imagepath;
+	$ImagePath = ".." . $Catalog . $xml->advanced->imagepath;
 	$FuncSysm = 'systemmodes';
 	$funcdev = 'devices';
 	$FuncDS = 'datasources';
@@ -112,37 +112,60 @@ if ($First == "true"){
 	//Loading from switchking starts here
 
 	// If Scenarios is active load them from switchking	
-	if ($SCEn == "true") {	 
- 		$XmlSC = simplexml_load_file(dirname(__FILE__)."/tempfiles/scenarios.xml");
- 		$CountSC = count($XmlSC);
- 		$ISCSwitchLoad=0;
- 		$CountSC1 = $CountSC - "1";
-			while($ISCSwitchLoad<=$CountSC1) {
-				${'SCSwitch'.$ISCSwitchLoad.'Id'} = $XmlSC->RESTScenario[$ISCSwitchLoad]->ID;
-				${'SCSwitch'.$ISCSwitchLoad.'Active'} = $XmlSC->RESTScenario[$ISCSwitchLoad]->Active;
-				${'SCSwitch'.$ISCSwitchLoad.'Name'} = $XmlSC->RESTScenario[$ISCSwitchLoad]->Name;
-				${'SCSwitch'.$ISCSwitchLoad.'Enabled'} = $XmlSC->RESTScenario[$ISCSwitchLoad]->Enabled;
-				$ISCSwitchLoad++;
-			};
+	if ($SCEn == "true") {	
+		$SCXmlStrMain  = file_get_contents("http://$User:$Pass@$Ip:$Port/$FuncSC"); //Switch king path to get scenarios info from
+    	$SCXml_Cont_Main = new SimpleXMLElement($SCXmlStrMain);  
+		$CountSC = count($SCXml_Cont_Main);
+		$CountSC1 = $CountSC - "1";
+		$Scenarios = array(); 
+    	foreach($SCXml_Cont_Main as $SCUrlMain){ //read out info from switchking into array
+			$Id = $SCUrlMain->ID;				
+			$Active = $SCUrlMain->Active;
+			$Name = $SCUrlMain->Name;
+			$Enabled = $SCUrlMain->Enabled;		
+			$Scenarios[] = $Id . "," . $Active . "," . $Name . "," . $Enabled; //add to array splitted by ,
+		}
+		$Scenarios = array_unique($Scenarios);	
+    	sort($Scenarios, SORT_NUMERIC); //Sort array after id.
+		$ISCSwitchLoad=0;
+		foreach($Scenarios as $Scenario){ //split upp array into scenario and add specifik number in each scenario variable name
+			$Scenario = explode(",", $Scenario);
+			${'SCSwitch'.$ISCSwitchLoad.'Id'} = $Scenario[0];
+			${'SCSwitch'.$ISCSwitchLoad.'Active'} = $Scenario[1];
+			${'SCSwitch'.$ISCSwitchLoad.'Name'} = $Scenario[2];
+			${'SCSwitch'.$ISCSwitchLoad.'Enabled'} = $Scenario[3];
+			$ISCSwitchLoad++;
+		}
 	};
 	
 	 // Load devices from switchking
-	 
- 	$XmlDevs = simplexml_load_file(dirname(__FILE__)."/tempfiles/devices.xml");
-	
- 	$CountDevs = count($XmlDevs);
- 	$DevNumbers = $xml->devices->numberofdevices;
- 	$IDevSwitchLoad=0;
- 	$CountDevs1 = $CountDevs - "1";
-	while($IDevSwitchLoad<=$CountDevs1) {
-		${'DevSwitch'.$IDevSwitchLoad.'Id'} = $XmlDevs->RESTDevice[$IDevSwitchLoad]->ID;
-		${'DevSwitch'.$IDevSwitchLoad.'CurrentStateID'} = $XmlDevs->RESTDevice[$IDevSwitchLoad]->CurrentStateID;
-		${'DevSwitch'.$IDevSwitchLoad.'Name'} = $XmlDevs->RESTDevice[$IDevSwitchLoad]->Name;
-		${'DevSwitch'.$IDevSwitchLoad.'SupportsAbsoluteDimLvl'} = $XmlDevs->RESTDevice[$IDevSwitchLoad]->SupportsAbsoluteDimLvl;
-		${'DevSwitch'.$IDevSwitchLoad.'CurrentDimLevel'} = $XmlDevs->RESTDevice[$IDevSwitchLoad]->CurrentDimLevel;
-		${'DevSwitch'.$IDevSwitchLoad.'ModeType'} = $XmlDevs->RESTDevice[$IDevSwitchLoad]->ModeType;
+ 	$DevNumbers = $xml->devices->numberofdevices; //read out amount of devices in local settings file	
+	$DevXmlStrMain  = file_get_contents("http://$User:$Pass@$Ip:$Port/$funcdev"); //Switch king path to get device info rfrom
+    $DevXml_Cont_Main = new SimpleXMLElement($DevXmlStrMain);  
+	$CountDevs = count($DevXml_Cont_Main);
+	$devices = array(); 
+    foreach($DevXml_Cont_Main as $DevUrlMain){ //read out info from switchking into array
+		$Id = $DevUrlMain->ID;				
+		$CurrentStateID = $DevUrlMain->CurrentStateID;
+		$Name = $DevUrlMain->Name;
+		$SupportsAbsoluteDimLvl = $DevUrlMain->SupportsAbsoluteDimLvl;
+		$CurrentDimLevel = $DevUrlMain->CurrentDimLevel;
+		$ModeType = $DevUrlMain->ModeType;		
+		$devices[] = $Id . "," . $CurrentStateID . "," . $Name . "," . $SupportsAbsoluteDimLvl . "," . $CurrentDimLevel . "," . $ModeType; //add to array splitted by ,
+	}
+	$devices = array_unique($devices);	
+    sort($devices, SORT_NUMERIC); //Sort array after id.
+	$IDevSwitchLoad=0;
+	foreach($devices as $device){ //split upp array into device and add specifik number in each device variable name
+		$device = explode(",", $device);
+		${'DevSwitch'.$IDevSwitchLoad.'Id'} = $device[0];
+		${'DevSwitch'.$IDevSwitchLoad.'CurrentStateID'} = $device[1];
+		${'DevSwitch'.$IDevSwitchLoad.'Name'} = $device[2];
+		${'DevSwitch'.$IDevSwitchLoad.'SupportsAbsoluteDimLvl'} = $device[3];
+		${'DevSwitch'.$IDevSwitchLoad.'CurrentDimLevel'} = $device[4];
+		${'DevSwitch'.$IDevSwitchLoad.'ModeType'} = $device[5];
 		$IDevSwitchLoad++;
-	};	
+	}
 		
 	// Load systemmodes from switchking
  	$XmlSM = simplexml_load_file("http://$User:$Pass@$Ip:$Port/$FuncSysm");
@@ -158,31 +181,56 @@ if ($First == "true"){
 		$ISMSwitchLoad++;
 	};
 	
-	// Load datasources from switchking
- 	$XmlDS = simplexml_load_file(dirname(__FILE__)."/tempfiles/datasources.xml");
- 	$CountDS1 = count($XmlDS);
+	// Load datasources from switchking	
+	$DSNumbers = $xml->systemmodes->numberofds; //read out amount of datasources in local settings file	
+	$DSXmlStrMain  = file_get_contents("http://$User:$Pass@$Ip:$Port/$FuncDS"); //Switch king path to get datasource info rfrom
+    $DSXml_Cont_Main = new SimpleXMLElement($DSXmlStrMain);  
+	$CountDS1 = count($DSXml_Cont_Main);
 	$CountDS = $CountDS1 - "1";
- 	$DSNumbers = $xml->systemmodes->numberofds;
- 	$IDSSwitchLoad=0; 	
-	while($IDSSwitchLoad<=$CountDS) {
-		${'DSSwitch'.$IDSSwitchLoad.'Id'} = $XmlDS->RESTDataSource[$IDSSwitchLoad]->ID;
-		${'DSSwitch'.$IDSSwitchLoad.'LastValue'} = $XmlDS->RESTDataSource[$IDSSwitchLoad]->LastValue;
-		${'DSSwitch'.$IDSSwitchLoad.'Name'} = $XmlDS->RESTDataSource[$IDSSwitchLoad]->Name;
-		${'DSSwitch'.$IDSSwitchLoad.'Enabled'} = $XmlDS->RESTDataSource[$IDSSwitchLoad]->Enabled;					
+	$Datasources = array(); 
+    foreach($DSXml_Cont_Main as $DSUrlMain){ //read out info from switchking into array
+		$Id = $DSUrlMain->ID;				
+		$LastValue = $DSUrlMain->LastValue;
+		$LastValue = str_replace(',', '&#44;', $LastValue);	//Convert , to html in value. To not interfear whit explode later
+		$Name = $DSUrlMain->Name;
+		$Enabled = $DSUrlMain->Enabled;		
+		$Datasources[] = $Id . "," . $LastValue . "," . $Name . "," . $Enabled; //add to array splitted by ,
+	}
+	$Datasources = array_unique($Datasources);	
+    //sort($Datasources, SORT_NUMERIC); //Sort array after id.
+	$IDSSwitchLoad=0;
+	foreach($Datasources as $Datasource){ //split upp array into datasource and add specifik number in each datasource variable name
+		$Datasource = explode(",", $Datasource);
+		${'DSSwitch'.$IDSSwitchLoad.'Id'} = $Datasource[0];
+		${'DSSwitch'.$IDSSwitchLoad.'LastValue'} = $Datasource[1];
+		${'DSSwitch'.$IDSSwitchLoad.'Name'} = $Datasource[2];
+		${'DSSwitch'.$IDSSwitchLoad.'Enabled'} = $Datasource[3];
 		$IDSSwitchLoad++;
+	}
+	
+	// Load devicegroups from switchking	
+	if ($DGEn == "true") {	//If devicegroups enabled start loading	
+		$DGXmlStrMain  = file_get_contents("http://$User:$Pass@$Ip:$Port/$FuncDG"); //Switch king path to get devicegroups info from switchking
+    	$DGXml_Cont_Main = new SimpleXMLElement($DGXmlStrMain);  
+		$CountDG1 = count($DGXml_Cont_Main);
+		$CountDG = $CountDG1 - "1";
+		$Devicegroups = array(); 
+    	foreach($DGXml_Cont_Main as $DGUrlMain){ //read out info from switchking into array
+			$Id = $DGUrlMain->ID;				
+			$Name = $DGUrlMain->Name;	
+			$Devicegroups[] = $Id . "," . $Name; //add to array splitted by ,
+		}
+		$Devicegroups = array_unique($Devicegroups);	
+    	//sort($Datasources, SORT_NUMERIC); //Sort array after id.
+		$IDGSwitchLoad=0;
+		foreach($Devicegroups as $Devicegroup){ //split upp array into devicegroup and add specifik number in each devicegroup variable name
+			$Devicegroup = explode(",", $Devicegroup);
+			${'DGSwitch'.$IDGSwitchLoad.'Id'} = $Devicegroup[0];
+			${'DGSwitch'.$IDGSwitchLoad.'Name'} = $Devicegroup[1];
+			$IDGSwitchLoad++;
+		}
 	};
-	if ($DGEn == "true") {	
-	// Load devicegroups from switchking
- 	$XmlDG = simplexml_load_file(dirname(__FILE__)."/tempfiles/devicegroups.xml");
- 	$CountDG1 = count($XmlDG);
-	$CountDG = $CountDG1 - "1";
- 	$IDGSwitchLoad=0; 	
-	while($IDGSwitchLoad<=$CountDG) {
-		${'DGSwitch'.$IDGSwitchLoad.'Id'} = $XmlDG->RESTDeviceGroup[$IDGSwitchLoad]->ID;
-		${'DGSwitch'.$IDGSwitchLoad.'Name'} = $XmlDG->RESTDeviceGroup[$IDGSwitchLoad]->Name;				
-		$IDGSwitchLoad++;
-	};
-	};
+	
 	//Loading from xml file starts here
 	//Scenarios settings from xml file
 	$MoveableSC = $xml->scenarios->moveablesc;
@@ -282,6 +330,6 @@ if ($First == "true"){
 	};
 	
 	//Razzberry support (Alpha)
-	$RazberryActive = "true";			
+	$RazberryActive = "false";			
 };
 ?>
