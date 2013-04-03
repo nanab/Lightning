@@ -9,7 +9,7 @@
 		@$TabBakPic = $_GET["TabBakPic"];
 		@$TabBakPicHeight = $_GET["TabBakPicHeight"];
 		@$TabBakPicWidth = $_GET["TabBakPicWidth"];
-		@$TabId = $_GET["TabID"];
+		@$TabId = $_GET["TabId"];
 		if (@$_GET["func"] == "tabs_settings") {
     		tabs_settings($TabEn, $TabName, $TabPage, $TabBakPic, $TabBakPicHeight, $TabBakPicWidth , $TabId);
     	die();
@@ -69,7 +69,7 @@
                 </div>
             </div> 
 			<div id="contenttabs">
-				<form id="tabs_settings" name="tabs_settings" method="post" action="/settings/tabs_settings_function.php?Send">
+				<form id="tabs_settings" name="tabs_settings" method="post" action="<?php echo $Catalog; ?>/settings/tabs_settings_function.php?Send">
 					<div class="borderdiv">
 						<div style="height:20px;">
 							<div style="display:inline-block;">
