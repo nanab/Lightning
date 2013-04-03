@@ -30,7 +30,7 @@
 					if(clicks === 1) {
 						timer = setTimeout(function() {
 								$('.contentdev3').hide();										
-							$("#contenttabstest").load('tabs_settings_function.php?TabEn='+ TabEn +'&TabName='+ TabName +'&TabPage='+ TabPage +'&TabBakPic='+ TabBakPic +'&TabBakPicHeight='+ TabBakPicHeight +'&TabBakPicWidth='+ TabBakPicWidth +'&TabId='+ TabId +'&func=tabs_settings') 
+							$("#contenttabstest").load('<?php echo $Catalog; ?>tabs_settings_function.php?TabEn='+ TabEn +'&TabName='+ TabName +'&TabPage='+ TabPage +'&TabBakPic='+ TabBakPic +'&TabBakPicHeight='+ TabBakPicHeight +'&TabBakPicWidth='+ TabBakPicWidth +'&TabId='+ TabId +'&func=tabs_settings') 
 							clicks = 0;             //after action performed, reset counter
 						}, DELAY);
 					} else {
@@ -43,7 +43,7 @@
 						}
 						$.ajax({
 								type: "POST",
-								url: "tabs_settings_function.php",
+								url: "<?php echo $Catalog; ?>tabs_settings_function.php",
 								data: {'TabId': TabId, 'TabEn': TabEn, 'send4': send4},
 								success: function(msge){
 									if(msge = 'success') {
@@ -73,7 +73,7 @@
 			$TabBakPicHeight = "Tab".$TabSettLoad."BakPicHeight";
 			$TabBakPicWidth = "Tab".$TabSettLoad."BakPicWidth";
 			$TabId = "Tab".$TabSettLoad."Id";
-			$TabNameNew = str_replace(' ', '%20', $$TabName);
+			$TabNameVar = str_replace(' ', '%20', $$TabName);
 			if ($TabSettLoad % 2 == 0) { 
 				$Div = '<div id="varannan">';
 				$Divstop = "";
@@ -86,7 +86,7 @@
 			echo $Div;
 			?>           
 			<div id="contentdev3" class="contentdev3" style="display:inline-block; width:255;">					                       
-				<input type="hidden" id="TabName<?php echo $TabSettLoad; ?>" value="<?php echo $TabNameNew; ?>" />
+				<input type="hidden" id="TabName<?php echo $TabSettLoad; ?>" value="<?php echo $TabNameVar; ?>" />
 				<input type="hidden" id="TabPage<?php echo $TabSettLoad; ?>" value="<?php echo $$TabPage; ?>" />	     												
 				<input type="hidden" id="TabBakPic<?php echo $TabSettLoad; ?>" value="<?php echo $$TabBakPic; ?>" /> 						
 				<input type="hidden" id="TabBakPicHeight<?php echo $TabSettLoad; ?>" value="<?php echo $$TabBakPicHeight; ?>" />						
