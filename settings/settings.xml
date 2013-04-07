@@ -2,11 +2,11 @@
 <settings>
   <main>
     <version>2.0</version>
-    <first>false</first>
-    <ip>192.168.1.14</ip>
+    <first>true</first>
+    <ip>192.168.1.1</ip>
     <port>8800</port>
-    <user>nanab</user>
-    <pass>Hus</pass>
+    <user>user</user>
+    <pass>pass</pass>
     <title>Lightningz!</title>
     <tabtime>2</tabtime>
     <langfile>eng.xml</langfile>
@@ -53,40 +53,40 @@
       <name>Top Deck</name>
       <page>tab2.php</page>
       <bakpic>top.png</bakpic>
-      <bakpicheight>656</bakpicheight>
+      <bakpicheight>650</bakpicheight>
       <bakpicwidth>924</bakpicwidth>
     </tab2>
     <tab3>
       <id>3</id>
       <en>false</en>
-      <name>Starta om mig!</name>
-      <page>/server/testserv.php</page>
+      <name>Tab3</name>
+      <page>tab3.php</page>
       <bakpic/>
-      <bakpicheight>600</bakpicheight>
-      <bakpicwidth>800</bakpicwidth>
+      <bakpicheight>650</bakpicheight>
+      <bakpicwidth>924</bakpicwidth>
     </tab3>
     <tab4>
       <id>4</id>
       <en>false</en>
-      <name>Starta om mig!</name>
+      <name>Tab4</name>
       <page>tab4.php</page>
       <bakpic/>
-      <bakpicheight>656</bakpicheight>
+      <bakpicheight>650</bakpicheight>
       <bakpicwidth>924</bakpicwidth>
     </tab4>
     <tab5>
       <id>5</id>
       <en>false</en>
-      <name>Inställningar</name>
-      <page>/settings/settings_tabs.php</page>
+      <name>Tab5</name>
+      <page>tab5.php</page>
       <bakpic/>
-      <bakpicheight>800</bakpicheight>
-      <bakpicwidth>700</bakpicwidth>
+      <bakpicheight>650</bakpicheight>
+      <bakpicwidth>924</bakpicwidth>
     </tab5>
   </tabs>
   <devices>
     <moveabledev>false</moveabledev>
-    <numberofdevices>13</numberofdevices>
+    <numberofdevices>1</numberofdevices>
     <dev0>
       <ap>0</ap>
       <en>true</en>
@@ -106,238 +106,10 @@
       <nameon>true</nameon>
       <tab>1</tab>
     </dev0>
-    <dev1>
-      <ap>1</ap>
-      <en>true</en>
-      <id/>
-      <x>104</x>
-      <y>272</y>
-      <onscenariodriven>DeviceOn_Scenario.png</onscenariodriven>
-      <offscenariodriven>DeviceOff_Scenario.png</offscenariodriven>
-      <onscheduledriven>DeviceOn.png</onscheduledriven>
-      <offscheduledriven>DeviceOff.png</offscheduledriven>
-      <onsemiauto>DeviceOn_SemiAuto.png</onsemiauto>
-      <offsemiauto>DeviceOff_SemiAuto.png</offsemiauto>
-      <onscheduleandruledriven>DeviceOn_Rule.png</onscheduleandruledriven>
-      <offscheduleandruledriven>DeviceOff_Rule.png</offscheduleandruledriven>
-      <picsizewidth>40</picsizewidth>
-      <picsizeheight>40</picsizeheight>
-      <nameon>true</nameon>
-      <tab>1</tab>
-    </dev1>
-    <dev2>
-      <ap>2</ap>
-      <en>true</en>
-      <id/>
-      <x>74</x>
-      <y>172</y>
-      <onscenariodriven>DeviceOn_Scenario.png</onscenariodriven>
-      <offscenariodriven>DeviceOff_Scenario.png</offscenariodriven>
-      <onscheduledriven>DeviceOn.png</onscheduledriven>
-      <offscheduledriven>DeviceOff.png</offscheduledriven>
-      <onsemiauto>DeviceOn_SemiAuto.png</onsemiauto>
-      <offsemiauto>DeviceOff_SemiAuto.png</offsemiauto>
-      <onscheduleandruledriven>DeviceOn_Rule.png</onscheduleandruledriven>
-      <offscheduleandruledriven>DeviceOff_Rule.png</offscheduleandruledriven>
-      <picsizewidth>40</picsizewidth>
-      <picsizeheight>40</picsizeheight>
-      <nameon>true</nameon>
-      <tab>1</tab>
-    </dev2>
-    <dev3>
-      <ap>3</ap>
-      <en>true</en>
-      <id/>
-      <x>252</x>
-      <y>130</y>
-      <onscenariodriven>DeviceOn_Scenario.png</onscenariodriven>
-      <offscenariodriven>DeviceOff_Scenario.png</offscenariodriven>
-      <onscheduledriven>DeviceOn.png</onscheduledriven>
-      <offscheduledriven>DeviceOff.png</offscheduledriven>
-      <onsemiauto>DeviceOn_SemiAuto.png</onsemiauto>
-      <offsemiauto>DeviceOff_SemiAuto.png</offsemiauto>
-      <onscheduleandruledriven>DeviceOn_Rule.png</onscheduleandruledriven>
-      <offscheduleandruledriven>DeviceOff_Rule.png</offscheduleandruledriven>
-      <picsizewidth>40</picsizewidth>
-      <picsizeheight>40</picsizeheight>
-      <nameon>true</nameon>
-      <tab>1</tab>
-    </dev3>
-    <dev4>
-      <ap>4</ap>
-      <en>true</en>
-      <id/>
-      <x>255</x>
-      <y>66</y>
-      <onscenariodriven>DeviceOn_Scenario.png</onscenariodriven>
-      <offscenariodriven>DeviceOff_Scenario.png</offscenariodriven>
-      <onscheduledriven>DeviceOn.png</onscheduledriven>
-      <offscheduledriven>DeviceOff.png</offscheduledriven>
-      <onsemiauto>DeviceOn_SemiAuto.png</onsemiauto>
-      <offsemiauto>DeviceOff_SemiAuto.png</offsemiauto>
-      <onscheduleandruledriven>DeviceOn_Rule.png</onscheduleandruledriven>
-      <offscheduleandruledriven>DeviceOff_Rule.png</offscheduleandruledriven>
-      <picsizewidth>40</picsizewidth>
-      <picsizeheight>40</picsizeheight>
-      <nameon>true</nameon>
-      <tab>1</tab>
-    </dev4>
-    <dev5>
-      <ap>5</ap>
-      <en>true</en>
-      <id/>
-      <x>9</x>
-      <y>280</y>
-      <onscenariodriven>DeviceOn_Scenario.png</onscenariodriven>
-      <offscenariodriven>DeviceOff_Scenario.png</offscenariodriven>
-      <onscheduledriven>DeviceOn.png</onscheduledriven>
-      <offscheduledriven>DeviceOff.png</offscheduledriven>
-      <onsemiauto>DeviceOn_SemiAuto.png</onsemiauto>
-      <offsemiauto>DeviceOff_SemiAuto.png</offsemiauto>
-      <onscheduleandruledriven>DeviceOn_Rule.png</onscheduleandruledriven>
-      <offscheduleandruledriven>DeviceOff_Rule.png</offscheduleandruledriven>
-      <picsizewidth>40</picsizewidth>
-      <picsizeheight>40</picsizeheight>
-      <nameon>true</nameon>
-      <tab>1</tab>
-    </dev5>
-    <dev6>
-      <ap>6</ap>
-      <en>true</en>
-      <id>11</id>
-      <x>100</x>
-      <y>120</y>
-      <onscenariodriven>DeviceOn_Scenario.png</onscenariodriven>
-      <offscenariodriven>DeviceOff_Scenario.png</offscenariodriven>
-      <onscheduledriven>DeviceOn.png</onscheduledriven>
-      <offscheduledriven>DeviceOff.png</offscheduledriven>
-      <onsemiauto>DeviceOn_SemiAuto.png</onsemiauto>
-      <offsemiauto>DeviceOff_SemiAuto.png</offsemiauto>
-      <onscheduleandruledriven>DeviceOn_Rule.png</onscheduleandruledriven>
-      <offscheduleandruledriven>DeviceOff_Rule.png</offscheduleandruledriven>
-      <picsizewidth>40</picsizewidth>
-      <picsizeheight>40</picsizeheight>
-      <nameon>true</nameon>
-      <tab>2</tab>
-    </dev6>
-    <dev7>
-      <ap>7</ap>
-      <en>true</en>
-      <id/>
-      <x>273</x>
-      <y>519</y>
-      <onscenariodriven>DeviceOn_Scenario.png</onscenariodriven>
-      <offscenariodriven>DeviceOff_Scenario.png</offscenariodriven>
-      <onscheduledriven>DeviceOn.png</onscheduledriven>
-      <offscheduledriven>DeviceOff.png</offscheduledriven>
-      <onsemiauto>DeviceOn_SemiAuto.png</onsemiauto>
-      <offsemiauto>DeviceOff_SemiAuto.png</offsemiauto>
-      <onscheduleandruledriven>DeviceOn_Rule.png</onscheduleandruledriven>
-      <offscheduleandruledriven>DeviceOff_Rule.png</offscheduleandruledriven>
-      <picsizewidth>40</picsizewidth>
-      <picsizeheight>40</picsizeheight>
-      <nameon>true</nameon>
-      <tab>1</tab>
-    </dev7>
-    <dev8>
-      <ap>8</ap>
-      <en>true</en>
-      <id/>
-      <x>135</x>
-      <y>438</y>
-      <onscenariodriven>DeviceOn_Scenario.png</onscenariodriven>
-      <offscenariodriven>DeviceOff_Scenario.png</offscenariodriven>
-      <onscheduledriven>DeviceOn.png</onscheduledriven>
-      <offscheduledriven>DeviceOff.png</offscheduledriven>
-      <onsemiauto>DeviceOn_SemiAuto.png</onsemiauto>
-      <offsemiauto>DeviceOff_SemiAuto.png</offsemiauto>
-      <onscheduleandruledriven>DeviceOn_Rule.png</onscheduleandruledriven>
-      <offscheduleandruledriven>DeviceOff_Rule.png</offscheduleandruledriven>
-      <picsizewidth>40</picsizewidth>
-      <picsizeheight>40</picsizeheight>
-      <nameon>true</nameon>
-      <tab>1</tab>
-    </dev8>
-    <dev9>
-      <ap>9</ap>
-      <en>true</en>
-      <id/>
-      <x>288</x>
-      <y>200</y>
-      <onscenariodriven>DeviceOn_Scenario.png</onscenariodriven>
-      <offscenariodriven>DeviceOff_Scenario.png</offscenariodriven>
-      <onscheduledriven>DeviceOn.png</onscheduledriven>
-      <offscheduledriven>DeviceOff.png</offscheduledriven>
-      <onsemiauto>DeviceOn_SemiAuto.png</onsemiauto>
-      <offsemiauto>DeviceOff_SemiAuto.png</offsemiauto>
-      <onscheduleandruledriven>DeviceOn_Rule.png</onscheduleandruledriven>
-      <offscheduleandruledriven>DeviceOff_Rule.png</offscheduleandruledriven>
-      <picsizewidth>40</picsizewidth>
-      <picsizeheight>40</picsizeheight>
-      <nameon>true</nameon>
-      <tab>1</tab>
-    </dev9>
-    <dev10>
-      <ap>10</ap>
-      <en>true</en>
-      <id/>
-      <x>569</x>
-      <y>352</y>
-      <onscenariodriven>DeviceOn_Scenario.png</onscenariodriven>
-      <offscenariodriven>DeviceOff_Scenario.png</offscenariodriven>
-      <onscheduledriven>DeviceOn.png</onscheduledriven>
-      <offscheduledriven>DeviceOff.png</offscheduledriven>
-      <onsemiauto>DeviceOn_SemiAuto.png</onsemiauto>
-      <offsemiauto>DeviceOff_SemiAuto.png</offsemiauto>
-      <onscheduleandruledriven>DeviceOn_Rule.png</onscheduleandruledriven>
-      <offscheduleandruledriven>DeviceOff_Rule.png</offscheduleandruledriven>
-      <picsizewidth>40</picsizewidth>
-      <picsizeheight>40</picsizeheight>
-      <nameon>true</nameon>
-      <tab>1</tab>
-    </dev10>
-    <dev11>
-      <ap>11</ap>
-      <en>true</en>
-      <id/>
-      <x>499</x>
-      <y>469</y>
-      <onscenariodriven>DeviceOn_Scenario.png</onscenariodriven>
-      <offscenariodriven>DeviceOff_Scenario.png</offscenariodriven>
-      <onscheduledriven>DeviceOn.png</onscheduledriven>
-      <offscheduledriven>DeviceOff.png</offscheduledriven>
-      <onsemiauto>DeviceOn_SemiAuto.png</onsemiauto>
-      <offsemiauto>DeviceOff_SemiAuto.png</offsemiauto>
-      <onscheduleandruledriven>DeviceOn_Rule.png</onscheduleandruledriven>
-      <offscheduleandruledriven>DeviceOff_Rule.png</offscheduleandruledriven>
-      <picsizewidth>40</picsizewidth>
-      <picsizeheight>40</picsizeheight>
-      <nameon>true</nameon>
-      <tab>1</tab>
-    </dev11>
-    <dev12>
-      <ap>12</ap>
-      <en>false</en>
-      <id/>
-      <x>100</x>
-      <y>120</y>
-      <onscenariodriven>DeviceOn_Scenario.png</onscenariodriven>
-      <offscenariodriven>DeviceOff_Scenario.png</offscenariodriven>
-      <onscheduledriven>DeviceOn.png</onscheduledriven>
-      <offscheduledriven>DeviceOff.png</offscheduledriven>
-      <onsemiauto>DeviceOn_SemiAuto.png</onsemiauto>
-      <offsemiauto>DeviceOff_SemiAuto.png</offsemiauto>
-      <onscheduleandruledriven>DeviceOn_Rule.png</onscheduleandruledriven>
-      <offscheduleandruledriven>DeviceOff_Rule.png</offscheduleandruledriven>
-      <picsizewidth>40</picsizewidth>
-      <picsizeheight>40</picsizeheight>
-      <nameon>true</nameon>
-      <tab>1</tab>
-    </dev12>
   </devices>
   <datasources>
     <moveableds>false</moveableds>
-    <numberofds>2</numberofds>
+    <numberofds>1</numberofds>
     <ds0>
       <ap>0</ap>
       <en>true</en>
@@ -351,23 +123,10 @@
       <sizey>500</sizey>
       <minute>1440</minute>
     </ds0>
-    <ds1>
-      <ap>1</ap>
-      <en>true</en>
-      <id/>
-      <fa>°C</fa>
-      <x>630</x>
-      <y>2</y>
-      <nameon>true</nameon>
-      <tab>1</tab>
-      <sizex>500</sizex>
-      <sizey>500</sizey>
-      <minute>1440</minute>
-    </ds1>
   </datasources>
   <systemmodes>
     <moveablesm>false</moveablesm>
-    <numberofsm>3</numberofsm>
+    <numberofsm>1</numberofsm>
     <sm0>
       <ap>0</ap>
       <en>true</en>
@@ -378,26 +137,6 @@
       <y>173</y>
       <tab>1</tab>
     </sm0>
-    <sm1>
-      <ap>1</ap>
-      <en>false</en>
-      <id/>
-      <x>50</x>
-      <y>50</y>
-      <on>Hemma_On.png</on>
-      <off>Hemma_Off.png</off>
-      <tab>1</tab>
-    </sm1>
-    <sm2>
-      <ap>2</ap>
-      <en>true</en>
-      <id/>
-      <x>864</x>
-      <y>261</y>
-      <on>Hemma_On.png</on>
-      <off>Hemma_Off.png</off>
-      <tab>1</tab>
-    </sm2>
   </systemmodes>
   <scenarios>
     <moveablesc>false</moveablesc>
