@@ -1,16 +1,16 @@
 <!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
 <?php
 $Version = "2.0";
-$Catalog = "";
+$Catalog = ""; //If ligtning is installed under child catalog on webserver add catalog name here started whit "/". example "/lightning"
 $xml = simplexml_load_file(dirname(__FILE__)."/settings.xml");
 //Load language inte array
 
 //Jquery files
 $Theme = $xml->main->theme;
-$Jquery = $Catalog . '&#92ui&#92jquery-1.9.0.js';
-$JqueryCustom = $Catalog . '&#92ui&#92jquery-ui-1.10.0.custom.js';
-$JqueryCustomCss = $Catalog . '&#92;themes&#92;themes&#92;' . $Theme . '&#92;jquery.ui.theme.css';
-$JqueryCustomCss2 = $Catalog . '&#92;themes&#92;themes&#92;' . $Theme . '&#92;jquery-ui.css';
+$Jquery = $Catalog . '/ui/jquery-1.9.0.js';
+$JqueryCustom = $Catalog . '/ui/jquery-ui-1.10.0.custom.js';
+$JqueryCustomCss = $Catalog . '/themes/themes/' . $Theme . '/jquery.ui.theme.css';
+$JqueryCustomCss2 = $Catalog . '/themes/themes/' . $Theme . '/jquery-ui.css';
 //$JqueryCustom2 = "../themes/vader/jquery-ui-1.9.2.custom.css";
 //$JqueryCustom2Css = "../themes/vader/jquery-ui-1.9.2.custom.css";
 
@@ -79,6 +79,8 @@ if ($First == "true"){
 	$FuncDS = 'datasources';
 	$FuncSC = 'scenarios';
 	$FuncDG = 'devicegroups';
+	$BackgroundColorWidgets = "0, 0, 0";
+	$TextColorWidgets = "white";
 	//Settings for page size
 	$SizeX = "15";
 	$SizeY = "15";
@@ -97,6 +99,8 @@ if ($First == "true"){
 	$WeatherPositionX = $xml->weather->positionx;
 	$WeatherPositionY = $xml->weather->positiony;
 	$WeatherTempFile = (dirname(__FILE__)."/../settings/tempfiles/weather.xml");
+	$OnlyDays = "true";
+	$WeatherDegree = "°";
 	//Load global language variables
 	$MinLang = $XmlLang->globallang->minutes;
 	$HourLang = $XmlLang->globallang->hours;
@@ -143,6 +147,7 @@ if ($First == "true"){
 	$DevXmlStrMain  = file_get_contents("http://$User:$Pass@$Ip:$Port/$funcdev"); //Switch king path to get device info rfrom
     $DevXml_Cont_Main = new SimpleXMLElement($DevXmlStrMain);  
 	$CountDevs = count($DevXml_Cont_Main);
+	$CountDevs1 = $CountDevs - "1";
 	$devices = array(); 
     foreach($DevXml_Cont_Main as $DevUrlMain){ //read out info from switchking into array
 		$Id = $DevUrlMain->ID;				
@@ -242,6 +247,7 @@ if ($First == "true"){
 	$SCHideable = $xml->scenarios->hideable;
 	
 	//DeviceGroups settings from xml file
+	$DevicegroupTransparent = "0.8";
 	$MoveableDG = $xml->devicegroups->moveabledg;
 	$DGX = $xml->devicegroups->x;
 	$DGY = $xml->devicegroups->y;
@@ -252,6 +258,7 @@ if ($First == "true"){
 	//Devices
 	//Devices settings from xml file		
 	$moveabledev = $xml->devices->moveabledev;
+	$DeviceTransparent = "0.8";
 	$IDevLoad=0;
 	while($IDevLoad<=$DevNumbers) {
 		$devtemp = 'dev'.$IDevLoad;
@@ -279,6 +286,7 @@ if ($First == "true"){
 	//Datasources settings from xml file
 	$DSNumbers = $xml->datasources->numberofds;
 	$MoveableDS = $xml->datasources->moveableds;
+	$DatasourceTransparent = "0.8";
 	$IDSLoad=0;
 	while($IDSLoad<=$DSNumbers) {
 		$dstemp = 'ds'.$IDSLoad;
