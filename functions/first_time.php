@@ -7,13 +7,7 @@ function first_time(){
 	include(dirname(__FILE__)."/../settings/main_settings.php");		
 };
 function second_time(){
-	@include_once(dirname(__FILE__)."/import_from_switchking.php");
-	@importtoxml(dirname(__FILE__)."/../settings/tempfiles/devices.xml", "http://$User:$Pass@$Ip:$Port/$funcdev", "Devices");
-	@importtoxml(dirname(__FILE__)."/../settings/tempfiles/systemmodes.xml", "http://$User:$Pass@$Ip:$Port/$FuncSysm", "Systemmodes");
-	@importtoxml(dirname(__FILE__)."/../settings/tempfiles/scenarios.xml", "http://$User:$Pass@$Ip:$Port/$FuncSC", "Scenarios");
-	@importtoxml(dirname(__FILE__)."/../settings/tempfiles/devicegroups.xml", "http://$User:$Pass@$Ip:$Port/$FuncDG", "Devicegroups");
-	@importtoxml(dirname(__FILE__)."/../settings/tempfiles/datasources.xml", "http://$User:$Pass@$Ip:$Port/$FuncDS", "Datasources");
-	@sortxml(dirname(__FILE__)."/../settings/tempfiles/devices.xml", 'ID', 'number', 'ascending', 'RESTDevice' );
+	include(dirname(__FILE__)."/../settings/load_settings.php");
 	$xmlMainSettings = new DOMDocument('1.0', 'utf-8');
 	$xmlMainSettings->formatOutput = true;
 	$xmlMainSettings->preserveWhiteSpace = false;
