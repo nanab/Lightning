@@ -1,7 +1,8 @@
 <!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<?php $TabBakPic = 'Tab'.$tabpage.'BakPic'; ?> <!-- Set bakground picture for specifik tab. -->
+		<?php $TabBakPic = 'Tab'.$tabpage.'BakPic'; 
+		include(dirname(__FILE__)."/functions/devices_load.php");?> <!-- Set bakground picture for specifik tab. -->
 		<script src="<?php echo $Jquery; ?>"></script> <!-- Inlude jquery files. -->
 		<script src="<?php echo $JqueryCustom; ?>"></script> <!-- Inlude jquery files. -->        
 		<link rel="stylesheet" href="<?php echo $JqueryCustomCss; ?>" />
@@ -385,8 +386,10 @@
 					function() {
 						if (SettingsDivVissible == 'true') {
 							//No update									
-						}else{							
-							location.reload(); //Reload page
+						}else{
+							var tabpaged = '<?php echo $tabpage; ?>';	
+							$('#devices_div').fadeOut('fast').load('<?php echo $Catalog; ?>/functions/devices_load.php?tabpage='+ tabpaged + '&func=device_load_first').fadeIn('slow');					
+							//location.reload(); //Reload page
 						}								
 					}, <?php echo $TabTime; ?>, true);												
 				<?php }; ?>			
@@ -394,165 +397,15 @@
 	</head>
 	<body>
     	<!-- //Start loading page -->
-		<div id"main<?php echo $tabpage; ?>" style="border:none; margin: 0px; display: inline;" class="main">
-			<img src="<?php echo $ImagePath.$$TabBakPic; ?>" width="<?php echo $Tab1BakPicWidth; ?>" height="<?php echo $Tab1BakPicHeight; ?>" style="border:none;"/>           
-	 		<?php 	     
-				 //Start loading devices.
-				$idev=0;
-				$CountDevs_new = $CountDevs - 1;
-				while($idev<=$CountDevs_new) {
-					$DevEn = "Dev".$idev."en";
-					$Devid = 'DevSwitch'.$idev.'Id';
-					$DevNameOn = "Dev".$idev."nameOn";
-					$Devap = "Dev".$idev."ap";
-					$DevPicSizeWidth = "Dev".$idev."PicSizeWidth";
-					$DevPicSizeHeight = "Dev".$idev."PicSizeHeight";
-					$DevOnScenarioDriven = "Dev".$idev."OnScenarioDriven";
-					$DevOffScenarioDriven = "Dev".$idev."OffScenarioDriven";			
-					$DevOnScheduleDriven = "Dev".$idev."OnScheduleDriven";
-					$DevOffScheduleDriven = "Dev".$idev."OffScheduleDriven";			
-					$DevOnSemiAuto = "Dev".$idev."OnSemiAuto";
-					$DevOffSemiAuto = "Dev".$idev."OffSemiAuto";			
-					$DevOnScheduleAndRuleDriven = "Dev".$idev."OnScheduleAndRuleDriven";
-					$DevOffScheduleAndRuleDriven = "Dev".$idev."OffScheduleAndRuleDriven";
-					$DevModeType = "DevSwitch".$idev."ModeType";
-					$Devtab = "Dev".$idev."tab";
-					$DevName = "DevSwitch".$idev."Name";
-					$DevCurrentState = 'DevSwitch'.$idev.'CurrentStateID';
-					$SupportsAbsoluteDimLvl = 'DevSwitch'.$idev.'SupportsAbsoluteDimLvl';
-					$CurrentDimLevel = 'DevSwitch'.$idev.'CurrentDimLevel';
-					if ($$DevEn == "true"){
-						if ($$Devtab == $tabpage){ ?>
-                            <div id="ap<?php echo $tabpage ?>DivDev<?php echo $$Devap ?>">
-							<div class="notclickdiv"><?php
-								if($$DevNameOn == 'true'){
-									?><div id="divname" style="display:inline-block;">
-                                        &nbsp;
-                                        <div style="display:inline-block;">
-                                        	<center>
-												<?php echo $$DevName . "&nbsp;&nbsp;"; ?>
-                                            </center>
-                                        </div>
-									</div>
-								<?php };	
-								if($$DevCurrentState == "2") { ?>					
-									<center>
-										<form method="post" action="" STYLE="margin:0; padding:0;">
-                                        	<input type="hidden" id="DevUpdate<?php echo $idev; ?>" value="updateon" />
-											<input type="hidden" id="DevOnId<?php echo $idev; ?>" value="<?php echo $$Devid; ?>" />
-											<input type="hidden" id="DevOnDiv<?php echo $idev; ?>" value="<?php echo $$Devap; ?>" />                    	                                        	<input type="hidden" id="Devap<?php echo $idev; ?>" value="<?php echo $$Devap; ?>" />  														
-                                            <input type="hidden" id="DevOnScenarioDriven<?php echo $idev; ?>" value="<?php echo $$DevOnScenarioDriven; ?>" />						
-                                            <input type="hidden" id="DevOffScenarioDriven<?php echo $idev; ?>" value="<?php echo $$DevOffScenarioDriven; ?>" />						
-                                            <input type="hidden" id="Deven<?php echo $idev; ?>" value="<?php echo $$DevEn; ?>" />						
-                                            <input type="hidden" id="DevNameOn<?php echo $idev; ?>" value="<?php echo $$DevNameOn; ?>" />						
-                                            <input type="hidden" id="Devtab<?php echo $idev; ?>" value="<?php echo $$Devtab; ?>" />						
-                                            <input type="hidden" id="DevName<?php echo $idev; ?>" value="<?php echo $$DevName; ?>" />						
-                                            <input type="hidden" id="DevOnScheduleDriven<?php echo $idev; ?>" value="<?php echo $$DevOnScheduleDriven; ?>" />						
-                                            <input type="hidden" id="DevOffScheduleDriven<?php echo $idev; ?>" value="<?php echo $$DevOffScheduleDriven; ?>" />						
-                                            <input type="hidden" id="DevOnSemiAuto<?php echo $idev; ?>" value="<?php echo $$DevOnSemiAuto; ?>" />						
-                                            <input type="hidden" id="DevOffSemiAuto<?php echo $idev; ?>" value="<?php echo $$DevOffSemiAuto; ?>" />						
-                                            <input type="hidden" id="DevOnScheduleAndRuleDriven<?php echo $idev; ?>" value="<?php echo $$DevOnScheduleAndRuleDriven; ?>" />						
-                                            <input type="hidden" id="DevOffScheduleAndRuleDriven<?php echo $idev; ?>" value="<?php echo $$DevOffScheduleAndRuleDriven; ?>" />						
-                                            <input type="hidden" id="DevPicSizeWidth<?php echo $idev; ?>" value="<?php echo $$DevPicSizeWidth; ?>" />						
-                                            <input type="hidden" id="DevPicSizeHeight<?php echo $idev; ?>" value="<?php echo $$DevPicSizeHeight; ?>" />
-                                            <input type="hidden" id="DevCurrentState<?php echo $idev; ?>" value="<?php echo $$DevCurrentState; ?>" />
-											<input type="hidden" id="SupportsAbsoluteDimLvl<?php echo $idev; ?>" value="<?php echo $$SupportsAbsoluteDimLvl; ?>" />
-											<input type="hidden" id="CurrentDimLevel<?php echo $idev; ?>" value="<?php echo $$CurrentDimLevel; ?>" />
-                                            <input type="hidden" id="DevModeType<?php echo $idev; ?>" value="<?php echo $$DevModeType; ?>" />                                       
-                                            <?php
-												if ($$DevModeType == "ScenarioDriven"){ ?>
-												<input type="image"  src='<?php echo $ImagePath.$$DevOnScenarioDriven; ?>'  width="<?php echo $$DevPicSizeWidth ?>" height="<?php echo $$DevPicSizeHeight ?>" id="<?php echo $$Devap ?>" style="display:block;" class="ReturnON_OFF" id="<?php echo $$Devap; ?>"/>
-                                            <?php }else if ($$DevModeType == "ScheduleDriven") { ?>
-                                            <input type="image"  src='<?php echo $ImagePath.$$DevOnScheduleDriven; ?>'  width="<?php echo $$DevPicSizeWidth ?>" height="<?php echo $$DevPicSizeHeight ?>" id="ReturnOn" style="display:block;" class="ReturnON_OFF" id="<?php echo $$Devap; ?>"/>
-                                            <?php }else if ($$DevModeType == "SemiAuto") { ?>
-                                            <input type="image"  src='<?php echo $ImagePath.$$DevOnSemiAuto; ?>'  width="<?php echo $$DevPicSizeWidth ?>" height="<?php echo $$DevPicSizeHeight ?>" id="<?php echo $$Devap ?>" style="display:block;" class="ReturnON_OFF" id="<?php echo $$Devap; ?>"/>
-                                            <?php }else if ($$DevModeType == "ScheduleAndRuleDriven") { ?>
-                                            <input type="image"  src='<?php echo $ImagePath.$$DevOnScheduleAndRuleDriven; ?>'  width="<?php echo $$DevPicSizeWidth ?>" height="<?php echo $$DevPicSizeHeight ?>" id="<?php echo $$Devap ?>" style="display:block;" class="ReturnON_OFF" id="<?php echo $$Devap; ?>"/>
-                                            <?php }; ?>
-										</form>
-									</center>
-								<?php }else{ ?>        
-									<center>
-										<form method="post" action="" STYLE="margin:0; padding:0;">
-											<input type="hidden" id="DevUpdate<?php echo $idev; ?>" value="updateoff" />
-											<input type="hidden" id="DevOnId<?php echo $idev; ?>" value="<?php echo $$Devid; ?>" />
-											<input type="hidden" id="DevOnDiv<?php echo $idev; ?>" value="<?php echo $$Devap; ?>" />                    	                                        	<input type="hidden" id="Devap<?php echo $idev; ?>" value="<?php echo $$Devap; ?>" />  														
-                                            <input type="hidden" id="DevOnScenarioDriven<?php echo $idev; ?>" value="<?php echo $$DevOnScenarioDriven; ?>" />						
-                                            <input type="hidden" id="DevOffScenarioDriven<?php echo $idev; ?>" value="<?php echo $$DevOffScenarioDriven; ?>" />						
-                                            <input type="hidden" id="Deven<?php echo $idev; ?>" value="<?php echo $$DevEn; ?>" />						
-                                            <input type="hidden" id="DevNameOn<?php echo $idev; ?>" value="<?php echo $$DevNameOn; ?>" />						
-                                            <input type="hidden" id="Devtab<?php echo $idev; ?>" value="<?php echo $$Devtab; ?>" />						
-                                            <input type="hidden" id="DevName<?php echo $idev; ?>" value="<?php echo $$DevName; ?>" />						
-                                            <input type="hidden" id="DevOnScheduleDriven<?php echo $idev; ?>" value="<?php echo $$DevOnScheduleDriven; ?>" />						
-                                            <input type="hidden" id="DevOffScheduleDriven<?php echo $idev; ?>" value="<?php echo $$DevOffScheduleDriven; ?>" />						
-                                            <input type="hidden" id="DevOnSemiAuto<?php echo $idev; ?>" value="<?php echo $$DevOnSemiAuto; ?>" />						
-                                            <input type="hidden" id="DevOffSemiAuto<?php echo $idev; ?>" value="<?php echo $$DevOffSemiAuto; ?>" />						
-                                            <input type="hidden" id="DevOnScheduleAndRuleDriven<?php echo $idev; ?>" value="<?php echo $$DevOnScheduleAndRuleDriven; ?>" />						
-                                            <input type="hidden" id="DevOffScheduleAndRuleDriven<?php echo $idev; ?>" value="<?php echo $$DevOffScheduleAndRuleDriven; ?>" />						
-                                            <input type="hidden" id="DevPicSizeWidth<?php echo $idev; ?>" value="<?php echo $$DevPicSizeWidth; ?>" />						
-                                            <input type="hidden" id="DevPicSizeHeight<?php echo $idev; ?>" value="<?php echo $$DevPicSizeHeight; ?>" />
-                                            <input type="hidden" id="DevCurrentState<?php echo $idev; ?>" value="<?php echo $$DevCurrentState; ?>" />
-											<input type="hidden" id="SupportsAbsoluteDimLvl<?php echo $idev; ?>" value="<?php echo $$SupportsAbsoluteDimLvl; ?>" />
-											<input type="hidden" id="CurrentDimLevel<?php echo $idev; ?>" value="<?php echo $$CurrentDimLevel; ?>" />
-                                            <input type="hidden" id="DevModeType<?php echo $idev; ?>" value="<?php echo $$DevModeType; ?>" />
-											<?php
-												if ($$DevModeType == "ScenarioDriven"){ ?>
-												<input type="image"  src='<?php echo $ImagePath.$$DevOffScenarioDriven; ?>'  width="<?php echo $$DevPicSizeWidth ?>" height="<?php echo $$DevPicSizeHeight ?>" id="<?php echo $$Devap ?>" style="display:block;" class="ReturnON_OFF" id="<?php echo $$Devap; ?>"/>
-                                            <?php }else if ($$DevModeType == "ScheduleDriven") { ?>
-                                            <input type="image"  src='<?php echo $ImagePath.$$DevOffScheduleDriven; ?>'  width="<?php echo $$DevPicSizeWidth ?>" height="<?php echo $$DevPicSizeHeight ?>" id="<?php echo $$Devap ?>" style="display:block;" class="ReturnON_OFF" id="<?php echo $$Devap; ?>"/>
-                                            <?php }else if ($$DevModeType == "SemiAuto") { ?>
-                                            <input type="image"  src='<?php echo $ImagePath.$$DevOffSemiAuto; ?>'  width="<?php echo $$DevPicSizeWidth ?>" height="<?php echo $$DevPicSizeHeight ?>" id="<?php echo $$Devap ?>" style="display:block;" class="ReturnON_OFF" id="<?php echo $$Devap; ?>"/>
-                                            <?php }else if ($$DevModeType == "ScheduleAndRuleDriven") { ?>
-                                            <input type="image"  src='<?php echo $ImagePath.$$DevOffScheduleAndRuleDriven; ?>'  width="<?php echo $$DevPicSizeWidth ?>" height="<?php echo $$DevPicSizeHeight ?>" id="<?php echo $$Devap ?>" style="display:block;" class="ReturnON_OFF" id="<?php echo $$Devap; ?>"/>
-                                            <?php }; ?>
-										</form>
-									</center>
-									<?php		
-								};
-								if($$SupportsAbsoluteDimLvl == 'true') {
-									if (($$CurrentDimLevel == '-1') && ($$DevCurrentState == "2")){
-										$dimlevelzero = '100';
-									}elseif(($$CurrentDimLevel == '-1') && ($$DevCurrentState == "1")){
-										$dimlevelzero = '0';
-									}else{
-									$dimlevelzero = $$CurrentDimLevel;
-									};
-									?>
-									<center>
-									<form action="" class="DevDim" id="<?php echo $idev; ?>" method="post" STYLE="margin:0; padding:0;">
-										<select id="DevDimLevel<?php echo $idev; ?>">
-											<option selected="<?php $$CurrentDimLevel; ?>"><?php echo $dimlevelzero; ?>%</option>
-											<option value="100">100%</option>
-											<option value="90">90%</option>
-											<option value="80">80%</option>
-											<option value="70">70%</option>
-											<option value="60">60%</option>
-											<option value="50">50%</option>
-											<option value="40">40%</option>
-											<option value="30">30%</option>
-											<option value="20">20%</option>
-											<option value="10">10%</option>
-											<input type="hidden" id="DevOnIdDim<?php echo $idev; ?>" value="<?php echo $$Devid; ?>" />
-											<input type="hidden" id="DevUpdateDim<?php echo $idev; ?>" value="updatedim" />
-											<input type="hidden" id="DevtabDim<?php echo $idev; ?>" value="<?php echo $$Devtab; ?>" />
-										</select>
-									</form>
-									</center>
-								<?php		
-								};					
-							?></div></div><?php	
-						}; 
-					};
-					//If moveable is active call Move function and in style file (dev style file) sett form not clickable
-					if ($AllMove == "true"){
-					?>
-                    <script>
-					MoveableDivs<?php echo $tabpage ?>('<?php echo $$Devap ?>', '<?php echo $$Devid ?>', '<?php echo $tabpage ?>');
-					</script>
-                    <?php
-					}
-					$idev++;
-				};					
+		<div id"main<?php echo $tabpage; ?>" style="border:none; margin: 0px; display: inline;" class="main"> <!--Main div -->
+	 		<img src="<?php echo $ImagePath.$$TabBakPic; ?>" width="<?php echo $Tab1BakPicWidth; ?>" height="<?php echo $Tab1BakPicHeight; ?>" style="border:none;"/> <!--Background picture -->           
+	 		
+			<div id="devices_div"> 	     
+				<?php 
+				device_load_first($tabpage); //load devices from device_load_first.php
+				?>
+            </div>
+			<?php	
 			//Load Divs for datasources		
 			$idsd=0;
 			while($idsd<=$CountDS) {
@@ -607,6 +460,7 @@
 			};				
 			//Load systemmodes
 			$ismd=0;
+			$SMNumbers = $SMNumbers - 1; 
 				while($ismd<=$SMNumbers) {	
 				$SMEn = "SM".$ismd."En";
 				$SMId = "SMSwitch".$ismd."Id";

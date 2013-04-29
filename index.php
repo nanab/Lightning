@@ -1,11 +1,7 @@
-<!-- V1.9 Copyright Nanab nanab666@gmail.com. -->
+<!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
 <html>
 	<head>
-    <!-- 
-    	TODO before V2.0. 
-    	Fix function to check if writable 
-        Function to upgrade settings.xml
-    -->
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
 	<?php
@@ -76,7 +72,14 @@
 				}							​
 			</style>
     		<script>
-				<!-- Function loading tabs-->
+			
+
+			if (screen.width <= 699) {
+			document.location = "/mobile/index.php";
+			}
+
+
+				<!-- Dunction loading tabs-->
 				$(function() {
 					$( "#tabs" ).tabs({				
 						beforeLoad: function( event, ui ) {					

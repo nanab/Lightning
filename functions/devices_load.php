@@ -1,5 +1,7 @@
 <!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
 <?php
+
+if (@$_GET["func"] == "device_load") {	
 @$Devap = $_GET["Devap"];
 @$Devid = $_GET["Devid"];
 @$DevOnId = $_GET["DevOnId"];
@@ -25,13 +27,11 @@
 include(dirname(__FILE__)."/../settings/load_settings.php");
 $Xmlread = simplexml_load_file("http://$User:$Pass@$Ip:$Port/$funcdev/$DevOnId");
 $DevModeType = $Xmlread->ModeType;
-$DevCurrentState = $Xmlread->CurrentStateID;
-if (@$_GET["func"] == "device_load") {			
+$DevCurrentState = $Xmlread->CurrentStateID;		
     device_load($Devap, $Devid, $DevOnId,$DevOnScenarioDriven, $DevOffScenarioDriven, $DevEn, $DevNameOn, $DevTab, $DevName, $DevOnScheduleDriven, $DevOffScheduleDriven, $DevOnSemiAuto, $DevOffSemiAuto, $DevOnScheduleAndRuleDriven, $DevOffScheduleAndRuleDriven, $DevPicSizeWidth, $DevPicSizeHeight, $DevCurrentState, $SupportsAbsoluteDimLvl, $CurrentDimLevel, $DevModeType, $TabPage);
     die();
 };		
 function device_load($Devap, $Devid, $DevOnId, $DevOnScenarioDriven, $DevOffScenarioDriven, $DevEn, $DevNameOn, $DevTab, $DevName, $DevOnScheduleDriven, $DevOffScheduleDriven, $DevOnSemiAuto, $DevOffSemiAuto, $DevOnScheduleAndRuleDriven, $DevOffScheduleAndRuleDriven, $DevPicSizeWidth, $DevPicSizeHeight, $DevCurrentState, $SupportsAbsoluteDimLvl, $CurrentDimLevel, $DevModeType, $TabPage){		
-	include(dirname(__FILE__)."/../settings/load_settings.php");
 	if ($DevEn == "true"){
 		if ($DevTab == $TabPage){                         		
 			if($DevNameOn == 'true'){
@@ -174,3 +174,4 @@ function device_load($Devap, $Devid, $DevOnId, $DevOnScenarioDriven, $DevOffScen
 		}; 
 	};			
 };
+
