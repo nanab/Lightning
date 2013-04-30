@@ -14,6 +14,7 @@
 		if ($$SDSEn == "true"){
 			?>				
 			#ap<?php echo $$SDSTab ?>DivDS<?php echo $$SDSAp ?> {
+				color:<?php echo $TextColorWidgets; ?>;
 				position: absolute;				
 				z-index: <?php echo $$DSStyleLoad ?>;
 				left: <?php echo $$SDSx ?>px;
@@ -21,7 +22,7 @@
 				-moz-border-radius: 10px;
 				-webkit-border-radius: 10px;
 				border-radius: 10px;
-				background-color: rgba(255, 255, 255, 0.5);
+				background-color: rgba(<?php echo $BackgroundColorWidgets; ?>, <?php echo $DatasourceTransparent; ?>);
 				border-color: solid 10px rgba(0,0,0,0.2); /*Very transparent black*/
 			}
             <?php

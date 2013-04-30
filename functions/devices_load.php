@@ -1,4 +1,4 @@
-<!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
+
 <?php
 
 if (@$_GET["func"] == "device_load") {	
@@ -30,8 +30,10 @@ $DevModeType = $Xmlread->ModeType;
 $DevCurrentState = $Xmlread->CurrentStateID;		
     device_load($Devap, $Devid, $DevOnId,$DevOnScenarioDriven, $DevOffScenarioDriven, $DevEn, $DevNameOn, $DevTab, $DevName, $DevOnScheduleDriven, $DevOffScheduleDriven, $DevOnSemiAuto, $DevOffSemiAuto, $DevOnScheduleAndRuleDriven, $DevOffScheduleAndRuleDriven, $DevPicSizeWidth, $DevPicSizeHeight, $DevCurrentState, $SupportsAbsoluteDimLvl, $CurrentDimLevel, $DevModeType, $TabPage);
     die();
-};		
-function device_load($Devap, $Devid, $DevOnId, $DevOnScenarioDriven, $DevOffScenarioDriven, $DevEn, $DevNameOn, $DevTab, $DevName, $DevOnScheduleDriven, $DevOffScheduleDriven, $DevOnSemiAuto, $DevOffSemiAuto, $DevOnScheduleAndRuleDriven, $DevOffScheduleAndRuleDriven, $DevPicSizeWidth, $DevPicSizeHeight, $DevCurrentState, $SupportsAbsoluteDimLvl, $CurrentDimLevel, $DevModeType, $TabPage){		
+};
+	
+function device_load($Devap, $Devid, $DevOnId, $DevOnScenarioDriven, $DevOffScenarioDriven, $DevEn, $DevNameOn, $DevTab, $DevName, $DevOnScheduleDriven, $DevOffScheduleDriven, $DevOnSemiAuto, $DevOffSemiAuto, $DevOnScheduleAndRuleDriven, $DevOffScheduleAndRuleDriven, $DevPicSizeWidth, $DevPicSizeHeight, $DevCurrentState, $SupportsAbsoluteDimLvl, $CurrentDimLevel, $DevModeType, $TabPage){
+	include(dirname(__FILE__)."/../settings/load_settings.php");		
 	if ($DevEn == "true"){
 		if ($DevTab == $TabPage){                         		
 			if($DevNameOn == 'true'){

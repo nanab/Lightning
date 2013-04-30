@@ -3,13 +3,14 @@
 		include(dirname(__FILE__)."/../settings/load_settings.php");
 ?>
 <style type="text/css">
-	#divname {			
-				-moz-border-radius: 10px;
-				-webkit-border-radius: 10px;
-				border-radius: 10px;
-				background-color: rgba(255, 255, 255, 0.5);
-				border-color: solid 10px rgba(0,0,0,0.2); /*Very transparent black*/
-			}
+	#divname {	
+		color:<?php echo $TextColorWidgets; ?>;		
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+		background-color: rgba(<?php echo $BackgroundColorWidgets; ?>, <?php echo $DeviceTransparent; ?>);
+		border-color: solid 10px rgba(0,0,0,0.2); /*Very transparent black*/
+	}
 	
 	<?php
 	$DevStyleLoad=0;

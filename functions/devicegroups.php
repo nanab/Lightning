@@ -14,11 +14,12 @@
 				font-size:12px;
 			}            
 			.maindg {
+				color:<?php echo $TextColorWidgets; ?>;
 				font-size:14px;
 				-moz-border-radius: 10px;
 				-webkit-border-radius: 10px;
 				border-radius: 10px;
-				background-color: rgba(255, 255, 255, 0.5);
+				background-color: rgba(<?php echo $BackgroundColorWidgets; ?>, <?php echo $DevicegroupTransparent; ?>);
 				border-color: solid 10px rgba(0,0,0,0.2); /*Very transparent black*/
 				text-align:right;				
 				vertical-align:top;
