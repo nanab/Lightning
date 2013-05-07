@@ -4,7 +4,7 @@
     <name>Ronneby</name>
     <type>Administrasjonssenter</type>
     <country>Sverige</country>
-    <timezone id="Europe/Stockholm" utcoffsetMinutes="60"/>
+    <timezone id="Europe/Stockholm" utcoffsetMinutes="120"/>
     <location altitude="5" latitude="56.20999" longitude="15.27602" geobase="geonames" geobaseid="2681825"/>
   </location>
   <credit>
@@ -21,401 +21,401 @@ http://om.yr.no/verdata/ -->
     <link id="longTermForecast" url="http://www.yr.no/sted/Sverige/Blekinge/Ronneby/langtidsvarsel.html"/>
   </links>
   <meta>
-    <lastupdate>2013-02-23T19:09:30</lastupdate>
-    <nextupdate>2013-02-24T07:00:00</nextupdate>
+    <lastupdate>2013-04-29T18:13:24</lastupdate>
+    <nextupdate>2013-04-30T06:00:00</nextupdate>
   </meta>
-  <sun rise="2013-02-23T07:05:31" set="2013-02-23T17:19:54"/>
+  <sun rise="2013-04-29T05:18:38" set="2013-04-29T20:35:09"/>
   <forecast>
     <tabular>
-      <time from="2013-02-23T23:00:00" to="2013-02-24T00:00:00" period="3">
-        <!-- Valid from 2013-02-23T23:00:00 to 2013-02-24T00:00:00 -->
-        <symbol number="4" name="Skyet" var="04"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-02-23T23:00:00 -->
-        <windDirection deg="48.1" code="NE" name="Nordøst"/>
-        <windSpeed mps="5.2" name="Lett bris"/>
-        <temperature unit="celsius" value="-2"/>
-        <pressure unit="hPa" value="1023.8"/>
-      </time>
-      <time from="2013-02-24T00:00:00" to="2013-02-24T06:00:00" period="0">
-        <!-- Valid from 2013-02-24T00:00:00 to 2013-02-24T06:00:00 -->
-        <symbol number="13" name="Snø" var="13"/>
-        <precipitation value="1.0" minvalue="0.7" maxvalue="1.0"/>
-        <!-- Valid at 2013-02-24T00:00:00 -->
-        <windDirection deg="49.4" code="NE" name="Nordøst"/>
-        <windSpeed mps="5.3" name="Lett bris"/>
-        <temperature unit="celsius" value="-2"/>
-        <pressure unit="hPa" value="1023.8"/>
-      </time>
-      <time from="2013-02-24T06:00:00" to="2013-02-24T12:00:00" period="1">
-        <!-- Valid from 2013-02-24T06:00:00 to 2013-02-24T12:00:00 -->
-        <symbol number="4" name="Skyet" var="04"/>
-        <precipitation value="0.6" minvalue="0.3" maxvalue="0.5"/>
-        <!-- Valid at 2013-02-24T06:00:00 -->
-        <windDirection deg="60.5" code="ENE" name="Øst-nordøst"/>
-        <windSpeed mps="6.1" name="Laber bris"/>
-        <temperature unit="celsius" value="-1"/>
-        <pressure unit="hPa" value="1023.1"/>
-      </time>
-      <time from="2013-02-24T12:00:00" to="2013-02-24T18:00:00" period="2">
-        <!-- Valid from 2013-02-24T12:00:00 to 2013-02-24T18:00:00 -->
-        <symbol number="4" name="Skyet" var="04"/>
-        <precipitation value="0.5" minvalue="0.3" maxvalue="0.5"/>
-        <!-- Valid at 2013-02-24T12:00:00 -->
-        <windDirection deg="67.0" code="ENE" name="Øst-nordøst"/>
-        <windSpeed mps="5.6" name="Laber bris"/>
-        <temperature unit="celsius" value="0"/>
-        <pressure unit="hPa" value="1024.3"/>
-      </time>
-      <time from="2013-02-24T18:00:00" to="2013-02-25T00:00:00" period="3">
-        <!-- Valid from 2013-02-24T18:00:00 to 2013-02-25T00:00:00 -->
-        <symbol number="4" name="Skyet" var="04"/>
-        <precipitation value="0.2" minvalue="0.1" maxvalue="0.3"/>
-        <!-- Valid at 2013-02-24T18:00:00 -->
-        <windDirection deg="63.0" code="ENE" name="Øst-nordøst"/>
-        <windSpeed mps="5.7" name="Laber bris"/>
-        <temperature unit="celsius" value="-1"/>
-        <pressure unit="hPa" value="1025.2"/>
-      </time>
-      <time from="2013-02-25T00:00:00" to="2013-02-25T06:00:00" period="0">
-        <!-- Valid from 2013-02-25T00:00:00 to 2013-02-25T06:00:00 -->
-        <symbol number="4" name="Skyet" var="04"/>
-        <precipitation value="0.1" minvalue="0.1" maxvalue="0.3"/>
-        <!-- Valid at 2013-02-25T00:00:00 -->
-        <windDirection deg="60.8" code="ENE" name="Øst-nordøst"/>
-        <windSpeed mps="4.6" name="Lett bris"/>
-        <temperature unit="celsius" value="0"/>
-        <pressure unit="hPa" value="1026.5"/>
-      </time>
-      <time from="2013-02-25T06:00:00" to="2013-02-25T12:00:00" period="1">
-        <!-- Valid from 2013-02-25T06:00:00 to 2013-02-25T12:00:00 -->
-        <symbol number="4" name="Skyet" var="04"/>
-        <precipitation value="0" minvalue="0.1" maxvalue="0.2"/>
-        <!-- Valid at 2013-02-25T06:00:00 -->
-        <windDirection deg="58.2" code="ENE" name="Øst-nordøst"/>
-        <windSpeed mps="4.8" name="Lett bris"/>
-        <temperature unit="celsius" value="0"/>
-        <pressure unit="hPa" value="1027.8"/>
-      </time>
-      <time from="2013-02-25T12:00:00" to="2013-02-25T18:00:00" period="2">
-        <!-- Valid from 2013-02-25T12:00:00 to 2013-02-25T18:00:00 -->
-        <symbol number="4" name="Skyet" var="04"/>
-        <precipitation value="0" minvalue="0.1" maxvalue="0.2"/>
-        <!-- Valid at 2013-02-25T12:00:00 -->
-        <windDirection deg="63.6" code="ENE" name="Øst-nordøst"/>
-        <windSpeed mps="5.0" name="Lett bris"/>
-        <temperature unit="celsius" value="1"/>
-        <pressure unit="hPa" value="1029.4"/>
-      </time>
-      <time from="2013-02-25T18:00:00" to="2013-02-26T00:00:00" period="3">
-        <!-- Valid from 2013-02-25T18:00:00 to 2013-02-26T00:00:00 -->
-        <symbol number="4" name="Skyet" var="04"/>
-        <precipitation value="0" minvalue="0.1" maxvalue="0.2"/>
-        <!-- Valid at 2013-02-25T18:00:00 -->
-        <windDirection deg="60.6" code="ENE" name="Øst-nordøst"/>
-        <windSpeed mps="4.6" name="Lett bris"/>
-        <temperature unit="celsius" value="0"/>
-        <pressure unit="hPa" value="1031.1"/>
-      </time>
-      <time from="2013-02-26T00:00:00" to="2013-02-26T06:00:00" period="0">
-        <!-- Valid from 2013-02-26T00:00:00 to 2013-02-26T06:00:00 -->
-        <symbol number="4" name="Skyet" var="04"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-02-26T00:00:00 -->
-        <windDirection deg="49.2" code="NE" name="Nordøst"/>
-        <windSpeed mps="4.0" name="Lett bris"/>
-        <temperature unit="celsius" value="-1"/>
-        <pressure unit="hPa" value="1032.8"/>
-      </time>
-      <time from="2013-02-26T07:00:00" to="2013-02-26T13:00:00" period="1">
-        <!-- Valid from 2013-02-26T07:00:00 to 2013-02-26T13:00:00 -->
-        <symbol number="1" name="Klarvær" var="01d"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-02-26T07:00:00 -->
-        <windDirection deg="40.2" code="NE" name="Nordøst"/>
-        <windSpeed mps="3.9" name="Lett bris"/>
-        <temperature unit="celsius" value="-1"/>
-        <pressure unit="hPa" value="1033.2"/>
-      </time>
-      <time from="2013-02-26T13:00:00" to="2013-02-26T19:00:00" period="2">
-        <!-- Valid from 2013-02-26T13:00:00 to 2013-02-26T19:00:00 -->
-        <symbol number="3" name="Delvis skyet" var="03d"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-02-26T13:00:00 -->
-        <windDirection deg="39.4" code="NE" name="Nordøst"/>
-        <windSpeed mps="1.9" name="Svak vind"/>
-        <temperature unit="celsius" value="3"/>
-        <pressure unit="hPa" value="1034.1"/>
-      </time>
-      <time from="2013-02-26T19:00:00" to="2013-02-27T01:00:00" period="3">
-        <!-- Valid from 2013-02-26T19:00:00 to 2013-02-27T01:00:00 -->
-        <symbol number="3" name="Delvis skyet" var="mf/03n.53"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-02-26T19:00:00 -->
-        <windDirection deg="7.0" code="N" name="Nord"/>
-        <windSpeed mps="1.4" name="Flau vind"/>
-        <temperature unit="celsius" value="0"/>
-        <pressure unit="hPa" value="1033.3"/>
-      </time>
-      <time from="2013-02-27T01:00:00" to="2013-02-27T07:00:00" period="0">
-        <!-- Valid from 2013-02-27T01:00:00 to 2013-02-27T07:00:00 -->
-        <symbol number="3" name="Delvis skyet" var="mf/03n.56"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-02-27T01:00:00 -->
-        <windDirection deg="342.7" code="NNW" name="Nord-nordvest"/>
-        <windSpeed mps="3.6" name="Lett bris"/>
-        <temperature unit="celsius" value="-6"/>
-        <pressure unit="hPa" value="1032.8"/>
-      </time>
-      <time from="2013-02-27T07:00:00" to="2013-02-27T13:00:00" period="1">
-        <!-- Valid from 2013-02-27T07:00:00 to 2013-02-27T13:00:00 -->
-        <symbol number="3" name="Delvis skyet" var="03d"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-02-27T07:00:00 -->
-        <windDirection deg="337.0" code="NNW" name="Nord-nordvest"/>
-        <windSpeed mps="4.3" name="Lett bris"/>
-        <temperature unit="celsius" value="-5"/>
-        <pressure unit="hPa" value="1031.6"/>
-      </time>
-      <time from="2013-02-27T13:00:00" to="2013-02-27T19:00:00" period="2">
-        <!-- Valid from 2013-02-27T13:00:00 to 2013-02-27T19:00:00 -->
-        <symbol number="3" name="Delvis skyet" var="03d"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-02-27T13:00:00 -->
-        <windDirection deg="317.6" code="NW" name="Nordvest"/>
-        <windSpeed mps="3.0" name="Svak vind"/>
-        <temperature unit="celsius" value="4"/>
-        <pressure unit="hPa" value="1030.6"/>
-      </time>
-      <time from="2013-02-27T19:00:00" to="2013-02-28T01:00:00" period="3">
-        <!-- Valid from 2013-02-27T19:00:00 to 2013-02-28T01:00:00 -->
-        <symbol number="2" name="Lettskyet" var="mf/02n.56"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-02-27T19:00:00 -->
-        <windDirection deg="321.4" code="NW" name="Nordvest"/>
-        <windSpeed mps="4.5" name="Lett bris"/>
-        <temperature unit="celsius" value="-1"/>
-        <pressure unit="hPa" value="1029.0"/>
-      </time>
-      <time from="2013-02-28T01:00:00" to="2013-02-28T07:00:00" period="0">
-        <!-- Valid from 2013-02-28T01:00:00 to 2013-02-28T07:00:00 -->
-        <symbol number="3" name="Delvis skyet" var="mf/03n.60"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-02-28T01:00:00 -->
-        <windDirection deg="302.6" code="WNW" name="Vest-nordvest"/>
-        <windSpeed mps="4.3" name="Lett bris"/>
-        <temperature unit="celsius" value="-2"/>
-        <pressure unit="hPa" value="1027.2"/>
-      </time>
-      <time from="2013-02-28T07:00:00" to="2013-02-28T13:00:00" period="1">
-        <!-- Valid from 2013-02-28T07:00:00 to 2013-02-28T13:00:00 -->
-        <symbol number="1" name="Klarvær" var="01d"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-02-28T07:00:00 -->
-        <windDirection deg="267.9" code="W" name="Vest"/>
-        <windSpeed mps="4.2" name="Lett bris"/>
-        <temperature unit="celsius" value="-1"/>
-        <pressure unit="hPa" value="1023.0"/>
-      </time>
-      <time from="2013-02-28T13:00:00" to="2013-02-28T19:00:00" period="2">
-        <!-- Valid from 2013-02-28T13:00:00 to 2013-02-28T19:00:00 -->
-        <symbol number="1" name="Klarvær" var="01d"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-02-28T13:00:00 -->
-        <windDirection deg="265.9" code="W" name="Vest"/>
-        <windSpeed mps="3.5" name="Lett bris"/>
-        <temperature unit="celsius" value="4"/>
-        <pressure unit="hPa" value="1018.6"/>
-      </time>
-      <time from="2013-02-28T19:00:00" to="2013-03-01T01:00:00" period="3">
-        <!-- Valid from 2013-02-28T19:00:00 to 2013-03-01T01:00:00 -->
-        <symbol number="1" name="Klarvær" var="mf/01n.60"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-02-28T19:00:00 -->
-        <windDirection deg="294.1" code="WNW" name="Vest-nordvest"/>
-        <windSpeed mps="4.9" name="Lett bris"/>
-        <temperature unit="celsius" value="0"/>
-        <pressure unit="hPa" value="1015.6"/>
-      </time>
-      <time from="2013-03-01T01:00:00" to="2013-03-01T07:00:00" period="0">
-        <!-- Valid from 2013-03-01T01:00:00 to 2013-03-01T07:00:00 -->
+      <time from="2013-04-29T22:00:00" to="2013-04-30T00:00:00" period="3">
+        <!-- Valid from 2013-04-29T22:00:00 to 2013-04-30T00:00:00 -->
         <symbol number="1" name="Klarvær" var="mf/01n.63"/>
         <precipitation value="0"/>
-        <!-- Valid at 2013-03-01T01:00:00 -->
-        <windDirection deg="323.5" code="NW" name="Nordvest"/>
-        <windSpeed mps="4.8" name="Lett bris"/>
-        <temperature unit="celsius" value="-2"/>
-        <pressure unit="hPa" value="1016.8"/>
+        <!-- Valid at 2013-04-29T22:00:00 -->
+        <windDirection deg="235.3" code="SW" name="Sørvest"/>
+        <windSpeed mps="4.2" name="Lett bris"/>
+        <temperature unit="celsius" value="5"/>
+        <pressure unit="hPa" value="1011.7"/>
       </time>
-      <time from="2013-03-01T07:00:00" to="2013-03-01T13:00:00" period="1">
-        <!-- Valid from 2013-03-01T07:00:00 to 2013-03-01T13:00:00 -->
-        <symbol number="1" name="Klarvær" var="01d"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-03-01T07:00:00 -->
-        <windDirection deg="335.1" code="NNW" name="Nord-nordvest"/>
-        <windSpeed mps="4.0" name="Lett bris"/>
-        <temperature unit="celsius" value="-5"/>
-        <pressure unit="hPa" value="1017.0"/>
-      </time>
-      <time from="2013-03-01T13:00:00" to="2013-03-01T19:00:00" period="2">
-        <!-- Valid from 2013-03-01T13:00:00 to 2013-03-01T19:00:00 -->
-        <symbol number="1" name="Klarvær" var="01d"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-03-01T13:00:00 -->
-        <windDirection deg="250.0" code="WSW" name="Vest-sørvest"/>
-        <windSpeed mps="0.4" name="Flau vind"/>
-        <temperature unit="celsius" value="4"/>
-        <pressure unit="hPa" value="1016.4"/>
-      </time>
-      <time from="2013-03-01T19:00:00" to="2013-03-02T01:00:00" period="3">
-        <!-- Valid from 2013-03-01T19:00:00 to 2013-03-02T01:00:00 -->
-        <symbol number="3" name="Delvis skyet" var="mf/03n.63"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-03-01T19:00:00 -->
-        <windDirection deg="272.1" code="W" name="Vest"/>
-        <windSpeed mps="3.6" name="Lett bris"/>
-        <temperature unit="celsius" value="-2"/>
-        <pressure unit="hPa" value="1013.4"/>
-      </time>
-      <time from="2013-03-02T01:00:00" to="2013-03-02T07:00:00" period="0">
-        <!-- Valid from 2013-03-02T01:00:00 to 2013-03-02T07:00:00 -->
-        <symbol number="4" name="Skyet" var="04"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-03-02T01:00:00 -->
-        <windDirection deg="258.3" code="WSW" name="Vest-sørvest"/>
-        <windSpeed mps="3.0" name="Svak vind"/>
-        <temperature unit="celsius" value="-3"/>
-        <pressure unit="hPa" value="1008.6"/>
-      </time>
-      <time from="2013-03-02T07:00:00" to="2013-03-02T13:00:00" period="1">
-        <!-- Valid from 2013-03-02T07:00:00 to 2013-03-02T13:00:00 -->
-        <symbol number="5" name="Regnbyger" var="05d"/>
-        <precipitation value="0.5"/>
-        <!-- Valid at 2013-03-02T07:00:00 -->
-        <windDirection deg="235.7" code="SW" name="Sørvest"/>
-        <windSpeed mps="5.3" name="Lett bris"/>
-        <temperature unit="celsius" value="0"/>
-        <pressure unit="hPa" value="1000.8"/>
-      </time>
-      <time from="2013-03-02T13:00:00" to="2013-03-02T19:00:00" period="2">
-        <!-- Valid from 2013-03-02T13:00:00 to 2013-03-02T19:00:00 -->
-        <symbol number="1" name="Klarvær" var="01d"/>
-        <precipitation value="0.1"/>
-        <!-- Valid at 2013-03-02T13:00:00 -->
-        <windDirection deg="255.8" code="WSW" name="Vest-sørvest"/>
-        <windSpeed mps="6.6" name="Laber bris"/>
-        <temperature unit="celsius" value="3"/>
-        <pressure unit="hPa" value="996.1"/>
-      </time>
-      <time from="2013-03-02T19:00:00" to="2013-03-03T01:00:00" period="3">
-        <!-- Valid from 2013-03-02T19:00:00 to 2013-03-03T01:00:00 -->
+      <time from="2013-04-30T00:00:00" to="2013-04-30T06:00:00" period="0">
+        <!-- Valid from 2013-04-30T00:00:00 to 2013-04-30T06:00:00 -->
         <symbol number="2" name="Lettskyet" var="mf/02n.66"/>
         <precipitation value="0"/>
-        <!-- Valid at 2013-03-02T19:00:00 -->
-        <windDirection deg="270.7" code="W" name="Vest"/>
-        <windSpeed mps="5.1" name="Lett bris"/>
-        <temperature unit="celsius" value="-2"/>
-        <pressure unit="hPa" value="996.5"/>
+        <!-- Valid at 2013-04-30T00:00:00 -->
+        <windDirection deg="242.2" code="WSW" name="Vest-sørvest"/>
+        <windSpeed mps="4.7" name="Lett bris"/>
+        <temperature unit="celsius" value="4"/>
+        <pressure unit="hPa" value="1012.5"/>
       </time>
-      <time from="2013-03-03T01:00:00" to="2013-03-03T07:00:00" period="0">
-        <!-- Valid from 2013-03-03T01:00:00 to 2013-03-03T07:00:00 -->
-        <symbol number="4" name="Skyet" var="04"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-03-03T01:00:00 -->
-        <windDirection deg="306.7" code="NW" name="Nordvest"/>
-        <windSpeed mps="4.1" name="Lett bris"/>
-        <temperature unit="celsius" value="-5"/>
-        <pressure unit="hPa" value="998.8"/>
-      </time>
-      <time from="2013-03-03T07:00:00" to="2013-03-03T13:00:00" period="1">
-        <!-- Valid from 2013-03-03T07:00:00 to 2013-03-03T13:00:00 -->
+      <time from="2013-04-30T06:00:00" to="2013-04-30T12:00:00" period="1">
+        <!-- Valid from 2013-04-30T06:00:00 to 2013-04-30T12:00:00 -->
         <symbol number="3" name="Delvis skyet" var="03d"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-03-03T07:00:00 -->
-        <windDirection deg="355.4" code="N" name="Nord"/>
-        <windSpeed mps="3.4" name="Lett bris"/>
-        <temperature unit="celsius" value="-8"/>
-        <pressure unit="hPa" value="1000.8"/>
+        <precipitation value="0" minvalue="0" maxvalue="0.2"/>
+        <!-- Valid at 2013-04-30T06:00:00 -->
+        <windDirection deg="241.6" code="WSW" name="Vest-sørvest"/>
+        <windSpeed mps="4.9" name="Lett bris"/>
+        <temperature unit="celsius" value="3"/>
+        <pressure unit="hPa" value="1014.5"/>
       </time>
-      <time from="2013-03-03T13:00:00" to="2013-03-03T19:00:00" period="2">
-        <!-- Valid from 2013-03-03T13:00:00 to 2013-03-03T19:00:00 -->
-        <symbol number="4" name="Skyet" var="04"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-03-03T13:00:00 -->
-        <windDirection deg="341.1" code="NNW" name="Nord-nordvest"/>
-        <windSpeed mps="1.4" name="Flau vind"/>
-        <temperature unit="celsius" value="-1"/>
-        <pressure unit="hPa" value="1003.4"/>
-      </time>
-      <time from="2013-03-03T19:00:00" to="2013-03-04T01:00:00" period="3">
-        <!-- Valid from 2013-03-03T19:00:00 to 2013-03-04T01:00:00 -->
-        <symbol number="13" name="Snø" var="13"/>
-        <precipitation value="0.8"/>
-        <!-- Valid at 2013-03-03T19:00:00 -->
-        <windDirection deg="86.9" code="E" name="Øst"/>
-        <windSpeed mps="2.4" name="Svak vind"/>
-        <temperature unit="celsius" value="-4"/>
-        <pressure unit="hPa" value="1005.7"/>
-      </time>
-      <time from="2013-03-04T01:00:00" to="2013-03-04T07:00:00" period="0">
-        <!-- Valid from 2013-03-04T01:00:00 to 2013-03-04T07:00:00 -->
-        <symbol number="13" name="Snø" var="13"/>
-        <precipitation value="0.7"/>
-        <!-- Valid at 2013-03-04T01:00:00 -->
-        <windDirection deg="60.5" code="ENE" name="Øst-nordøst"/>
-        <windSpeed mps="2.3" name="Svak vind"/>
-        <temperature unit="celsius" value="-5"/>
-        <pressure unit="hPa" value="1008.7"/>
-      </time>
-      <time from="2013-03-04T07:00:00" to="2013-03-04T13:00:00" period="1">
-        <!-- Valid from 2013-03-04T07:00:00 to 2013-03-04T13:00:00 -->
+      <time from="2013-04-30T12:00:00" to="2013-04-30T18:00:00" period="2">
+        <!-- Valid from 2013-04-30T12:00:00 to 2013-04-30T18:00:00 -->
         <symbol number="1" name="Klarvær" var="01d"/>
-        <precipitation value="0.1"/>
-        <!-- Valid at 2013-03-04T07:00:00 -->
-        <windDirection deg="23.7" code="NNE" name="Nord-nordøst"/>
+        <precipitation value="0" minvalue="0" maxvalue="0.2"/>
+        <!-- Valid at 2013-04-30T12:00:00 -->
+        <windDirection deg="245.8" code="WSW" name="Vest-sørvest"/>
+        <windSpeed mps="5.9" name="Laber bris"/>
+        <temperature unit="celsius" value="9"/>
+        <pressure unit="hPa" value="1016.2"/>
+      </time>
+      <time from="2013-04-30T18:00:00" to="2013-05-01T00:00:00" period="3">
+        <!-- Valid from 2013-04-30T18:00:00 to 2013-05-01T00:00:00 -->
+        <symbol number="1" name="Klarvær" var="mf/01n.66"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-04-30T18:00:00 -->
+        <windDirection deg="268.9" code="W" name="Vest"/>
+        <windSpeed mps="5.2" name="Lett bris"/>
+        <temperature unit="celsius" value="11"/>
+        <pressure unit="hPa" value="1017.5"/>
+      </time>
+      <time from="2013-05-01T00:00:00" to="2013-05-01T06:00:00" period="0">
+        <!-- Valid from 2013-05-01T00:00:00 to 2013-05-01T06:00:00 -->
+        <symbol number="1" name="Klarvær" var="mf/01n.70"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-01T00:00:00 -->
+        <windDirection deg="278.0" code="W" name="Vest"/>
+        <windSpeed mps="3.4" name="Lett bris"/>
+        <temperature unit="celsius" value="4"/>
+        <pressure unit="hPa" value="1021.0"/>
+      </time>
+      <time from="2013-05-01T06:00:00" to="2013-05-01T12:00:00" period="1">
+        <!-- Valid from 2013-05-01T06:00:00 to 2013-05-01T12:00:00 -->
+        <symbol number="1" name="Klarvær" var="01d"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-01T06:00:00 -->
+        <windDirection deg="286.2" code="WNW" name="Vest-nordvest"/>
         <windSpeed mps="2.7" name="Svak vind"/>
-        <temperature unit="celsius" value="-9"/>
-        <pressure unit="hPa" value="1011.9"/>
+        <temperature unit="celsius" value="0"/>
+        <pressure unit="hPa" value="1024.2"/>
       </time>
-      <time from="2013-03-04T13:00:00" to="2013-03-04T19:00:00" period="2">
-        <!-- Valid from 2013-03-04T13:00:00 to 2013-03-04T19:00:00 -->
-        <symbol number="4" name="Skyet" var="04"/>
+      <time from="2013-05-01T12:00:00" to="2013-05-01T18:00:00" period="2">
+        <!-- Valid from 2013-05-01T12:00:00 to 2013-05-01T18:00:00 -->
+        <symbol number="1" name="Klarvær" var="01d"/>
         <precipitation value="0"/>
-        <!-- Valid at 2013-03-04T13:00:00 -->
-        <windDirection deg="359.8" code="N" name="Nord"/>
+        <!-- Valid at 2013-05-01T12:00:00 -->
+        <windDirection deg="274.4" code="W" name="Vest"/>
+        <windSpeed mps="2.5" name="Svak vind"/>
+        <temperature unit="celsius" value="11"/>
+        <pressure unit="hPa" value="1026.8"/>
+      </time>
+      <time from="2013-05-01T18:00:00" to="2013-05-02T00:00:00" period="3">
+        <!-- Valid from 2013-05-01T18:00:00 to 2013-05-02T00:00:00 -->
+        <symbol number="2" name="Lettskyet" var="mf/02n.70"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-01T18:00:00 -->
+        <windDirection deg="207.9" code="SSW" name="Sør-sørvest"/>
         <windSpeed mps="3.1" name="Svak vind"/>
-        <temperature unit="celsius" value="-5"/>
-        <pressure unit="hPa" value="1014.6"/>
+        <temperature unit="celsius" value="8"/>
+        <pressure unit="hPa" value="1026.3"/>
       </time>
-      <time from="2013-03-04T19:00:00" to="2013-03-05T01:00:00" period="3">
-        <!-- Valid from 2013-03-04T19:00:00 to 2013-03-05T01:00:00 -->
-        <symbol number="2" name="Lettskyet" var="mf/02n.73"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-03-04T19:00:00 -->
-        <windDirection deg="10.0" code="N" name="Nord"/>
-        <windSpeed mps="4.1" name="Lett bris"/>
-        <temperature unit="celsius" value="-9"/>
-        <pressure unit="hPa" value="1017.4"/>
+      <time from="2013-05-02T00:00:00" to="2013-05-02T06:00:00" period="0">
+        <!-- Valid from 2013-05-02T00:00:00 to 2013-05-02T06:00:00 -->
+        <symbol number="4" name="Skyet" var="04"/>
+        <precipitation value="0.2" minvalue="0.1" maxvalue="0.3"/>
+        <!-- Valid at 2013-05-02T00:00:00 -->
+        <windDirection deg="166.2" code="SSE" name="Sør-sørøst"/>
+        <windSpeed mps="1.1" name="Flau vind"/>
+        <temperature unit="celsius" value="1"/>
+        <pressure unit="hPa" value="1026.4"/>
       </time>
-      <time from="2013-03-05T01:00:00" to="2013-03-05T07:00:00" period="0">
-        <!-- Valid from 2013-03-05T01:00:00 to 2013-03-05T07:00:00 -->
-        <symbol number="1" name="Klarvær" var="mf/01n.77"/>
-        <precipitation value="0"/>
-        <!-- Valid at 2013-03-05T01:00:00 -->
-        <windDirection deg="357.4" code="N" name="Nord"/>
-        <windSpeed mps="4.8" name="Lett bris"/>
-        <temperature unit="celsius" value="-12"/>
-        <pressure unit="hPa" value="1020.3"/>
-      </time>
-      <time from="2013-03-05T07:00:00" to="2013-03-05T13:00:00" period="1">
-        <!-- Valid from 2013-03-05T07:00:00 to 2013-03-05T13:00:00 -->
+      <time from="2013-05-02T05:00:00" to="2013-05-02T11:00:00" period="1">
+        <!-- Valid from 2013-05-02T05:00:00 to 2013-05-02T11:00:00 -->
         <symbol number="3" name="Delvis skyet" var="03d"/>
         <precipitation value="0"/>
-        <!-- Valid at 2013-03-05T07:00:00 -->
-        <windDirection deg="8.3" code="N" name="Nord"/>
-        <windSpeed mps="4.8" name="Lett bris"/>
-        <temperature unit="celsius" value="-14"/>
+        <!-- Valid at 2013-05-02T05:00:00 -->
+        <windDirection deg="122.5" code="ESE" name="Øst-sørøst"/>
+        <windSpeed mps="0.5" name="Flau vind"/>
+        <temperature unit="celsius" value="-1"/>
+        <pressure unit="hPa" value="1024.7"/>
+      </time>
+      <time from="2013-05-02T14:00:00" to="2013-05-02T20:00:00" period="2">
+        <!-- Valid from 2013-05-02T14:00:00 to 2013-05-02T20:00:00 -->
+        <symbol number="2" name="Lettskyet" var="02d"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-02T14:00:00 -->
+        <windDirection deg="240.0" code="WSW" name="Vest-sørvest"/>
+        <windSpeed mps="1.8" name="Svak vind"/>
+        <temperature unit="celsius" value="12"/>
+        <pressure unit="hPa" value="1023.4"/>
+      </time>
+      <time from="2013-05-02T20:00:00" to="2013-05-03T02:00:00" period="3">
+        <!-- Valid from 2013-05-02T20:00:00 to 2013-05-03T02:00:00 -->
+        <symbol number="1" name="Klarvær" var="mf/01n.73"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-02T20:00:00 -->
+        <windDirection deg="187.2" code="S" name="Sør"/>
+        <windSpeed mps="1.6" name="Svak vind"/>
+        <temperature unit="celsius" value="8"/>
+        <pressure unit="hPa" value="1022.1"/>
+      </time>
+      <time from="2013-05-03T02:00:00" to="2013-05-03T08:00:00" period="0">
+        <!-- Valid from 2013-05-03T02:00:00 to 2013-05-03T08:00:00 -->
+        <symbol number="1" name="Klarvær" var="mf/01n.76"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-03T02:00:00 -->
+        <windDirection deg="25.5" code="NNE" name="Nord-nordøst"/>
+        <windSpeed mps="0.6" name="Flau vind"/>
+        <temperature unit="celsius" value="5"/>
+        <pressure unit="hPa" value="1021.6"/>
+      </time>
+      <time from="2013-05-03T08:00:00" to="2013-05-03T14:00:00" period="1">
+        <!-- Valid from 2013-05-03T08:00:00 to 2013-05-03T14:00:00 -->
+        <symbol number="1" name="Klarvær" var="01d"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-03T08:00:00 -->
+        <windDirection deg="85.8" code="E" name="Øst"/>
+        <windSpeed mps="3.1" name="Svak vind"/>
+        <temperature unit="celsius" value="7"/>
+        <pressure unit="hPa" value="1019.7"/>
+      </time>
+      <time from="2013-05-03T14:00:00" to="2013-05-03T20:00:00" period="2">
+        <!-- Valid from 2013-05-03T14:00:00 to 2013-05-03T20:00:00 -->
+        <symbol number="1" name="Klarvær" var="01d"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-03T14:00:00 -->
+        <windDirection deg="140.3" code="SE" name="Sørøst"/>
+        <windSpeed mps="3.0" name="Svak vind"/>
+        <temperature unit="celsius" value="12"/>
+        <pressure unit="hPa" value="1016.4"/>
+      </time>
+      <time from="2013-05-03T20:00:00" to="2013-05-04T02:00:00" period="3">
+        <!-- Valid from 2013-05-03T20:00:00 to 2013-05-04T02:00:00 -->
+        <symbol number="1" name="Klarvær" var="mf/01n.76"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-03T20:00:00 -->
+        <windDirection deg="191.8" code="SSW" name="Sør-sørvest"/>
+        <windSpeed mps="1.3" name="Flau vind"/>
+        <temperature unit="celsius" value="7"/>
+        <pressure unit="hPa" value="1013.1"/>
+      </time>
+      <time from="2013-05-04T02:00:00" to="2013-05-04T08:00:00" period="0">
+        <!-- Valid from 2013-05-04T02:00:00 to 2013-05-04T08:00:00 -->
+        <symbol number="4" name="Skyet" var="04"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-04T02:00:00 -->
+        <windDirection deg="279.5" code="W" name="Vest"/>
+        <windSpeed mps="2.5" name="Svak vind"/>
+        <temperature unit="celsius" value="3"/>
+        <pressure unit="hPa" value="1011.2"/>
+      </time>
+      <time from="2013-05-04T08:00:00" to="2013-05-04T14:00:00" period="1">
+        <!-- Valid from 2013-05-04T08:00:00 to 2013-05-04T14:00:00 -->
+        <symbol number="3" name="Delvis skyet" var="03d"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-04T08:00:00 -->
+        <windDirection deg="191.7" code="SSW" name="Sør-sørvest"/>
+        <windSpeed mps="1.4" name="Flau vind"/>
+        <temperature unit="celsius" value="7"/>
+        <pressure unit="hPa" value="1011.0"/>
+      </time>
+      <time from="2013-05-04T14:00:00" to="2013-05-04T20:00:00" period="2">
+        <!-- Valid from 2013-05-04T14:00:00 to 2013-05-04T20:00:00 -->
+        <symbol number="1" name="Klarvær" var="01d"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-04T14:00:00 -->
+        <windDirection deg="191.9" code="SSW" name="Sør-sørvest"/>
+        <windSpeed mps="4.5" name="Lett bris"/>
+        <temperature unit="celsius" value="11"/>
+        <pressure unit="hPa" value="1012.0"/>
+      </time>
+      <time from="2013-05-04T20:00:00" to="2013-05-05T02:00:00" period="3">
+        <!-- Valid from 2013-05-04T20:00:00 to 2013-05-05T02:00:00 -->
+        <symbol number="1" name="Klarvær" var="mf/01n.80"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-04T20:00:00 -->
+        <windDirection deg="156.0" code="SSE" name="Sør-sørøst"/>
+        <windSpeed mps="1.2" name="Flau vind"/>
+        <temperature unit="celsius" value="8"/>
+        <pressure unit="hPa" value="1012.6"/>
+      </time>
+      <time from="2013-05-05T02:00:00" to="2013-05-05T08:00:00" period="0">
+        <!-- Valid from 2013-05-05T02:00:00 to 2013-05-05T08:00:00 -->
+        <symbol number="1" name="Klarvær" var="mf/01n.83"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-05T02:00:00 -->
+        <windDirection deg="161.1" code="SSE" name="Sør-sørøst"/>
+        <windSpeed mps="1.2" name="Flau vind"/>
+        <temperature unit="celsius" value="6"/>
+        <pressure unit="hPa" value="1015.7"/>
+      </time>
+      <time from="2013-05-05T08:00:00" to="2013-05-05T14:00:00" period="1">
+        <!-- Valid from 2013-05-05T08:00:00 to 2013-05-05T14:00:00 -->
+        <symbol number="3" name="Delvis skyet" var="03d"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-05T08:00:00 -->
+        <windDirection deg="8.1" code="N" name="Nord"/>
+        <windSpeed mps="1.4" name="Flau vind"/>
+        <temperature unit="celsius" value="9"/>
+        <pressure unit="hPa" value="1018.9"/>
+      </time>
+      <time from="2013-05-05T14:00:00" to="2013-05-05T20:00:00" period="2">
+        <!-- Valid from 2013-05-05T14:00:00 to 2013-05-05T20:00:00 -->
+        <symbol number="4" name="Skyet" var="04"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-05T14:00:00 -->
+        <windDirection deg="184.0" code="S" name="Sør"/>
+        <windSpeed mps="2.6" name="Svak vind"/>
+        <temperature unit="celsius" value="13"/>
+        <pressure unit="hPa" value="1021.6"/>
+      </time>
+      <time from="2013-05-05T20:00:00" to="2013-05-06T02:00:00" period="3">
+        <!-- Valid from 2013-05-05T20:00:00 to 2013-05-06T02:00:00 -->
+        <symbol number="9" name="Regn" var="09"/>
+        <precipitation value="0.7"/>
+        <!-- Valid at 2013-05-05T20:00:00 -->
+        <windDirection deg="218.3" code="SW" name="Sørvest"/>
+        <windSpeed mps="0.6" name="Flau vind"/>
+        <temperature unit="celsius" value="11"/>
+        <pressure unit="hPa" value="1023.1"/>
+      </time>
+      <time from="2013-05-06T02:00:00" to="2013-05-06T08:00:00" period="0">
+        <!-- Valid from 2013-05-06T02:00:00 to 2013-05-06T08:00:00 -->
+        <symbol number="4" name="Skyet" var="04"/>
+        <precipitation value="0.5"/>
+        <!-- Valid at 2013-05-06T02:00:00 -->
+        <windDirection deg="337.2" code="NNW" name="Nord-nordvest"/>
+        <windSpeed mps="2.5" name="Svak vind"/>
+        <temperature unit="celsius" value="9"/>
+        <pressure unit="hPa" value="1023.9"/>
+      </time>
+      <time from="2013-05-06T08:00:00" to="2013-05-06T14:00:00" period="1">
+        <!-- Valid from 2013-05-06T08:00:00 to 2013-05-06T14:00:00 -->
+        <symbol number="4" name="Skyet" var="04"/>
+        <precipitation value="0.3"/>
+        <!-- Valid at 2013-05-06T08:00:00 -->
+        <windDirection deg="3.7" code="N" name="Nord"/>
+        <windSpeed mps="3.2" name="Svak vind"/>
+        <temperature unit="celsius" value="10"/>
+        <pressure unit="hPa" value="1023.1"/>
+      </time>
+      <time from="2013-05-06T14:00:00" to="2013-05-06T20:00:00" period="2">
+        <!-- Valid from 2013-05-06T14:00:00 to 2013-05-06T20:00:00 -->
+        <symbol number="3" name="Delvis skyet" var="03d"/>
+        <precipitation value="0.1"/>
+        <!-- Valid at 2013-05-06T14:00:00 -->
+        <windDirection deg="329.6" code="NNW" name="Nord-nordvest"/>
+        <windSpeed mps="2.5" name="Svak vind"/>
+        <temperature unit="celsius" value="15"/>
+        <pressure unit="hPa" value="1023.1"/>
+      </time>
+      <time from="2013-05-06T20:00:00" to="2013-05-07T02:00:00" period="3">
+        <!-- Valid from 2013-05-06T20:00:00 to 2013-05-07T02:00:00 -->
+        <symbol number="1" name="Klarvær" var="mf/01n.87"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-06T20:00:00 -->
+        <windDirection deg="359.8" code="N" name="Nord"/>
+        <windSpeed mps="1.8" name="Svak vind"/>
+        <temperature unit="celsius" value="14"/>
         <pressure unit="hPa" value="1022.8"/>
+      </time>
+      <time from="2013-05-07T02:00:00" to="2013-05-07T08:00:00" period="0">
+        <!-- Valid from 2013-05-07T02:00:00 to 2013-05-07T08:00:00 -->
+        <symbol number="1" name="Klarvær" var="mf/01n.90"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-07T02:00:00 -->
+        <windDirection deg="332.7" code="NNW" name="Nord-nordvest"/>
+        <windSpeed mps="3.4" name="Lett bris"/>
+        <temperature unit="celsius" value="9"/>
+        <pressure unit="hPa" value="1024.2"/>
+      </time>
+      <time from="2013-05-07T08:00:00" to="2013-05-07T14:00:00" period="1">
+        <!-- Valid from 2013-05-07T08:00:00 to 2013-05-07T14:00:00 -->
+        <symbol number="1" name="Klarvær" var="01d"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-07T08:00:00 -->
+        <windDirection deg="351.1" code="N" name="Nord"/>
+        <windSpeed mps="2.9" name="Svak vind"/>
+        <temperature unit="celsius" value="10"/>
+        <pressure unit="hPa" value="1025.6"/>
+      </time>
+      <time from="2013-05-07T14:00:00" to="2013-05-07T20:00:00" period="2">
+        <!-- Valid from 2013-05-07T14:00:00 to 2013-05-07T20:00:00 -->
+        <symbol number="1" name="Klarvær" var="01d"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-07T14:00:00 -->
+        <windDirection deg="18.4" code="NNE" name="Nord-nordøst"/>
+        <windSpeed mps="0.2" name="Stille"/>
+        <temperature unit="celsius" value="17"/>
+        <pressure unit="hPa" value="1025.9"/>
+      </time>
+      <time from="2013-05-07T20:00:00" to="2013-05-08T02:00:00" period="3">
+        <!-- Valid from 2013-05-07T20:00:00 to 2013-05-08T02:00:00 -->
+        <symbol number="1" name="Klarvær" var="mf/01n.90"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-07T20:00:00 -->
+        <windDirection deg="56.9" code="ENE" name="Øst-nordøst"/>
+        <windSpeed mps="2.2" name="Svak vind"/>
+        <temperature unit="celsius" value="13"/>
+        <pressure unit="hPa" value="1027.8"/>
+      </time>
+      <time from="2013-05-08T02:00:00" to="2013-05-08T08:00:00" period="0">
+        <!-- Valid from 2013-05-08T02:00:00 to 2013-05-08T08:00:00 -->
+        <symbol number="1" name="Klarvær" var="mf/01n.93"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-08T02:00:00 -->
+        <windDirection deg="40.9" code="NE" name="Nordøst"/>
+        <windSpeed mps="3.4" name="Lett bris"/>
+        <temperature unit="celsius" value="8"/>
+        <pressure unit="hPa" value="1030.5"/>
+      </time>
+      <time from="2013-05-08T08:00:00" to="2013-05-08T14:00:00" period="1">
+        <!-- Valid from 2013-05-08T08:00:00 to 2013-05-08T14:00:00 -->
+        <symbol number="1" name="Klarvær" var="01d"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-08T08:00:00 -->
+        <windDirection deg="55.3" code="NE" name="Nordøst"/>
+        <windSpeed mps="5.9" name="Laber bris"/>
+        <temperature unit="celsius" value="10"/>
+        <pressure unit="hPa" value="1032.4"/>
+      </time>
+      <time from="2013-05-08T14:00:00" to="2013-05-08T20:00:00" period="2">
+        <!-- Valid from 2013-05-08T14:00:00 to 2013-05-08T20:00:00 -->
+        <symbol number="1" name="Klarvær" var="01d"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-08T14:00:00 -->
+        <windDirection deg="68.8" code="ENE" name="Øst-nordøst"/>
+        <windSpeed mps="6.7" name="Laber bris"/>
+        <temperature unit="celsius" value="15"/>
+        <pressure unit="hPa" value="1033.4"/>
+      </time>
+      <time from="2013-05-08T20:00:00" to="2013-05-09T02:00:00" period="3">
+        <!-- Valid from 2013-05-08T20:00:00 to 2013-05-09T02:00:00 -->
+        <symbol number="1" name="Klarvær" var="mf/01n.93"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-08T20:00:00 -->
+        <windDirection deg="57.9" code="ENE" name="Øst-nordøst"/>
+        <windSpeed mps="4.5" name="Lett bris"/>
+        <temperature unit="celsius" value="10"/>
+        <pressure unit="hPa" value="1034.0"/>
+      </time>
+      <time from="2013-05-09T02:00:00" to="2013-05-09T08:00:00" period="0">
+        <!-- Valid from 2013-05-09T02:00:00 to 2013-05-09T08:00:00 -->
+        <symbol number="1" name="Klarvær" var="mf/01n.97"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-09T02:00:00 -->
+        <windDirection deg="58.0" code="ENE" name="Øst-nordøst"/>
+        <windSpeed mps="3.9" name="Lett bris"/>
+        <temperature unit="celsius" value="6"/>
+        <pressure unit="hPa" value="1035.3"/>
+      </time>
+      <time from="2013-05-09T08:00:00" to="2013-05-09T14:00:00" period="1">
+        <!-- Valid from 2013-05-09T08:00:00 to 2013-05-09T14:00:00 -->
+        <symbol number="1" name="Klarvær" var="01d"/>
+        <precipitation value="0"/>
+        <!-- Valid at 2013-05-09T08:00:00 -->
+        <windDirection deg="62.0" code="ENE" name="Øst-nordøst"/>
+        <windSpeed mps="5.6" name="Laber bris"/>
+        <temperature unit="celsius" value="9"/>
+        <pressure unit="hPa" value="1034.9"/>
       </time>
     </tabular>
   </forecast>

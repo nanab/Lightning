@@ -3,18 +3,18 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<?php $TabBakPic = 'Tab'.$tabpage.'BakPic'; ?> <!-- Set bakground picture for specifik tab. -->
 		<script src="<?php echo $Jquery; ?>"></script> <!-- Inlude jquery files. -->
-		<script src="<?php echo $JqueryCustom; ?>"></script> <!-- Inlude jquery files. -->        
-		<link rel="stylesheet" href="<?php echo $JqueryCustomCss; ?>" />
-        <link rel="stylesheet" href="<?php echo $JqueryCustomCss2; ?>" />
+		<script src="<?php echo $JqueryCustom; ?>"></script> <!-- Inlude jquery files. --> 
         <?php if ($RazberryActive == "true") { ?>      <!-- If razzbery is aktivated start loading files. -->
 			<script src="razberry/razberry_load.js"></script> 
             <script src="razberry/jquery.triggerpath.js"></script> 
             <script src="razberry/jquery.dateformat.js"></script> 
-        <?php } ?> <!-- Done loading razberry files -->		
+        <?php } ?> <!-- Done loading razberry files -->		       
+		<link rel="stylesheet" href="<?php echo $JqueryCustomCss; ?>" />
+        <link rel="stylesheet" href="<?php echo $JqueryCustomCss2; ?>" />
         <?php if ($AllMove == "true") { ?>   <!-- If move is active load move functions -->	
 			<script src="/functions/moveabledivs.js"></script>            
 		<?php }; // Done loading move function
-						
+								
 		//Language
 		$RefreshButtonLang = $XmlLang->main->refreshbutton;
 		$SettingsButtonLang = $XmlLang->main->settingsbutton;
@@ -173,14 +173,14 @@
             			timer = setTimeout(function() {	
 							$.ajax({
 								type: "POST",
-								url: "<?php echo $Catalog; ?>/functions/devices.php",
+								url: "/functions/devices.php",
 								data: {'DevOnId': DevOnId, 'DevOnDiv': DevOnDiv, 'DevUpdate': DevUpdate, 'DevDimLevel': DevDimLevel, 'DevUpdateDim': DevUpdateDim},
 								success: function(html){
 									e.preventDefault();
 									setTimeout(function(){
 										if(html = 'success') {
 											$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).fadeOut('fast').delay(1000);																						
-											$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).load('<?php echo $Catalog; ?>/functions/devices_load.php?Devap='+ Devap +'&DevOnId='+ DevOnId + '&DevOnScenarioDriven='+ DevOnScenarioDriven +'&DevOffScenarioDriven='+ DevOffScenarioDriven +'&Deven='+ Deven +'&DevNameOn='+ DevNameOn +'&Devtab='+ Devtab +'&DevName='+ DevName +'&DevOnScheduleDriven='+ DevOnScheduleDriven +'&DevOffScheduleDriven='+ DevOffScheduleDriven +'&DevOnSemiAuto='+ DevOnSemiAuto +'&DevOffSemiAuto='+ DevOffSemiAuto +'&DevOnScheduleAndRuleDriven='+ DevOnScheduleAndRuleDriven +'&DevOffScheduleAndRuleDriven='+ DevOffScheduleAndRuleDriven +'&DevPicSizeWidth='+ DevPicSizeWidth +'&DevPicSizeHeight='+ DevPicSizeHeight + '&DevCurrentState='+ DevCurrentState + '&SupportsAbsoluteDimLvl='+ SupportsAbsoluteDimLvl + '&CurrentDimLevel='+ CurrentDimLevel + '&DevModeType='+ DevModeType + '&TabPage='+ TabPage + '&func=device_load').fadeIn('slow');																																											
+											$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).load('/functions/devices_load.php?Devap='+ Devap +'&DevOnId='+ DevOnId + '&DevOnScenarioDriven='+ DevOnScenarioDriven +'&DevOffScenarioDriven='+ DevOffScenarioDriven +'&Deven='+ Deven +'&DevNameOn='+ DevNameOn +'&Devtab='+ Devtab +'&DevName='+ DevName +'&DevOnScheduleDriven='+ DevOnScheduleDriven +'&DevOffScheduleDriven='+ DevOffScheduleDriven +'&DevOnSemiAuto='+ DevOnSemiAuto +'&DevOffSemiAuto='+ DevOffSemiAuto +'&DevOnScheduleAndRuleDriven='+ DevOnScheduleAndRuleDriven +'&DevOffScheduleAndRuleDriven='+ DevOffScheduleAndRuleDriven +'&DevPicSizeWidth='+ DevPicSizeWidth +'&DevPicSizeHeight='+ DevPicSizeHeight + '&DevCurrentState='+ DevCurrentState + '&SupportsAbsoluteDimLvl='+ SupportsAbsoluteDimLvl + '&CurrentDimLevel='+ CurrentDimLevel + '&DevModeType='+ DevModeType + '&TabPage='+ TabPage + '&func=device_load').fadeIn('slow');																																											
 										}
 									}, 1000);
 								}
@@ -200,13 +200,13 @@
 						}
 						$.ajax({
 							type: "POST",
-							url: "<?php echo $Catalog; ?>/functions/devices.php",
+							url: "/functions/devices.php",
 							data: {'DevOnId': DevOnId, 'DevOnDiv': DevOnDiv, 'DevUpdate': DevUpdate, 'DevDimLevel': DevDimLevel, 'DevUpdateDim': DevUpdateDim},
 							success: function(html){
 								e.preventDefault();
 								if(html = 'success') {
 									$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).fadeOut('fast').delay(1000);											
-									$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).load('<?php echo $Catalog; ?>/functions/devices_load.php?Devap='+ Devap +'&DevOnId='+ DevOnId + '&DevOnScenarioDriven='+ DevOnScenarioDriven +'&DevOffScenarioDriven='+ DevOffScenarioDriven +'&Deven='+ Deven +'&DevNameOn='+ DevNameOn +'&Devtab='+ Devtab +'&DevName='+ DevName +'&DevOnScheduleDriven='+ DevOnScheduleDriven +'&DevOffScheduleDriven='+ DevOffScheduleDriven +'&DevOnSemiAuto='+ DevOnSemiAuto +'&DevOffSemiAuto='+ DevOffSemiAuto +'&DevOnScheduleAndRuleDriven='+ DevOnScheduleAndRuleDriven +'&DevOffScheduleAndRuleDriven='+ DevOffScheduleAndRuleDriven +'&DevPicSizeWidth='+ DevPicSizeWidth +'&DevPicSizeHeight='+ DevPicSizeHeight + '&DevCurrentState='+ DevCurrentState + '&SupportsAbsoluteDimLvl='+ SupportsAbsoluteDimLvl + '&CurrentDimLevel='+ CurrentDimLevel + '&DevModeType='+ DevModeType + '&TabPage='+ TabPage + '&func=device_load');																																
+									$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).load('/functions/devices_load.php?Devap='+ Devap +'&DevOnId='+ DevOnId + '&DevOnScenarioDriven='+ DevOnScenarioDriven +'&DevOffScenarioDriven='+ DevOffScenarioDriven +'&Deven='+ Deven +'&DevNameOn='+ DevNameOn +'&Devtab='+ Devtab +'&DevName='+ DevName +'&DevOnScheduleDriven='+ DevOnScheduleDriven +'&DevOffScheduleDriven='+ DevOffScheduleDriven +'&DevOnSemiAuto='+ DevOnSemiAuto +'&DevOffSemiAuto='+ DevOffSemiAuto +'&DevOnScheduleAndRuleDriven='+ DevOnScheduleAndRuleDriven +'&DevOffScheduleAndRuleDriven='+ DevOffScheduleAndRuleDriven +'&DevPicSizeWidth='+ DevPicSizeWidth +'&DevPicSizeHeight='+ DevPicSizeHeight + '&DevCurrentState='+ DevCurrentState + '&SupportsAbsoluteDimLvl='+ SupportsAbsoluteDimLvl + '&CurrentDimLevel='+ CurrentDimLevel + '&DevModeType='+ DevModeType + '&TabPage='+ TabPage + '&func=device_load');																																
 									$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).fadeIn('slow');	
 								}
 							}
@@ -251,12 +251,12 @@
 					}
 					$.ajax({
 						type: "POST",
-						url: "<?php echo $Catalog; ?>/functions/devices.php",
+						url: "/functions/devices.php",
 						data: {'DevOnId': DevOnId, 'DevOnDiv': DevOnDiv, 'DevUpdate': DevUpdate, 'DevDimLevel': DevDimLevel, 'DevUpdate': DevUpdate},
 						success: function(html){
 							if(html = 'success') {
 								$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).fadeOut('fast');											
-								$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).delay(1000).load('<?php echo $Catalog; ?>/functions/devices_load.php?Devap='+ Devap +'&DevOnId='+ DevOnId + '&DevOnScenarioDriven='+ DevOnScenarioDriven +'&DevOffScenarioDriven='+ DevOffScenarioDriven +'&Deven='+ Deven +'&DevNameOn='+ DevNameOn +'&Devtab='+ Devtab +'&DevName='+ DevName +'&DevOnScheduleDriven='+ DevOnScheduleDriven +'&DevOffScheduleDriven='+ DevOffScheduleDriven +'&DevOnSemiAuto='+ DevOnSemiAuto +'&DevOffSemiAuto='+ DevOffSemiAuto +'&DevOnScheduleAndRuleDriven='+ DevOnScheduleAndRuleDriven +'&DevOffScheduleAndRuleDriven='+ DevOffScheduleAndRuleDriven +'&DevPicSizeWidth='+ DevPicSizeWidth +'&DevPicSizeHeight='+ DevPicSizeHeight + '&DevCurrentState='+ DevCurrentState + '&SupportsAbsoluteDimLvl='+ SupportsAbsoluteDimLvl + '&CurrentDimLevel='+ CurrentDimLevel + '&DevModeType='+ DevModeType + '&TabPage='+ TabPage + '&func=device_load');																																
+								$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).delay(1000).load('/functions/devices_load.php?Devap='+ Devap +'&DevOnId='+ DevOnId + '&DevOnScenarioDriven='+ DevOnScenarioDriven +'&DevOffScenarioDriven='+ DevOffScenarioDriven +'&Deven='+ Deven +'&DevNameOn='+ DevNameOn +'&Devtab='+ Devtab +'&DevName='+ DevName +'&DevOnScheduleDriven='+ DevOnScheduleDriven +'&DevOffScheduleDriven='+ DevOffScheduleDriven +'&DevOnSemiAuto='+ DevOnSemiAuto +'&DevOffSemiAuto='+ DevOffSemiAuto +'&DevOnScheduleAndRuleDriven='+ DevOnScheduleAndRuleDriven +'&DevOffScheduleAndRuleDriven='+ DevOffScheduleAndRuleDriven +'&DevPicSizeWidth='+ DevPicSizeWidth +'&DevPicSizeHeight='+ DevPicSizeHeight + '&DevCurrentState='+ DevCurrentState + '&SupportsAbsoluteDimLvl='+ SupportsAbsoluteDimLvl + '&CurrentDimLevel='+ CurrentDimLevel + '&DevModeType='+ DevModeType + '&TabPage='+ TabPage + '&func=device_load');																																
 								$('#ap<?php echo $tabpage ?>DivDev'+ DevOnDiv).fadeIn('slow');	
 							}
 						}
@@ -273,7 +273,7 @@
 										
 					$.ajax({
 						type: "POST",
-						url: "<?php echo $Catalog; ?>/functions/systemmodes.php",
+						url: "/functions/systemmodes.php",
 						data: {'SMId': Id, 'SystemmodesUpdate': SystemmodesUpdate},
 						success: function(html){
 							if(html = 'success') {
@@ -285,7 +285,7 @@
 				<?php																									
 				//Load devicegroups
 				if ($DGEn == "true"){ ?>
-					$('#devicegroupsmain').load('<?php echo $Catalog; ?>/functions/devicegroups.php');
+					$('#devicegroupsmain').load('/functions/devicegroups.php');
 					//Moveable devicegroup
 					<?php if ($AllMove == "true"){ ?>
 						MoveableDG('<?php echo $tabpage ?>');
@@ -293,16 +293,16 @@
 				<?php }; 													
 				//Load Scenarios
 				if ($SCEn == "true"){ ?>					
-					$('#scenarios').load('<?php echo $Catalog; ?>/functions/scenarios.php');
+					$('#scenarios').load('/functions/scenarios.php');
 					//Moveable Scenarios
 					<?php if ($AllMove == "true"){ ?>			
 						MoveableSC('<?php echo $tabpage ?>');
 					<?php }; ?>						
-				<?php };
+				<?php }; ?>
 				//Load Settingsbutton
-				if ($SettingsButtonActive == "true"){ ?>
+				<?php if ($SettingsButtonActive == "true"){ ?>
 					$( ".buttonsettings" ).button({ label: "<?php echo $SettingsButtonLang; ?>"}).click(function() {
-						$('#settings').load('<?php echo $Catalog; ?>/settings/settings_tabs.php').show();
+						$('#settings').load('/settings/settings_tabs.php').show();
 						SettingsDivVissible = 'true';
 						return false;
 					});
@@ -324,7 +324,7 @@
 				};
 				//Load weather widget
 				if ($WeatherEnabled == "true") { ?>			
-					$('#weather').load('<?php echo $Catalog; ?>/functions/weather.php');
+					$('#weather').load('/functions/weather.php');
 					//Moveable Weather
 					<?php if ($AllMove == "true"){ ?>			
 						MoveableWeather('<?php echo $tabpage ?>');
@@ -372,10 +372,10 @@
 						};
 						//Bring upp the dialog whit dropdown list in title
 						dialog.dialog({title: DSName + ' <select id="dropDown"><option value="' + DSMinute + '">own</option><option value="720">12' + hours + '</option><option value="1440">24' + hours + '</option><option value="2160">36' + hours + '</option><option value="2880">48' + hours + '</option><option value="4320">3' + days + '</option><option value="5760">4' + days + '</option><option value="7200">5' + days + '</option><option value="8640">6' + days + '</option><option value="10080">1' + week + '</option><option value="20160">2' + weeks + '</option><option value="30240">3' + weeks + '</option></select>', draggable: false});
-						dialog.dialog({ position: 'top' }).load('<?php echo $Catalog; ?>/functions/graph.php?DSMinute='+ DSMinute + '&DSSizeX='+ DSSizeX + '&DSSizeY='+ DSSizeY + '&DSId='+ DSId + '&func=graph');
+						dialog.dialog({ position: 'top' }).load('/functions/graph.php?DSMinute='+ DSMinute + '&DSSizeX='+ DSSizeX + '&DSSizeY='+ DSSizeY + '&DSId='+ DSId + '&func=graph');
 						$('#dropDown').on('change',function() {
 							var NewTime = $("#dropDown").val();
-							dialog.dialog({ position: 'top' }).load('<?php echo $Catalog; ?>/functions/graph.php?DSMinute='+ NewTime + '&DSSizeX='+ DSSizeX + '&DSSizeY='+ DSSizeY + '&DSId='+ DSId + '&func=graph');
+							dialog.dialog({ position: 'top' }).load('/functions/graph.php?DSMinute='+ NewTime + '&DSSizeX='+ DSSizeX + '&DSSizeY='+ DSSizeY + '&DSId='+ DSId + '&func=graph');
 						});
 					});					
                 });								
@@ -434,13 +434,12 @@
                                             </center>
                                         </div>
 									</div>
-								<?php };	
-								if($$DevCurrentState == "2") { ?>					
-									<center>
-										<form method="post" action="" STYLE="margin:0; padding:0;">
-                                        	<input type="hidden" id="DevUpdate<?php echo $idev; ?>" value="updateon" />
-											<input type="hidden" id="DevOnId<?php echo $idev; ?>" value="<?php echo $$Devid; ?>" />
-											<input type="hidden" id="DevOnDiv<?php echo $idev; ?>" value="<?php echo $$Devap; ?>" />                    	                                        	<input type="hidden" id="Devap<?php echo $idev; ?>" value="<?php echo $$Devap; ?>" />  														
+								<?php };
+								?>
+								<form method="post" action="" STYLE="margin:0; padding:0;">
+									<input type="hidden" id="DevOnId<?php echo $idev; ?>" value="<?php echo $$Devid; ?>" />
+											<input type="hidden" id="DevOnDiv<?php echo $idev; ?>" value="<?php echo $$Devap; ?>" />                    	                                        	
+                                            <input type="hidden" id="Devap<?php echo $idev; ?>" value="<?php echo $$Devap; ?>" />  														
                                             <input type="hidden" id="DevOnScenarioDriven<?php echo $idev; ?>" value="<?php echo $$DevOnScenarioDriven; ?>" />						
                                             <input type="hidden" id="DevOffScenarioDriven<?php echo $idev; ?>" value="<?php echo $$DevOffScenarioDriven; ?>" />						
                                             <input type="hidden" id="Deven<?php echo $idev; ?>" value="<?php echo $$DevEn; ?>" />						
@@ -458,7 +457,13 @@
                                             <input type="hidden" id="DevCurrentState<?php echo $idev; ?>" value="<?php echo $$DevCurrentState; ?>" />
 											<input type="hidden" id="SupportsAbsoluteDimLvl<?php echo $idev; ?>" value="<?php echo $$SupportsAbsoluteDimLvl; ?>" />
 											<input type="hidden" id="CurrentDimLevel<?php echo $idev; ?>" value="<?php echo $$CurrentDimLevel; ?>" />
-                                            <input type="hidden" id="DevModeType<?php echo $idev; ?>" value="<?php echo $$DevModeType; ?>" />                                       
+                                            <input type="hidden" id="DevModeType<?php echo $idev; ?>" value="<?php echo $$DevModeType; ?>" />   
+								<?php	
+								if($$DevCurrentState == "2") { ?>					
+									<center>
+										
+                                        	<input type="hidden" id="DevUpdate<?php echo $idev; ?>" value="updateon" />
+											                                    
                                             <?php
 												if ($$DevModeType == "ScenarioDriven"){ ?>
 												<input type="image"  src='<?php echo $ImagePath.$$DevOnScenarioDriven; ?>'  width="<?php echo $$DevPicSizeWidth ?>" height="<?php echo $$DevPicSizeHeight ?>" id="<?php echo $$Devap ?>" style="display:block;" class="ReturnON_OFF" id="<?php echo $$Devap; ?>"/>
@@ -473,28 +478,9 @@
 									</center>
 								<?php }else{ ?>        
 									<center>
-										<form method="post" action="" STYLE="margin:0; padding:0;">
+										
 											<input type="hidden" id="DevUpdate<?php echo $idev; ?>" value="updateoff" />
-											<input type="hidden" id="DevOnId<?php echo $idev; ?>" value="<?php echo $$Devid; ?>" />
-											<input type="hidden" id="DevOnDiv<?php echo $idev; ?>" value="<?php echo $$Devap; ?>" />                    	                                        	<input type="hidden" id="Devap<?php echo $idev; ?>" value="<?php echo $$Devap; ?>" />  														
-                                            <input type="hidden" id="DevOnScenarioDriven<?php echo $idev; ?>" value="<?php echo $$DevOnScenarioDriven; ?>" />						
-                                            <input type="hidden" id="DevOffScenarioDriven<?php echo $idev; ?>" value="<?php echo $$DevOffScenarioDriven; ?>" />						
-                                            <input type="hidden" id="Deven<?php echo $idev; ?>" value="<?php echo $$DevEn; ?>" />						
-                                            <input type="hidden" id="DevNameOn<?php echo $idev; ?>" value="<?php echo $$DevNameOn; ?>" />						
-                                            <input type="hidden" id="Devtab<?php echo $idev; ?>" value="<?php echo $$Devtab; ?>" />						
-                                            <input type="hidden" id="DevName<?php echo $idev; ?>" value="<?php echo $$DevName; ?>" />						
-                                            <input type="hidden" id="DevOnScheduleDriven<?php echo $idev; ?>" value="<?php echo $$DevOnScheduleDriven; ?>" />						
-                                            <input type="hidden" id="DevOffScheduleDriven<?php echo $idev; ?>" value="<?php echo $$DevOffScheduleDriven; ?>" />						
-                                            <input type="hidden" id="DevOnSemiAuto<?php echo $idev; ?>" value="<?php echo $$DevOnSemiAuto; ?>" />						
-                                            <input type="hidden" id="DevOffSemiAuto<?php echo $idev; ?>" value="<?php echo $$DevOffSemiAuto; ?>" />						
-                                            <input type="hidden" id="DevOnScheduleAndRuleDriven<?php echo $idev; ?>" value="<?php echo $$DevOnScheduleAndRuleDriven; ?>" />						
-                                            <input type="hidden" id="DevOffScheduleAndRuleDriven<?php echo $idev; ?>" value="<?php echo $$DevOffScheduleAndRuleDriven; ?>" />						
-                                            <input type="hidden" id="DevPicSizeWidth<?php echo $idev; ?>" value="<?php echo $$DevPicSizeWidth; ?>" />						
-                                            <input type="hidden" id="DevPicSizeHeight<?php echo $idev; ?>" value="<?php echo $$DevPicSizeHeight; ?>" />
-                                            <input type="hidden" id="DevCurrentState<?php echo $idev; ?>" value="<?php echo $$DevCurrentState; ?>" />
-											<input type="hidden" id="SupportsAbsoluteDimLvl<?php echo $idev; ?>" value="<?php echo $$SupportsAbsoluteDimLvl; ?>" />
-											<input type="hidden" id="CurrentDimLevel<?php echo $idev; ?>" value="<?php echo $$CurrentDimLevel; ?>" />
-                                            <input type="hidden" id="DevModeType<?php echo $idev; ?>" value="<?php echo $$DevModeType; ?>" />
+											
 											<?php
 												if ($$DevModeType == "ScenarioDriven"){ ?>
 												<input type="image"  src='<?php echo $ImagePath.$$DevOffScenarioDriven; ?>'  width="<?php echo $$DevPicSizeWidth ?>" height="<?php echo $$DevPicSizeHeight ?>" id="<?php echo $$Devap ?>" style="display:block;" class="ReturnON_OFF" id="<?php echo $$Devap; ?>"/>
