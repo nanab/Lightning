@@ -86,7 +86,7 @@
   </tabs>
   <devices>
     <moveabledev>false</moveabledev>
-    <numberofdevices>13</numberofdevices>
+    <numberofdevices>15</numberofdevices>
     <dev0>
       <ap>0</ap>
       <en>true</en>
@@ -334,6 +334,44 @@
       <nameon>true</nameon>
       <tab>1</tab>
     </dev12>
+    <dev13>
+      <ap>13</ap>
+      <en>false</en>
+      <id/>
+      <x>100</x>
+      <y>120</y>
+      <onscenariodriven>DeviceOn_Scenario.png</onscenariodriven>
+      <offscenariodriven>DeviceOff_Scenario.png</offscenariodriven>
+      <onscheduledriven>DeviceOn.png</onscheduledriven>
+      <offscheduledriven>DeviceOff.png</offscheduledriven>
+      <onsemiauto>DeviceOn_SemiAuto.png</onsemiauto>
+      <offsemiauto>DeviceOff_SemiAuto.png</offsemiauto>
+      <onscheduleandruledriven>DeviceOn_Rule.png</onscheduleandruledriven>
+      <offscheduleandruledriven>DeviceOff_Rule.png</offscheduleandruledriven>
+      <picsizewidth>40</picsizewidth>
+      <picsizeheight>40</picsizeheight>
+      <nameon>true</nameon>
+      <tab>1</tab>
+    </dev13>
+    <dev14>
+      <ap>14</ap>
+      <en>false</en>
+      <id></id>
+      <x>100</x>
+      <y>120</y>
+      <onscenariodriven>DeviceOn_Scenario.png</onscenariodriven>
+      <offscenariodriven>DeviceOff_Scenario.png</offscenariodriven>
+      <onscheduledriven>DeviceOn.png</onscheduledriven>
+      <offscheduledriven>DeviceOff.png</offscheduledriven>
+      <onsemiauto>DeviceOn_SemiAuto.png</onsemiauto>
+      <offsemiauto>DeviceOff_SemiAuto.png</offsemiauto>
+      <onscheduleandruledriven>DeviceOn_Rule.png</onscheduleandruledriven>
+      <offscheduleandruledriven>DeviceOff_Rule.png</offscheduleandruledriven>
+      <picsizewidth>40</picsizewidth>
+      <picsizeheight>40</picsizeheight>
+      <nameon>true</nameon>
+      <tab>1</tab>
+    </dev14>
   </devices>
   <datasources>
     <moveableds>false</moveableds>
