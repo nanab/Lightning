@@ -1,4 +1,3 @@
-<!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
 <?php
 include(dirname(__FILE__)."/../settings/load_settings.php");
 if($_POST['DevUpdate'] == "updateon") {

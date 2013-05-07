@@ -7,6 +7,7 @@
 	<?php
 	//Include settings file
 	include(dirname(__FILE__)."/settings/load_settings.php");
+	include(dirname(__FILE__)."/settings/load_switch.php");
 	//Load language variables
 	//$DirCheckLang = $XmlLang->main->dircheck;
 	//$WriteFileCheckLang = $XmlLang->main->writefilecheck;

@@ -153,7 +153,7 @@ include(dirname(__FILE__)."/../settings/load_settings.php");
   				});
 			</script>
                 <div style="width:15px;display:inline-block;"></div>
-                <div id="dim" style="display:inline-block;">
+                <div id="dim" style="display:inline-block;" class="dim">
               	                                                                                            		                                                                               	 
 						<div id="slider" DevOnIdDim="<?php echo $DevOnId; ?>" DevUpdateDim="updatedim" DevtabDim="<?php echo $DevTab; ?>" style="display:inline-block;"></div>               		         
                 		<div style="display:inline-block;"><input type="text" id="slider_value"><label for="slider_value" style="font-size:9;">%</label></div>	                     
@@ -188,6 +188,7 @@ include(dirname(__FILE__)."/../settings/load_settings.php");
 };
 function device_load_first($tabpage) {
 	include(dirname(__FILE__)."/../settings/load_settings.php");
+	include(dirname(__FILE__)."/../settings/load_switch.php");
 	 //Start loading devices.
 				$idev=0;
 				$CountDevs_new = $CountDevs - 1;
@@ -218,8 +219,7 @@ function device_load_first($tabpage) {
 								device_load($$Devap, $$Devid, $$DevOnId, $$DevOnScenarioDriven, $$DevOffScenarioDriven, $$DevEn, $$DevNameOn, $$Devtab, $$DevName, $$DevOnScheduleDriven, $$DevOffScheduleDriven, $$DevOnSemiAuto, $$DevOffSemiAuto, $$DevOnScheduleAndRuleDriven, $$DevOffScheduleAndRuleDriven, $$DevPicSizeWidth, $$DevPicSizeHeight, $$DevCurrentState, $$SupportsAbsoluteDimLvl, $$CurrentDimLevel, $$DevModeType);																										
 					?>
 					</div>
-                <div style="height:3px;">
-                
+                <div style="height:3px;">                
                 </div>
 					<?php
 					};

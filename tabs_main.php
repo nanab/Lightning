@@ -1,7 +1,15 @@
-<!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<?php $TabBakPic = 'Tab'.$tabpage.'BakPic'; ?> <!-- Set bakground picture for specifik tab. -->
+		<?php 
+		include(dirname(__FILE__)."/settings/load_switch.php");
+		include(dirname(__FILE__)."/settings/load_settings.php");
+		include(dirname(__FILE__)."/style/devices_style.php");
+		include(dirname(__FILE__)."/style/datasources_style.php");
+		include(dirname(__FILE__)."/style/systemmodes_style.php");
+		include(dirname(__FILE__)."/style/scenarios_style.php");
+		include(dirname(__FILE__)."/style/devicegroups_style.php");			
+		$TabBakPic = 'Tab'.$tabpage.'BakPic';  //Set bakground picture for specifik tab.
+		?>
 		<script src="<?php echo $Jquery; ?>"></script> <!-- Inlude jquery files. -->
 		<script src="<?php echo $JqueryCustom; ?>"></script> <!-- Inlude jquery files. --> 
         <?php if ($RazberryActive == "true") { ?>      <!-- If razzbery is aktivated start loading files. -->

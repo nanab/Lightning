@@ -87,7 +87,7 @@
     			return false; });
     										
 			//Function Dim device
-				$('#slider').on('change',function() {
+				$('.dim').on('change',function() {
 					alert("hey");
 					var element = $(this);
 					var Id = element.attr("id");

@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width,height=device-height, user-scalable=yes" />
 <head>
 <?php include(dirname(__FILE__)."/../settings/load_settings.php"); ?>
+
 <?php include(dirname(__FILE__)."/devices_load_mobile.php"); ?>
 <script src="<?php echo ".." . $Jquery; ?>"></script> <!-- Inlude jquery files. -->
 <script src="<?php echo ".." . $JqueryCustom; ?>"></script> <!-- Inlude jquery files. -->
@@ -40,7 +41,10 @@
 	}
 	#slider{
 		width:80px;
-		 font-size: 10;	
+		font-size: 10;	
+	}
+	.scenarios{
+		font-size:15;	
 	}
 	
 </style>
