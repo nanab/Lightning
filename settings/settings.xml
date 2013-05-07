@@ -3,7 +3,7 @@
   <main>
     <version>2.0</version>
     <first>true</first>
-    <ip>192.168.1.1</ip>
+    <ip>localhost</ip>
     <port>8800</port>
     <user>user</user>
     <pass>pass</pass>
