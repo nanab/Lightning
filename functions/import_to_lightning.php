@@ -1,8 +1,8 @@
-<!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
 <?php
-function index_import_devices(){
+function index_import_devices($RemainingDevices){
 	include(dirname(__FILE__)."/../settings/load_settings.php");
-	$ImportDevicesTitleLang = $XmlLang->import->devicestitle;
+	$ImportDevicesTitleLang1 = $XmlLang->import->devicestitle1;
+	$ImportDevicesTitleLang2 = $XmlLang->import->devicestitle2;
 	$ImportDevicesTextLang = $XmlLang->import->devicestext;
 	$ImportDevicesBackgroundLang = $XmlLang->import->devicesbackground;
 	?>
@@ -37,15 +37,16 @@ function index_import_devices(){
 			});
 		});				
 	</script>            
-	<div id="dialog-confirm" title="<?php echo $ImportDevicesTitleLang; ?>">
+	<div id="dialog-confirm" title="<?php echo $ImportDevicesTitleLang1 . " " . $RemainingDevices . " " . $ImportDevicesTitleLang2; ?>">
 		<p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span><?php echo $ImportDevicesTextLang; ?></p>
 	</div>
 	<div class="background"></div>
 	<?php	
 }
-function index_import_systemmodes(){
+function index_import_systemmodes($RemainingSystemmodes){
 	include(dirname(__FILE__)."/../settings/load_settings.php");
-	$ImportSMTitleLang = $XmlLang->import->systemmodestitle;
+	$ImportSMTitleLang1 = $XmlLang->import->systemmodestitle1;
+	$ImportSMTitleLang2 = $XmlLang->import->systemmodestitle2;
 	$ImportSMTextLang = $XmlLang->import->systemmodestext;
 	$ImportSMBackgroundLang = $XmlLang->import->systemmodesbackground;
 	?>
@@ -80,15 +81,16 @@ function index_import_systemmodes(){
 			});
 		});				
 	</script>            
-	<div id="dialog-confirm" title="<?php echo $ImportSMTitleLang; ?>">
+	<div id="dialog-confirm" title="<?php echo $ImportSMTitleLang1 . " " . $RemainingSystemmodes . " " . $ImportSMTitleLang2; ?>">
 		<p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span><?php echo $ImportSMTextLang; ?></p>
 	</div>
 	<div class="background"></div>
 	<?php			
 }
-function index_import_datasources(){
+function index_import_datasources($RemainingDatasources){
 	include(dirname(__FILE__)."/../settings/load_settings.php");
-	$ImportDSTitleLang = $XmlLang->import->datasourcestitle;
+	$ImportDSTitleLang1 = $XmlLang->import->datasourcestitle1;
+	$ImportDSTitleLang2 = $XmlLang->import->datasourcestitle2;
 	$ImportDSTextLang = $XmlLang->import->datasourcestext;
 	$ImportDSBackgroundLang = $XmlLang->import->datasourcesbackground;
 	?>
@@ -100,7 +102,7 @@ function index_import_datasources(){
 		$(function() {						
 			$( "#dialog-confirm" ).dialog({
 				resizable: false,
-				width:400,
+				width:500,
 				modal: true,							
 				buttons: {
 					"Ok": function() {
@@ -123,7 +125,7 @@ function index_import_datasources(){
 			});
 		});				
 	</script>            
-	<div id="dialog-confirm" title="<?php echo $ImportDSTitleLang; ?>">
+	<div id="dialog-confirm" title="<?php echo $ImportDSTitleLang1 . " " . $RemainingDatasources . " " . $ImportDSTitleLang2; ?>">
 		<p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span><?php echo $ImportDSTextLang; ?></p>
 	</div>
 	<div class="background"></div>

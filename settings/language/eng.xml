@@ -16,13 +16,16 @@
 			<years>years</years>
 		</globallang>
 		<import>
-			<devicestitle>There are new devices to import!</devicestitle>
+			<devicestitle1>There are</devicestitle1>
+			<devicestitle2>new device(s) to import!</devicestitle2>
 			<devicestext>Do you want to do it now?</devicestext>
 			<devicesbackground>Please disable the devices that you don´t want to use in the switchking interface.</devicesbackground>
-			<systemmodestitle>There are new systemmodes to import!</systemmodestitle>
+			<systemmodestitle1>There are</systemmodestitle1>
+			<systemmodestitle2>new systemmode(s) to import!</systemmodestitle2>
 			<systemmodestext>Do you want to do it now?</systemmodestext>
 			<systemmodesbackground>Please disable the systemmodes that you don´t want to use in the switchking interface.</systemmodesbackground>
-			<datasourcestitle>There are new datasources to import!</datasourcestitle>
+			<datasourcestitle1>There are</datasourcestitle1>
+			<datasourcestitle2>new datasource(s) to import!</datasourcestitle2>
 			<datasourcestext>Do you want to do it now?</datasourcestext>
 			<datasourcesbackground>Please disable the datasources that you don´t want to use in the switchking interface.</datasourcesbackground>
 		</import>

@@ -43,16 +43,19 @@
     	<?php
 		//Check if all devices is imported if not import them	
     	if ($CountDevs > $DevNumbers) {	
+			$RemainingDevices = $CountDevs - $DevNumbers;
         	include(dirname(__FILE__)."/functions/import_to_lightning.php");
-			index_import_devices();
+			index_import_devices($RemainingDevices);
 		//Check if all systemmodes is imported if not import them		
 		}else if($CountSM > $SMNumbers){
+			$RemainingSystemmodes = $CountSM - $SMNumbers;
 			include(dirname(__FILE__)."/functions/import_to_lightning.php");
-			index_import_systemmodes();
+			index_import_systemmodes($RemainingSystemmodes);
 		//Check if all datasources is imported if not import them
 		}else if($CountDS1 > $DSNumbers){
+			$RemainingDatasources = $CountDS1 - $DSNumbers;
 			include(dirname(__FILE__)."/functions/import_to_lightning.php");
-			index_import_datasources();			
+			index_import_datasources($RemainingDatasources);			
 			//All imported start lodaing page
 		}else{			
 			?>
