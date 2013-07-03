@@ -23,7 +23,7 @@
 		?>
 		#ap<?php echo $$SDevTab ?>DivDev<?php echo $$SDevap ?> {
 			position: absolute;
-			z-index: <?php echo $$DevStyleLoad ?>;
+			z-index: <?php echo $DevStyleLoad ?>;
 			left: <?php echo $$SDevx ?>px;
 			top: <?php echo $$SDevy ?>px;
 		}					

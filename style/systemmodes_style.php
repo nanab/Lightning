@@ -17,7 +17,7 @@
 				position: absolute;
 				width: 65px;
 				height: 65px;
-				z-index: <?php echo $$SMStyleLoad ?>;
+				z-index: <?php echo $SMStyleLoad ?>;
 				left: <?php echo $$SSMx ?>px;
 				top: <?php echo $$SSMy ?>px;
 				}

@@ -16,7 +16,7 @@
 			#ap<?php echo $$SDSTab ?>DivDS<?php echo $$SDSAp ?> {
 				color:<?php echo $TextColorWidgets; ?>;
 				position: absolute;				
-				z-index: <?php echo $$DSStyleLoad ?>;
+				z-index: <?php echo $DSStyleLoad ?>;
 				left: <?php echo $$SDSx ?>px;
 				top: <?php echo $$SDSy ?>px;
 				-moz-border-radius: 10px;
