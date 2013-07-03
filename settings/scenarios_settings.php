@@ -4,6 +4,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<?php
 		include(dirname(__FILE__)."/load_settings.php");
+		include(dirname(__FILE__)."/load_switch.php");
 		//Load language vars
  		$EnabledLang = $XmlLang->settings->scenarios->enabled;
 		$DisabledLang = $XmlLang->settings->scenarios->disabled;

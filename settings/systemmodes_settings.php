@@ -4,6 +4,7 @@
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <?php
         include(dirname(__FILE__)."/load_settings.php");
+		include(dirname(__FILE__)."/load_switch.php");
         ?>
         <script src="<?php echo $Jquery; ?>"></script>
 		<script src="<?php echo $JqueryCustom; ?>"></script> 
