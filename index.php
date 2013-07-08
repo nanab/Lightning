@@ -1,4 +1,4 @@
-<!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
+
 <html>
 	<head>
 
@@ -7,7 +7,9 @@
 	<?php
 	//Include settings file
 	include(dirname(__FILE__)."/settings/load_settings.php");
-	include(dirname(__FILE__)."/settings/load_switch.php");
+	if ($First == "false"){
+		include(dirname(__FILE__)."/settings/load_switch.php");
+	}
 	//Load language variables
 	//$DirCheckLang = $XmlLang->main->dircheck;
 	//$WriteFileCheckLang = $XmlLang->main->writefilecheck;
@@ -28,11 +30,11 @@
 	}*/		
 	//If first time call first function so user can fill in connection info
 	if ($First == "true"){		
-		include(dirname(__FILE__)."/functions/first_time.php");
+		include("./functions/first_time.php");
 		first_time();
 	//after connection info is done start import tempfiles xml files from switchking
 	}else if ($First == "second"){
-		include(dirname(__FILE__)."/functions/first_time.php");
+		include("./functions/first_time.php");
 		second_time();
 	//First stage done check version of settingsfile. Upgrade if older.
 	}else if ($VersionXml < $Version){

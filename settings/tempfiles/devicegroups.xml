@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Devicegroups>
+	<RESTDeviceGroup>
+		<Description></Description>
+		<ID>-1</ID>
+		<Name></Name>
+	</RESTDeviceGroup>
+	<RESTDeviceGroup>
+		<Description>1 IT_rum</Description>
+		<ID>4</ID>
+		<Name>1 IT_rum</Name>
+	</RESTDeviceGroup>
+	<RESTDeviceGroup>
+		<Description>2 &#214;verv&#229;ning</Description>
+		<ID>5</ID>
+		<Name>2 &#214;verv&#229;ning</Name>
+	</RESTDeviceGroup>
+	<RESTDeviceGroup>
+		<Description>Lampor i f&#246;nster</Description>
+		<ID>1</ID>
+		<Name>Lampor i f&#246;nster</Name>
+	</RESTDeviceGroup>
+	<RESTDeviceGroup>
+		<Description>test</Description>
+		<ID>3</ID>
+		<Name>test</Name>
+	</RESTDeviceGroup>
+	<RESTDeviceGroup>
+		<Description>Utebelysning</Description>
+		<ID>2</ID>
+		<Name>Utebelysning</Name>
+	</RESTDeviceGroup>
+</Devicegroups>

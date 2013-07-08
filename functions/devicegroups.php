@@ -1,8 +1,8 @@
-<!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
 	<head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <?php
-        include(dirname(__FILE__)."/../settings/load_settings.php");				
+        include(dirname(__FILE__)."/../settings/load_settings.php");
+		include(dirname(__FILE__)."/../settings/load_switch.php")				
         ?>        
         <link rel="stylesheet" href="<?php echo $JqueryCustomCss; ?>" />
         <link rel="stylesheet" href="<?php echo $JqueryCustomCss2; ?>" />

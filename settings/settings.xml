@@ -3,7 +3,7 @@
   <main>
     <version>2.0</version>
     <first>true</first>
-    <ip>localhost</ip>
+    <ip>192.168.1.14</ip>
     <port>8800</port>
     <user>user</user>
     <pass>pass</pass>
@@ -53,35 +53,35 @@
       <name>Top Deck</name>
       <page>tab2.php</page>
       <bakpic>top.png</bakpic>
-      <bakpicheight>650</bakpicheight>
+      <bakpicheight>656</bakpicheight>
       <bakpicwidth>924</bakpicwidth>
     </tab2>
     <tab3>
       <id>3</id>
       <en>false</en>
-      <name>Tab3</name>
+      <name>tab3</name>
       <page>tab3.php</page>
       <bakpic/>
-      <bakpicheight>650</bakpicheight>
-      <bakpicwidth>924</bakpicwidth>
+      <bakpicheight>600</bakpicheight>
+      <bakpicwidth>800</bakpicwidth>
     </tab3>
     <tab4>
       <id>4</id>
       <en>false</en>
-      <name>Tab4</name>
+      <name>tab4</name>
       <page>tab4.php</page>
       <bakpic/>
-      <bakpicheight>650</bakpicheight>
+      <bakpicheight>656</bakpicheight>
       <bakpicwidth>924</bakpicwidth>
     </tab4>
     <tab5>
       <id>5</id>
       <en>false</en>
-      <name>Tab5</name>
+      <name>tab5</name>
       <page>tab5.php</page>
       <bakpic/>
-      <bakpicheight>650</bakpicheight>
-      <bakpicwidth>924</bakpicwidth>
+      <bakpicheight>800</bakpicheight>
+      <bakpicwidth>700</bakpicwidth>
     </tab5>
   </tabs>
   <devices>
@@ -112,13 +112,13 @@
     <numberofds>1</numberofds>
     <ds0>
       <ap>0</ap>
-      <en>true</en>
+      <en>false</en>
       <id>3</id>
       <fa/>
       <tab>1</tab>
       <nameon>true</nameon>
-      <x>498</x>
-      <y>9</y>
+      <x>581</x>
+      <y>199</y>
       <sizex>500</sizex>
       <sizey>500</sizey>
       <minute>1440</minute>
@@ -141,8 +141,8 @@
   <scenarios>
     <moveablesc>false</moveablesc>
     <en>true</en>
-    <x>0</x>
-    <y>514</y>
+    <x>8</x>
+    <y>453</y>
     <backcolor>black</backcolor>
     <fontsize>12</fontsize>
     <hideable>true</hideable>
@@ -150,8 +150,8 @@
   <devicegroups>
     <moveabledg>false</moveabledg>
     <en>true</en>
-    <x>706</x>
-    <y>1</y>
+    <x>714</x>
+    <y>405</y>
   </devicegroups>
   <advanced>
     <imagepath>/images/</imagepath>

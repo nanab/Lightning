@@ -1,9 +1,8 @@
-<!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
 	<head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <?php
-        $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-        include(dirname(__FILE__)."/../settings/load_settings.php");		
+        include(dirname(__FILE__)."/../settings/load_settings.php");
+		include(dirname(__FILE__)."/../settings/load_switch.php")		
         ?>                
         <script>
             $(function() {

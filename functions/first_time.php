@@ -1,17 +1,24 @@
 <!-- V2.0 Copyright Nanab nanab666@gmail.com. -->
 <?php 
 function first_time(){
-	include(dirname(__FILE__)."/../settings/load_settings.php");
+	include("./settings/load_settings.php");
 	$FirstLang = $XmlLang->firsttime->first;
 	echo $FirstLang; ?><br><?php		
-	include(dirname(__FILE__)."/../settings/main_settings.php");		
+	include("./settings/main_settings.php");		
 };
 function second_time(){
-	include(dirname(__FILE__)."/../settings/load_settings.php");
+	
+	@include_once("import_from_switchking.php");
+	@importtoxml("./settings/tempfiles/devices.xml", "http://$User:$Pass@$Ip:$Port/$funcdev", "Devices");
+	@importtoxml("./settings/tempfiles/systemmodes.xml", "http://$User:$Pass@$Ip:$Port/$FuncSysm", "Systemmodes");
+	@importtoxml("./settings/tempfiles/scenarios.xml", "http://$User:$Pass@$Ip:$Port/$FuncSC", "Scenarios");
+	@importtoxml("./settings/tempfiles/devicegroups.xml", "http://$User:$Pass@$Ip:$Port/$FuncDG", "Devicegroups");
+	@importtoxml("./settings/tempfiles/datasources.xml", "http://$User:$Pass@$Ip:$Port/$FuncDS", "Datasources");
+	@sortxml("./settings/tempfiles/devices.xml", 'ID', 'number', 'ascending', 'RESTDevice' );
 	$xmlMainSettings = new DOMDocument('1.0', 'utf-8');
 	$xmlMainSettings->formatOutput = true;
 	$xmlMainSettings->preserveWhiteSpace = false;
-	$xmlMainSettings->load(dirname(__FILE__)."/../settings/settings.xml");
+	$xmlMainSettings->load("./settings/settings.xml");
 	$first_new = "false";
 	$main =  $xmlMainSettings->getElementsByTagName('main')->item(0);
 	$first_orginal = $main->getElementsByTagName('first')->item(0);
@@ -20,10 +27,8 @@ function second_time(){
 	<script>
 		<?php 
 		if ($First == "second"){ 
-			$xmlMainSettings->save(dirname(__FILE__)."/../settings/settings.xml"); ?>
-			$(document).ready(function(){
-				location.reload()
-			});
+			$xmlMainSettings->save("./settings/settings.xml"); ?>
+				window.location.href = "../index.php";					
 			<?php 
 		};
 		?>

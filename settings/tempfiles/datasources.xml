@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Datasources>
+	<RESTDataSource>
+		<Description></Description>
+		<Enabled>true</Enabled>
+		<EngineeringUnit></EngineeringUnit>
+		<EvalMinMax>false</EvalMinMax>
+		<GroupID>-1</GroupID>
+		<GroupName></GroupName>
+		<ID>10</ID>
+		<LastRun>9999-12-31T23:59:59.9999999</LastRun>
+		<LastValue>Av</LastValue>
+		<LastValueAdditionalData></LastValueAdditionalData>
+		<LastValueDebugInfo>Collected from source TelldusAPI and event [ID:-1,Src:TelldusAPI,Timestamp:2013-07-05 00:42:23,NativeID:N/A,FeatEvt:TurnOff,FeatDimLvl:N/A,Operation:StateChange].</LastValueDebugInfo>
+		<LastValueExpires>9999-12-31T23:59:59</LastValueExpires>
+		<LastValueIsFailureValue>false</LastValueIsFailureValue>
+		<LastValueLocalTimestamp>2013-07-05T00:42:23</LastValueLocalTimestamp>
+		<LastValueStatus>OK</LastValueStatus>
+		<LastValueTimestamp>2013-07-05T00:42:23</LastValueTimestamp>
+		<Name>Brytare sofia sova v&#228;nster</Name>
+		<NextRun>9999-12-31T23:59:59.9999999</NextRun>
+		<PollScheduleRate>PT0S</PollScheduleRate>
+		<PollScheduleType>WhenModified</PollScheduleType>
+		<PollScheduleValue>PT0S</PollScheduleValue>
+		<Status>Unknown</Status>
+		<UsedValue>Av</UsedValue>
+		<UsedValueAdditionalData></UsedValueAdditionalData>
+		<UsedValueDebugInfo>Collected from source TelldusAPI and event [ID:-1,Src:TelldusAPI,Timestamp:2013-07-05 00:42:23,NativeID:N/A,FeatEvt:TurnOff,FeatDimLvl:N/A,Operation:StateChange].</UsedValueDebugInfo>
+		<UsedValueExpires>9999-12-31T23:59:59</UsedValueExpires>
+		<UsedValueIsFailureValue>false</UsedValueIsFailureValue>
+		<UsedValueLocalTimestamp>2013-07-05T00:42:23</UsedValueLocalTimestamp>
+		<UsedValueStatus>OK</UsedValueStatus>
+		<UsedValueTimestamp>2013-07-05T00:42:23</UsedValueTimestamp>
+	</RESTDataSource>
+	<RESTDataSource>
+		<Description></Description>
+		<Enabled>true</Enabled>
+		<EngineeringUnit></EngineeringUnit>
+		<EvalMinMax>false</EvalMinMax>
+		<GroupID>-1</GroupID>
+		<GroupName></GroupName>
+		<ID>11</ID>
+		<LastRun>9999-12-31T23:59:59.9999999</LastRun>
+		<LastValue>Av</LastValue>
+		<LastValueAdditionalData></LastValueAdditionalData>
+		<LastValueDebugInfo>Collected from source TelldusAPI and event [ID:-1,Src:TelldusAPI,Timestamp:2013-07-05 09:18:21,NativeID:18,FeatEvt:TurnOff,FeatDimLvl:N/A,Operation:StateChange].</LastValueDebugInfo>
+		<LastValueExpires>9999-12-31T23:59:59</LastValueExpires>
+		<LastValueIsFailureValue>false</LastValueIsFailureValue>
+		<LastValueLocalTimestamp>2013-07-05T09:18:21</LastValueLocalTimestamp>
+		<LastValueStatus>OK</LastValueStatus>
+		<LastValueTimestamp>2013-07-05T09:18:21</LastValueTimestamp>
+		<Name>Brytare sofia s&#228;ng h&#246;ger</Name>
+		<NextRun>9999-12-31T23:59:59.9999999</NextRun>
+		<PollScheduleRate>PT0S</PollScheduleRate>
+		<PollScheduleType>WhenModified</PollScheduleType>
+		<PollScheduleValue>PT0S</PollScheduleValue>
+		<Status>Unknown</Status>
+		<UsedValue>Av</UsedValue>
+		<UsedValueAdditionalData></UsedValueAdditionalData>
+		<UsedValueDebugInfo>Collected from source TelldusAPI and event [ID:-1,Src:TelldusAPI,Timestamp:2013-07-05 09:18:21,NativeID:18,FeatEvt:TurnOff,FeatDimLvl:N/A,Operation:StateChange].</UsedValueDebugInfo>
+		<UsedValueExpires>9999-12-31T23:59:59</UsedValueExpires>
+		<UsedValueIsFailureValue>false</UsedValueIsFailureValue>
+		<UsedValueLocalTimestamp>2013-07-05T09:18:21</UsedValueLocalTimestamp>
+		<UsedValueStatus>OK</UsedValueStatus>
+		<UsedValueTimestamp>2013-07-05T09:18:21</UsedValueTimestamp>
+	</RESTDataSource>
+	<RESTDataSource>
+		<Description>SkyR1</Description>
+		<Enabled>true</Enabled>
+		<EngineeringUnit></EngineeringUnit>
+		<EvalMinMax>false</EvalMinMax>
+		<GroupID>-1</GroupID>
+		<GroupName></GroupName>
+		<ID>3</ID>
+		<LastRun>9999-12-31T23:59:59.9999999</LastRun>
+		<LastValue>P&#229;</LastValue>
+		<LastValueAdditionalData></LastValueAdditionalData>
+		<LastValueDebugInfo>Collected from source TelldusAPI and event [ID:-1,Src:TelldusAPI,Timestamp:2013-07-08 21:45:55,NativeID:N/A,FeatEvt:TurnOn,FeatDimLvl:N/A,Operation:StateChange].</LastValueDebugInfo>
+		<LastValueExpires>9999-12-31T23:59:59.9999999</LastValueExpires>
+		<LastValueIsFailureValue>false</LastValueIsFailureValue>
+		<LastValueLocalTimestamp>2013-07-08T21:45:56.082523+02:00</LastValueLocalTimestamp>
+		<LastValueStatus>OK</LastValueStatus>
+		<LastValueTimestamp>2013-07-08T21:45:55.829819+02:00</LastValueTimestamp>
+		<Name>Skymningsrel&#228;</Name>
+		<NextRun>9999-12-31T23:59:59.9999999</NextRun>
+		<PollScheduleRate>PT0S</PollScheduleRate>
+		<PollScheduleType>WhenModified</PollScheduleType>
+		<PollScheduleValue>PT0S</PollScheduleValue>
+		<Status>Unknown</Status>
+		<UsedValue>P&#229;</UsedValue>
+		<UsedValueAdditionalData></UsedValueAdditionalData>
+		<UsedValueDebugInfo>Collected from source TelldusAPI and event [ID:-1,Src:TelldusAPI,Timestamp:2013-07-08 21:45:55,NativeID:N/A,FeatEvt:TurnOn,FeatDimLvl:N/A,Operation:StateChange].</UsedValueDebugInfo>
+		<UsedValueExpires>9999-12-31T23:59:59.9999999</UsedValueExpires>
+		<UsedValueIsFailureValue>false</UsedValueIsFailureValue>
+		<UsedValueLocalTimestamp>2013-07-08T21:45:56.082523+02:00</UsedValueLocalTimestamp>
+		<UsedValueStatus>OK</UsedValueStatus>
+		<UsedValueTimestamp>2013-07-08T21:45:55.829819+02:00</UsedValueTimestamp>
+	</RESTDataSource>
+	<RESTDataSource>
+		<Description></Description>
+		<Enabled>true</Enabled>
+		<EngineeringUnit>&#176;C</EngineeringUnit>
+		<EvalMinMax>true</EvalMinMax>
+		<GroupID>-1</GroupID>
+		<GroupName></GroupName>
+		<ID>6</ID>
+		<LastRun>9999-12-31T23:59:59.9999999</LastRun>
+		<LastValue>17,7</LastValue>
+		<LastValueAdditionalData></LastValueAdditionalData>
+		<LastValueDebugInfo>Collected from source TelldusAPI and event [ID:-1,Src:TelldusAPI,Timestamp:2013-07-08 21:38:15].</LastValueDebugInfo>
+		<LastValueExpires>9999-12-31T23:59:59.9999999</LastValueExpires>
+		<LastValueIsFailureValue>false</LastValueIsFailureValue>
+		<LastValueLocalTimestamp>2013-07-08T21:38:15.4469558+02:00</LastValueLocalTimestamp>
+		<LastValueStatus>OK</LastValueStatus>
+		<LastValueTimestamp>2013-07-08T21:38:15+02:00</LastValueTimestamp>
+		<Name>Ute temp</Name>
+		<NextRun>9999-12-31T23:59:59.9999999</NextRun>
+		<PollScheduleRate>PT0S</PollScheduleRate>
+		<PollScheduleType>WhenModified</PollScheduleType>
+		<PollScheduleValue>PT0S</PollScheduleValue>
+		<Status>Unknown</Status>
+		<UsedValue>17,7</UsedValue>
+		<UsedValueAdditionalData></UsedValueAdditionalData>
+		<UsedValueDebugInfo>Collected from source TelldusAPI and event [ID:-1,Src:TelldusAPI,Timestamp:2013-07-08 21:38:15].</UsedValueDebugInfo>
+		<UsedValueExpires>9999-12-31T23:59:59.9999999</UsedValueExpires>
+		<UsedValueIsFailureValue>false</UsedValueIsFailureValue>
+		<UsedValueLocalTimestamp>2013-07-08T21:38:15.4469558+02:00</UsedValueLocalTimestamp>
+		<UsedValueStatus>OK</UsedValueStatus>
+		<UsedValueTimestamp>2013-07-08T21:38:15+02:00</UsedValueTimestamp>
+	</RESTDataSource>
+</Datasources>
