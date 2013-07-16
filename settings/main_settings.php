@@ -218,7 +218,7 @@
 			@$langfile_new = $_POST['langfile'];
 			@$theme_new = $_POST['theme'];
 			@$allmove_new = $_POST['allmove'];
-			if ($First == "true"){
+			if ($First == "true" || $First == "second"){
 				$first_new = "second";
 			}else{
 				$first_new = "false";
@@ -280,7 +280,7 @@
 			//Replace old elements with new
 			?>
 			<script>
-				<?php if ($First == "true"){
+				<?php if ($First == "true" || $First == "second"){
 					$xmlMainSettings->save("settings.xml");?>
 					window.location.href = "../index.php";<?php
 				}else{

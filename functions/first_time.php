@@ -7,7 +7,13 @@ function first_time(){
 	include("./settings/main_settings.php");		
 };
 function second_time(){
-	
+	include("./settings/load_settings.php");
+	$testconnection = file_get_contents("http://$User:$Pass@$Ip:$Port/$funcdev");
+	if($testconnection === FALSE) {
+		echo "Can't connect to switchking server please check your connection info";
+		include("./settings/main_settings.php");
+		die();
+	}else{
 	@include_once("import_from_switchking.php");
 	@importtoxml("./settings/tempfiles/devices.xml", "http://$User:$Pass@$Ip:$Port/$funcdev", "Devices");
 	@importtoxml("./settings/tempfiles/systemmodes.xml", "http://$User:$Pass@$Ip:$Port/$FuncSysm", "Systemmodes");
@@ -34,5 +40,6 @@ function second_time(){
 		?>
 	</script>
 	<?php
+	}
 };
 ?>
