@@ -280,12 +280,19 @@
 			//Replace old elements with new
 			?>
 			<script>
-				<?php if ($First == "true" || $First == "second"){
-					$xmlMainSettings->save("settings.xml");?>
-					window.location.href = "../index.php";<?php
+				<?php 
+				if ($First == "true" || $First == "second"){
+					$xmlMainSettings->save("settings.xml");
+					?> window.location.href = "../index.php"; <?php
 				}else{
-					$xmlMainSettings->save("settings.xml");?>
-					window.location.href = "main_settings.php";<?php
+					@$testconnection = file_get_contents("http://$User:$Pass@$Ip:$Port/$funcdev");
+					if($testconnection === FALSE) {
+						$xmlMainSettings->save("settings.xml");
+						?> window.location.href = "../index.php"; <?php
+					}else{
+						$xmlMainSettings->save("settings.xml");?>
+						window.location.href = "main_settings.php";<?php
+					}
 				} ?>
 					
 			</script>

@@ -8,7 +8,15 @@
 	//Include settings file
 	include(dirname(__FILE__)."/settings/load_settings.php");
 	if ($First == "false"){
+		//Check that lightning can connect to switchking if not direkt to main settings page
+		@$testconnection = file_get_contents("http://$User:$Pass@$Ip:$Port/$funcdev");
+			if($testconnection === FALSE) {
+				echo "Can't connect to switchking server please check your connection info. <br>After you have pressed save button please reload page manually!!";
+				include("./settings/main_settings.php");
+				die();
+			}else{ //else continue loading page
 		include(dirname(__FILE__)."/settings/load_switch.php");
+			}
 	}
 	//Load language variables
 	//$DirCheckLang = $XmlLang->main->dircheck;
@@ -57,9 +65,17 @@
 		}else if($CountDS1 > $DSNumbers){
 			$RemainingDatasources = $CountDS1 - $DSNumbers;
 			include(dirname(__FILE__)."/functions/import_to_lightning.php");
-			index_import_datasources($RemainingDatasources);			
+			index_import_datasources($RemainingDatasources);
+		
+			
+		}else if($numbers_razberry < $count_razberry){ 
+				if ($RazberryActive == "true"){
+					$RemainingRazberryDevices = $count_razberry - $numbers_razberry;
+					include(dirname(__FILE__)."/functions/import_to_lightning.php");
+					index_import_razberry_devices($RemainingRazberryDevices);
+				}
 			//All imported start lodaing page
-		}else{			
+		}else{
 			?>
             <title><?php echo $MainTitle ?></title>
             <script src="<?php echo $Jquery; ?>"></script>
@@ -78,14 +94,14 @@
 				}							​
 			</style>
     		<script>
-			
+			//Check if user want to have mobile interface enabled if so direct page to mobile
+			<?php if ($MobileInterfaceEn = "true"){ ?>
+				if (screen.width <= 699) {
+				document.location = "/mobile/index.php";
+				}
+			<?php } ?>
 
-			if (screen.width <= 699) {
-			document.location = "/mobile/index.php";
-			}
-
-
-				<!-- Dunction loading tabs-->
+				<!-- Function loading tabs-->
 				$(function() {
 					$( "#tabs" ).tabs({				
 						beforeLoad: function( event, ui ) {					
@@ -178,6 +194,7 @@
 			</div>  
 		</body>
 		<?php 
-		}; 
+		}
+	
 	}?>
 </html>
